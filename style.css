@@ -1,0 +1,13 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Monospace;
+    font-size: 12px;
+    text-size-adjust: none;
+    line-height: 12px;
+}
+
+html {
+    background-color: #0C0C0C;
+    color: #CCCCCC;
+}
