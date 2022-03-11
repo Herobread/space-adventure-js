@@ -30,6 +30,8 @@ export function mainMenu() {
 
     temp = 'WASD - move, enter/space - confirm '
     renderer.drawObject(temp, center(temp.length), parseInt(window.h - 2))
+
+    // renderer.drawObject(art.planets[5].img, 10, 10)
 }
 
 function logic() {

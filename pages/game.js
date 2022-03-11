@@ -51,7 +51,6 @@ function pauseMenu() {
 }
 
 function ui() {
-    // hotbar
     let temp = ' '
 
     if (!alive) {
@@ -217,7 +216,7 @@ function asteroid() {
             asteroids[asteroids.length - 1].xVelocity = 3
         }
 
-        asteroidCooldown = 60
+        asteroidCooldown = 10 + randomInRange(0, 70)
     }
 
 
@@ -227,7 +226,7 @@ function asteroid() {
             asteroids[i].y += asteroids[i].yVelocity
             const asteroidImg = art.asteroids[asteroids[i].type].img
 
-            renderer.drawObject(asteroidImg, parseInt(asteroids[i].x), parseInt(asteroids[i].y))
+            renderer.drawObjectWithoutSpace(asteroidImg, parseInt(asteroids[i].x), parseInt(asteroids[i].y))
             addColisionObject(asteroidImg, parseInt(asteroids[i].x), parseInt(asteroids[i].y))
 
 
@@ -257,6 +256,7 @@ function animation() {
             if (animations[i].state < animations[i].img.length - 1) {
                 animations[i].state += 1
                 animations[i].x += animations[i].xSpeed
+                animations[i].y += animations[i].ySpeed
             } else {
                 animations.splice(i, 1)
             }
@@ -269,7 +269,7 @@ function animation() {
         const pos = animations[i].state
         const texture = animations[i].img[pos]
 
-        renderer.drawObjectWithoutSpace(cropImg(texture, animations[i].cropX, animations[i].cropY), animations[i].x, animations[i].y)
+        renderer.drawObjectWithoutSpace(cropImg(texture, animations[i].cropX, animations[i].cropY), parseInt(animations[i].x), parseInt(animations[i].y))
     }
 
     animationCooldown -= 1
@@ -338,13 +338,15 @@ let asteroidsColisions = [] // for bullets that destroy asteroids
 function checkAsteroidColisions() {
     for (let i = 0; i < asteroidsColisions.length; i += 1) {
         const ast = asteroidsColisions[i]
+        const astReal = asteroids[i]
 
         bullets.forEach((bullet, bI) => {
             if (checkIfPointInRectangle(bullet.x, bullet.y, ast.x, ast.y, ast.x + ast.width, ast.y + ast.height)) {
 
                 addAnimation(art.animations.hit, bullets[bI].x - 1, bullets[bI].y - 1, 3, 0)
 
-                addAnimation(art.animations.explosion, ast.x, ast.y, -3, 0, ast.width, ast.height)
+                // console.log(astReal)
+                addAnimation(art.animations.explosion, ast.x, ast.y, -3, astReal.yVelocity * 3, ast.width, ast.height)
 
                 asteroids.splice(i, 1)
                 bullets.splice(bI, 1)
@@ -402,6 +404,37 @@ let particleCooldown = 0
 
 function ambient() {
     smallParticles()
+
+    planet()
+}
+
+let planets = []
+let planetCooldown = 2000
+
+function planet() {
+    planetCooldown -= 1
+
+    if (planetCooldown === 0) {
+        planets.push({
+            x: window.w,
+            y: randomInRange(5, window.h / 2),
+            type: randomInRange(0, art.planets.length - 1)
+        })
+        planetCooldown = 2000
+    }
+
+    planets.map((planet, i) => {
+        if (planet.x < -70)
+            planets.splice(i, 1)
+
+        planet.x -= 0.5
+
+        return planet
+    })
+
+    planets.forEach(planet => {
+        renderer.drawObjectWithoutSpace(art.planets[planet.type].img, parseInt(planet.x), parseInt(planet.y))
+    })
 }
 
 let trailList = [player.y, player.y, player.y, player.y, player.y]

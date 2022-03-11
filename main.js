@@ -76,16 +76,3 @@ function main() {
 
     renderer.render()
 }
-
-/*
-let player = {
-    'x': 10,
-    'y': 10,
-    'hp': 3,
-    'distance': 0,
-    'hitCooldown': 0
-}
-let paused = 0
-let pauseCooldown = 30
-
-*/
