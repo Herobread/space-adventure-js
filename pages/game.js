@@ -22,12 +22,16 @@ export function game() {
     } else {
         ambient()
 
-        if (alive)
-            bullet()
+        bullet()
+        // if (alive) {
+
+        // }
 
         asteroid()
 
         ship()
+
+        enemy()
 
         animation()
 
@@ -36,6 +40,7 @@ export function game() {
         clearColisions()
 
         ui()
+
     }
 }
 
@@ -60,7 +65,7 @@ function ui() {
         temp = `Your score is ${player.distance}`
         renderer.drawObject(temp, center(temp.length), window.h / 2)
 
-        temp = `Enter - restart, esc - exit`
+        temp = `Enter - respawn, esc - exit`
         renderer.drawObject(temp, center(temp.length), window.h - 1)
     } else {
         temp = `${player.distance}`
@@ -409,7 +414,7 @@ function ambient() {
 }
 
 let planets = []
-let planetCooldown = 2000
+let planetCooldown = 2000 + randomInRange(0, 1000)
 
 function planet() {
     planetCooldown -= 1
@@ -420,7 +425,7 @@ function planet() {
             y: randomInRange(5, window.h / 2),
             type: randomInRange(0, art.planets.length - 1)
         })
-        planetCooldown = 2000
+        planetCooldown = 2000 + randomInRange(0, 1000)
     }
 
     planets.map((planet, i) => {
@@ -516,4 +521,97 @@ function smallParticles() {
             particles.splice(i, 1)
         }
     }
+}
+
+
+////////////////////////////////////////////////// enemy
+
+let enemies = []
+let enemyBullets = []
+let enemiesCooldown = 3000 + randomInRange(0, 1000)
+
+
+function enemy() {
+    if (enemiesCooldown <= 0 && enemies.length === 0) {
+        addEnemy(window.w - 20, randomInRange(10, window.h - 10))
+        enemiesCooldown = 3000 + randomInRange(0, 1000)
+    }
+
+    enemies.map((enemy, enemyI) => {
+        bullets.forEach(bullet => {
+            if (enemy.hitCooldown <= 0 && checkIfPointInRectangle(bullet.x, bullet.y, enemy.x, enemy.y, enemy.x + enemy.width, enemy.y + enemy.height)) {
+                enemy.hitCooldown = 20
+                enemy.hp -= 1
+                addAnimation(art.animations.hit, enemy.x + randomInRange(0, 5), enemy.y + randomInRange(0, 4))
+            }
+
+            if (enemy.hp <= 0) {
+                enemies.splice(enemyI, 1)
+
+                addAnimation(art.animations.explosion, parseInt(enemy.x), parseInt(enemy.y), 0, 0, 10, 6)
+            }
+        })
+
+        let hp = ['- - -', '# - -', '# # -', '# # #']
+        renderer.drawObject(hp[enemy.hp], enemy.x + 2, parseInt(enemy.y + enemy.height))
+
+        if (enemy.y < player.y) {
+            enemy.y += 0.1
+        }
+        if (enemy.y > player.y) {
+            enemy.y -= 0.1
+        }
+
+        if (enemy.shootCooldown <= 0) {
+            addEnemyBullet(parseInt(enemy.x), parseInt(enemy.y + 3))
+            enemy.shootCooldown = 70
+        }
+
+        enemy.shootCooldown -= 1
+        enemy.hitCooldown -= 1
+
+        return enemy
+    })
+
+    enemyBullets.map((bullet, i) => {
+        bullet.x -= 3
+
+        if (bullet.x < 0) {
+            enemyBullets.splice(i, 1)
+        }
+
+        renderer.drawObject('#', bullet.x, bullet.y)
+        addColisionObject('=', bullet.x, bullet.y)
+
+        return bullet
+    })
+
+    enemies.forEach(enemy => {
+        renderer.drawObject(art.enemies[0].img, parseInt(enemy.x), parseInt(enemy.y))
+    })
+
+    // console.log(enemies)
+
+    enemiesCooldown -= 1
+}
+
+function addEnemyBullet(x, y) {
+    enemyBullets.push({
+        x: x,
+        y: y,
+    })
+}
+
+function addEnemy(x, y) {
+    enemies.push({
+        x: x,
+        y: y,
+        width: 10,
+        height: 6,
+        hitCooldown: 0,
+        shootCooldown: 0,
+        hp: 3
+    })
+
+    addAnimation(art.animations.explosion, x - 1, y - 1, 0, 0, 12, 8)
 }
