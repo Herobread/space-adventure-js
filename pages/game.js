@@ -212,7 +212,7 @@ function bullet() {
             // if ( owerpowered weapon)
             // addAnimation(art.animations.fire, bullets[i].x, bullets[i].y - 1)
 
-            addAnimation(art.animations.smallFire, bullets[i].x, bullets[i].y - 1)
+            addAnimation(art.animations.verySmallFire, bullets[i].x, bullets[i].y - 1)
 
             bullets[i].x += 2
 
@@ -561,7 +561,6 @@ let enemyBullets = []
 let enemiesCooldown = 4000 + randomInRange(0, 2000)
 // enemiesCooldown = 100
 
-
 function enemy() {
     if (enemiesCooldown <= 0 && enemies.length === 0) {
         addEnemy(window.w - 20, randomInRange(10, window.h - 10))
@@ -616,7 +615,7 @@ function enemy() {
         }
 
         // renderer.drawObject('-', bullet.x, bullet.y)
-        addAnimation(art.animations.smallFire, bullet.x, bullet.y - 1)
+        addAnimation(art.animations.verySmallFire, bullet.x, bullet.y - 1)
         addColisionObject('=', bullet.x, bullet.y)
 
         return bullet

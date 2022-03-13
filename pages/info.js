@@ -11,7 +11,7 @@ export function info() {
 
     renderer.drawObject(art.logo.img, center(art.logo.width), parseInt(window.h / 8))
 
-    let temp = 'version: aplha'
+    let temp = 'version: aplha 5'
     renderer.drawObject(temp, center(temp.length), parseInt(window.h / 8) + 7)
 
     temp = 'Simple infinite game'

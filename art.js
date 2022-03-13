@@ -390,6 +390,14 @@ _/\\
 -
       `
     ],
+    verySmallFire: [
+      `
+=
+`,
+      `
+-
+`
+    ],
     smallFire: [
       `
 =
