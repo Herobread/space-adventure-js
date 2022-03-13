@@ -23,15 +23,14 @@ export function game() {
         ambient()
 
         bullet()
-        // if (alive) {
-
-        // }
 
         asteroid()
 
         ship()
 
         enemy()
+
+        buff()
 
         animation()
 
@@ -40,7 +39,6 @@ export function game() {
         clearColisions()
 
         ui()
-
     }
 }
 
@@ -76,7 +74,7 @@ function ui() {
             temp = '**       **'
         renderer.drawObject(temp, center(temp.length), window.h - 1)
 
-        if (player.hp === 3)
+        if (player.hp >= 3)
             temp = '# # #'
         else if (player.hp === 2)
             temp = '# # -'
@@ -85,7 +83,11 @@ function ui() {
         else if (player.hp === 0)
             temp = '- - -'
 
-        renderer.drawObjectWithoutSpace(temp, center(temp.length), window.h - 1)
+        if (player.hp > 3) {
+            temp += ` +${player.hp - 3}`
+        }
+
+        renderer.drawObjectWithoutSpace(temp, center(6), window.h - 1)
     }
 }
 
@@ -97,6 +99,10 @@ function ship() {
         alive = false
     }
     if (alive) {
+        if (player.hp === 1) {
+            addAnimation(art.animations.fire, parseInt(player.x + 3), parseInt(player.y + 2), -1 - randomInRange(0, 3), 1 - randomInRange(0, 2))
+        }
+
         player.distance += 1
         trail()
         renderer.drawObject(art.ship.img, parseInt(player.x), parseInt(player.y))
@@ -185,6 +191,8 @@ function bullet() {
     if (bullets) {
         for (let i = 0; i < bullets.length; i += 1) {
             renderer.draw('=', bullets[i].x, bullets[i].y)
+            // if ( owerpowered weapon)
+            // addAnimation(art.animations.fire, bullets[i].x, bullets[i].y - 1)
 
             bullets[i].x += 2
 
@@ -350,7 +358,6 @@ function checkAsteroidColisions() {
 
                 addAnimation(art.animations.hit, bullets[bI].x - 1, bullets[bI].y - 1, 3, 0)
 
-                // console.log(astReal)
                 addAnimation(art.animations.explosion, ast.x, ast.y, -3, astReal.yVelocity * 3, ast.width, ast.height)
 
                 asteroids.splice(i, 1)
@@ -528,13 +535,14 @@ function smallParticles() {
 
 let enemies = []
 let enemyBullets = []
-let enemiesCooldown = 3000 + randomInRange(0, 1000)
+let enemiesCooldown = 4000 + randomInRange(0, 2000)
+// enemiesCooldown = 100
 
 
 function enemy() {
     if (enemiesCooldown <= 0 && enemies.length === 0) {
         addEnemy(window.w - 20, randomInRange(10, window.h - 10))
-        enemiesCooldown = 3000 + randomInRange(0, 1000)
+        enemiesCooldown = 4000 + randomInRange(0, 2000)
     }
 
     enemies.map((enemy, enemyI) => {
@@ -567,6 +575,10 @@ function enemy() {
             enemy.shootCooldown = 70
         }
 
+        if (enemy.hp === 1) {
+            addAnimation(art.animations.fire, parseInt(enemy.x + 3), parseInt(enemy.y + 2), -1 - randomInRange(0, 3), 1 - randomInRange(0, 2))
+        }
+
         enemy.shootCooldown -= 1
         enemy.hitCooldown -= 1
 
@@ -590,8 +602,6 @@ function enemy() {
         renderer.drawObject(art.enemies[0].img, parseInt(enemy.x), parseInt(enemy.y))
     })
 
-    // console.log(enemies)
-
     enemiesCooldown -= 1
 }
 
@@ -614,4 +624,51 @@ function addEnemy(x, y) {
     })
 
     addAnimation(art.animations.explosion, x - 1, y - 1, 0, 0, 12, 8)
+}
+
+//////////////////////////////////////////////// buffs
+
+let buffs = []
+let buffsCooldown = 1000 + randomInRange(0, 2000)
+// buffsCooldown = 100
+
+function buff() {
+    if (buffsCooldown <= 0) {
+        addBuff(window.w, randomInRange(10, window.h - 10), randomInRange(0, art.buffs.length - 1))
+        buffsCooldown = 4000 + randomInRange(0, 2000)
+        // buffsCooldown = 100
+    }
+
+    buffs.map((buff, i) => {
+        buff.x -= 0.5
+
+        renderer.drawObjectWithoutSpace(art.buffs[buff.type].img, parseInt(buff.x), parseInt(buff.y))
+
+        bullets.forEach(bullet => {
+            if (checkIfPointInRectangle(bullet.x, bullet.y, buff.x, buff.y, buff.x + 5, buff.y + 6)) {
+                buffs.splice(i, 1)
+
+                player.hp += 1
+
+                addAnimation(art.animations.buffPickedUp[buff.type], parseInt(buff.x), parseInt(buff.y))
+                addAnimation(art.animations.hit, parseInt(buff.x + 1), parseInt(buff.y + 1))
+            }
+        })
+
+        if (buff.x < -5) {
+            buffs.splice(i, 1)
+        }
+
+        return buff
+    })
+
+    buffsCooldown -= 1
+}
+
+function addBuff(x, y, type) {
+    buffs.push({
+        x: x,
+        y: y,
+        type: type
+    })
 }
