@@ -53,8 +53,26 @@ function pauseMenu() {
     renderer.drawObject(temp, center(temp.length), parseInt(window.h / 2) + 1)
 }
 
+// let debug = true
+let debug = false
+
 function ui() {
     let temp = ' '
+
+    if (debug) {
+        temp = `Bullets: ${bullets.length}; Particles: ${particles.length}; Asteroids: ${asteroids.length}; Planets: ${planets.length}; Enemies: ${enemies.length}; Buffs: ${buffs.length}`
+        renderer.drawObject(temp, 1, 1)
+
+        console.table(player)
+        temp = `Player: hp: ${player.hp}, hitCooldown:${player.hitCooldown}, bulletCooldown:${bulletCooldown}, distance:${player.distance}, x:${player.x}, y:${player.y}`
+        renderer.drawObject(temp, 1, 2)
+
+        temp = `Animations: ${animations.length}`
+        renderer.drawObject(temp, 1, 3)
+
+        temp = `buffCooldown: ${buffsCooldown}, enemiesCooldown:${enemiesCooldown}, planetCooldown:${planetCooldown}, asteroidCooldown:${asteroidCooldown}`
+        renderer.drawObject(temp, 1, 4)
+    }
 
     if (!alive) {
         temp = `You died!`
@@ -193,6 +211,8 @@ function bullet() {
             renderer.draw('=', bullets[i].x, bullets[i].y)
             // if ( owerpowered weapon)
             // addAnimation(art.animations.fire, bullets[i].x, bullets[i].y - 1)
+
+            addAnimation(art.animations.smallFire, bullets[i].x, bullets[i].y - 1)
 
             bullets[i].x += 2
 
@@ -452,6 +472,9 @@ function planet() {
 let trailList = [player.y, player.y, player.y, player.y, player.y]
 
 function trail() {
+
+    // addAnimation(art.animations.trail, parseInt(player.x - 1), parseInt(player.y), -2, 0)
+    // addAnimation(art.animations.trail, parseInt(player.x), parseInt(player.y), -2, 0)
     // - --=%%
     // sorry for that(
 
@@ -592,14 +615,15 @@ function enemy() {
             enemyBullets.splice(i, 1)
         }
 
-        renderer.drawObject('#', bullet.x, bullet.y)
+        // renderer.drawObject('-', bullet.x, bullet.y)
+        addAnimation(art.animations.smallFire, bullet.x, bullet.y - 1)
         addColisionObject('=', bullet.x, bullet.y)
 
         return bullet
     })
 
     enemies.forEach(enemy => {
-        renderer.drawObject(art.enemies[0].img, parseInt(enemy.x), parseInt(enemy.y))
+        renderer.drawObjectWithoutSpace(art.enemies[0].img, parseInt(enemy.x), parseInt(enemy.y))
     })
 
     enemiesCooldown -= 1
@@ -619,7 +643,7 @@ function addEnemy(x, y) {
         width: 10,
         height: 6,
         hitCooldown: 0,
-        shootCooldown: 0,
+        shootCooldown: 70,
         hp: 3
     })
 
