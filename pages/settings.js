@@ -12,6 +12,7 @@ export function settings() {
     renderer.drawObject(art.logo.img, center(art.logo.width), parseInt(window.h / 8))
 
     renderer.drawObject('Coming soon, esc - exit', center(8), parseInt(window.h / 2))
+    renderer.drawObject('Yes, very soon', center(8), parseInt(window.h / 2) + 1)
     renderer.drawObject(menu, center(1), parseInt(window.h / 2) + 1)
 }
 

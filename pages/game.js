@@ -1,15 +1,15 @@
 import { renderer } from "../renderer.js"
 import { art } from "../art.js"
-import { center, checkIfPointInRectangle, cropImg, randomInRange } from "../util.js"
+import { center, checkIfPointInRectangle, cropImg, randomInRange, randomInRangeFloat } from "../util.js"
 
-let menu = 1
-// window.fps = 60
+let autoAimMax = 1500
 let player = {
     'x': 10,
     'y': 10,
     'hp': 3,
     'distance': 0,
-    'hitCooldown': 0
+    'hitCooldown': 0,
+    'autoAim': 0
 }
 let paused = 0
 let pauseCooldown = 30
@@ -22,8 +22,6 @@ export function game() {
     } else {
         ambient()
 
-        bullet()
-
         asteroid()
 
         ship()
@@ -31,6 +29,8 @@ export function game() {
         enemy()
 
         buff()
+
+        bullet()
 
         animation()
 
@@ -53,8 +53,8 @@ function pauseMenu() {
     renderer.drawObject(temp, center(temp.length), parseInt(window.h / 2) + 1)
 }
 
-// let debug = true
-let debug = false
+let debug = true
+// let debug = false
 
 function ui() {
     let temp = ' '
@@ -63,8 +63,7 @@ function ui() {
         temp = `Bullets: ${bullets.length}; Particles: ${particles.length}; Asteroids: ${asteroids.length}; Planets: ${planets.length}; Enemies: ${enemies.length}; Buffs: ${buffs.length}`
         renderer.drawObject(temp, 1, 1)
 
-        console.table(player)
-        temp = `Player: hp: ${player.hp}, hitCooldown:${player.hitCooldown}, bulletCooldown:${bulletCooldown}, distance:${player.distance}, x:${player.x}, y:${player.y}`
+        temp = `Player: hp: ${player.hp}, hitCooldown:${player.hitCooldown}, bulletCooldown:${bulletCooldown}, distance:${player.distance}, autoAim: ${player.autoAim}, x:${player.x}, y:${player.y}`
         renderer.drawObject(temp, 1, 2)
 
         temp = `Animations: ${animations.length}`
@@ -84,6 +83,13 @@ function ui() {
         temp = `Enter - respawn, esc - exit`
         renderer.drawObject(temp, center(temp.length), window.h - 1)
     } else {
+        if (player.autoAim !== -1) {
+            temp = '-'
+            temp += temp.repeat(parseInt(50 * player.autoAim / autoAimMax) * 2)
+            temp = '<' + temp + '>'
+            renderer.drawObject(temp, center(temp.length), window.h - 2)
+        }
+
         temp = `${player.distance}`
         renderer.drawObject(temp, center(temp.length), window.h - 3)
 
@@ -113,12 +119,13 @@ let alive = true
 
 function ship() {
     if (player.hp <= 0 && alive) {
+        addAnimationBoom(parseInt(player.x), parseInt(player.y))
         addAnimation(art.animations.explosion, parseInt(player.x), parseInt(player.y), -2, 0, art.ship.width, art.ship.height)
         alive = false
     }
     if (alive) {
         if (player.hp === 1) {
-            addAnimation(art.animations.fire, parseInt(player.x + 3), parseInt(player.y + 2), -1 - randomInRange(0, 3), 1 - randomInRange(0, 2))
+            addAnimation(art.animations.fire, parseInt(player.x + 3), parseInt(player.y + 2), -1 - randomInRangeFloat(0, 3), 1 - randomInRangeFloat(0, 2))
         }
 
         player.distance += 1
@@ -129,6 +136,11 @@ function ship() {
 }
 
 function input() {
+    if (window.pressedKeys[']']) {
+        debug = true
+    } else {
+        debug = false
+    }
     if (window.pressedKeys['w'] && player.y - 0.4 > 0) {
         if (!paused)
             player.y -= 0.5
@@ -180,13 +192,13 @@ function input() {
 }
 
 function reset() {
-    menu = 1
     player = {
         'x': 10,
         'y': window.h / 2 - 3,
         'hp': 3,
         'distance': 0,
-        'hitCooldown': 100
+        'hitCooldown': 100,
+        'autoAim': 0
     }
     paused = 0
     pauseCooldown = 0
@@ -204,22 +216,48 @@ function reset() {
 }
 
 let bullets = []
+let isAimed = false
 
 function bullet() {
+    if (player.autoAim >= 0)
+        player.autoAim -= 1
     if (bullets) {
         for (let i = 0; i < bullets.length; i += 1) {
             renderer.draw('=', bullets[i].x, bullets[i].y)
-            // if ( owerpowered weapon)
-            // addAnimation(art.animations.fire, bullets[i].x, bullets[i].y - 1)
 
             addAnimation(art.animations.verySmallFire, bullets[i].x, bullets[i].y - 1)
 
+            if (player.autoAim >= 0) {
+                addAnimation(art.animations.smallFire, bullets[i].x, bullets[i].y - 1, randomInRange(0, -2), randomInRangeFloat(-1, 1))
+
+                isAimed = false
+
+                aimBullet(i, enemies)
+                if (!isAimed)
+                    aimBullet(i, asteroids)
+            }
+
             bullets[i].x += 2
 
-            if (bullets[i].x > window.w)
+            if (bullets[i].x > window.w + 5)
                 bullets.splice(i, 1)
         }
     }
+}
+
+function aimBullet(bulletI, array) {
+    let i = bulletI
+    array.forEach(element => {
+        if (element.x + 3 > bullets[i].x && isAimed === false) {
+            let bulletYVelocity = 0
+            if (parseInt(bullets[i].y - 3) !== parseInt(element.y)) {
+                bulletYVelocity = bullets[i].y >= element.y + 3 ? -0.6 : 0.6
+            }
+
+            bullets[i].y += bulletYVelocity
+            isAimed = true
+        }
+    })
 }
 
 /////////////////////////////////////////////////// asteroids
@@ -376,15 +414,25 @@ function checkAsteroidColisions() {
         bullets.forEach((bullet, bI) => {
             if (checkIfPointInRectangle(bullet.x, bullet.y, ast.x, ast.y, ast.x + ast.width, ast.y + ast.height)) {
 
-                addAnimation(art.animations.hit, bullets[bI].x - 1, bullets[bI].y - 1, 3, 0)
+                addAnimation(art.animations.fire, bullets[bI].x - 1, bullets[bI].y - 1, 4, 0)
 
                 addAnimation(art.animations.explosion, ast.x, ast.y, -3, astReal.yVelocity * 3, ast.width, ast.height)
+
+                addAnimationBoom(ast.x, ast.y)
 
                 asteroids.splice(i, 1)
                 bullets.splice(bI, 1)
             }
         })
 
+    }
+}
+
+
+
+function addAnimationBoom(x, y) {
+    for (let i = 0; i < 15; i += 1) {
+        addAnimation(art.animations.fire, x, y, randomInRangeFloat(-2, 2), randomInRangeFloat(-2, 2))
     }
 }
 
@@ -579,6 +627,8 @@ function enemy() {
                 enemies.splice(enemyI, 1)
 
                 addAnimation(art.animations.explosion, parseInt(enemy.x), parseInt(enemy.y), 0, 0, 10, 6)
+                addAnimationBoom(parseInt(enemy.x), parseInt(enemy.y))
+
             }
         })
 
@@ -652,13 +702,13 @@ function addEnemy(x, y) {
 //////////////////////////////////////////////// buffs
 
 let buffs = []
-let buffsCooldown = 1000 + randomInRange(0, 2000)
+let buffsCooldown = 1000 + randomInRange(0, 1000)
 // buffsCooldown = 100
 
 function buff() {
     if (buffsCooldown <= 0) {
         addBuff(window.w, randomInRange(10, window.h - 10), randomInRange(0, art.buffs.length - 1))
-        buffsCooldown = 4000 + randomInRange(0, 2000)
+        buffsCooldown = 3000 + randomInRange(0, 2000)
         // buffsCooldown = 100
     }
 
@@ -669,12 +719,18 @@ function buff() {
 
         bullets.forEach(bullet => {
             if (checkIfPointInRectangle(bullet.x, bullet.y, buff.x, buff.y, buff.x + 5, buff.y + 6)) {
+                if (buff.type === 0) {
+                    player.hp += 1
+                }
+                if (buff.type === 1) {
+                    player.autoAim = autoAimMax
+                }
+
                 buffs.splice(i, 1)
 
-                player.hp += 1
 
                 addAnimation(art.animations.buffPickedUp[buff.type], parseInt(buff.x), parseInt(buff.y))
-                addAnimation(art.animations.hit, parseInt(buff.x + 1), parseInt(buff.y + 1))
+                // addAnimation(art.animations.hit, parseInt(buff.x + 1), parseInt(buff.y + 1))
             }
         })
 

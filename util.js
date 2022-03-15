@@ -34,3 +34,9 @@ export function cropImg(img, width, height) {
     }
     return res
 }
+
+export function randomInRangeFloat(start, end) {
+    start *= 100
+    end *= 100
+    return Math.floor(Math.random() * (end - start + 1) + start) / 100;
+}
