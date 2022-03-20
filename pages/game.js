@@ -9,7 +9,8 @@ let player = {
     'hp': 3,
     'distance': 0,
     'hitCooldown': 0,
-    'autoAim': 0
+    'autoAim': 0,
+    // 'lazer': 1
 }
 let paused = 0
 let pauseCooldown = 30
@@ -141,23 +142,24 @@ function input() {
     } else {
         debug = false
     }
-    if (window.pressedKeys['w'] && player.y - 0.4 > 0) {
+    if ((window.pressedKeys['w'] || window.pressedKeys['ArrowUp']) && player.y - 0.4 > 0) {
         if (!paused)
             player.y -= 0.5
     }
-    if (window.pressedKeys['s'] && player.y + 0.4 < window.h - 6) {
+    if ((window.pressedKeys['s'] || window.pressedKeys['ArrowDown']) && player.y + 0.4 < window.h - 6) {
         if (!paused)
             player.y += 0.5
     }
-    if (window.pressedKeys['a'] && player.x - 0.5 > 0) {
+    if ((window.pressedKeys['a'] || window.pressedKeys['ArrowLeft']) && player.x - 0.5 > 0) {
         if (!paused)
             player.x -= 0.5
     }
-    if (window.pressedKeys['d'] && player.x + 0.5 < window.w - 6) {
+    if ((window.pressedKeys['d'] || window.pressedKeys['ArrowRight']) && player.x + 0.5 < window.w - 6) {
         if (!paused)
             player.x += 0.5
     }
     if (window.pressedKeys[' '] && bulletCooldown <= 0 && alive) {
+        // if (player.lazer < 0)
         bullets.push({
             x: parseInt(player.x + 6),
             y: parseInt(player.y + 3)
@@ -221,28 +223,41 @@ let isAimed = false
 function bullet() {
     if (player.autoAim >= 0)
         player.autoAim -= 1
-    if (bullets) {
-        for (let i = 0; i < bullets.length; i += 1) {
-            renderer.draw('=', bullets[i].x, bullets[i].y)
+    // if (player.lazer < 0) {
+    for (let i = 0; i < bullets.length; i += 1) {
 
-            addAnimation(art.animations.verySmallFire, bullets[i].x, bullets[i].y - 1)
+        renderer.draw('=', bullets[i].x, bullets[i].y)
 
-            if (player.autoAim >= 0) {
-                addAnimation(art.animations.smallFire, bullets[i].x, bullets[i].y - 1, randomInRange(0, -2), randomInRangeFloat(-1, 1))
+        addAnimation(art.animations.verySmallFire, bullets[i].x, bullets[i].y - 1)
 
-                isAimed = false
+        if (player.autoAim >= 0) {
+            addAnimation(art.animations.smallFire, bullets[i].x, bullets[i].y - 1, randomInRange(0, -2), randomInRangeFloat(-1, 1))
 
-                aimBullet(i, enemies)
-                if (!isAimed)
-                    aimBullet(i, asteroids)
-            }
+            isAimed = false
 
-            bullets[i].x += 2
-
-            if (bullets[i].x > window.w + 5)
-                bullets.splice(i, 1)
+            aimBullet(i, enemies)
+            if (!isAimed)
+                aimBullet(i, asteroids)
         }
+
+
+        bullets[i].x += 2
+
+        if (bullets[i].x > window.w + 5)
+            bullets.splice(i, 1)
     }
+    // } 
+    // else {
+    //     bullets = []
+    //     if (window.pressedKeys[' '])
+    //         for (let k = 0; k < window.w; k += 1) {
+    //             addAnimation([`-`], player.x + 7 + k, player.y + 3)
+    //             bullets.push({
+    //                 x: player.x + 7 + k,
+    //                 y: player.y + 3
+    //             })
+    //         }
+    // }
 }
 
 function aimBullet(bulletI, array) {
@@ -322,7 +337,6 @@ let animationCooldown = 20
 
 function animation() {
     if (animationCooldown <= 0) {
-
         for (let i = 0; i < animations.length; i += 1) {
             if (animations[i].state < animations[i].img.length - 1) {
                 animations[i].state += 1
@@ -333,7 +347,7 @@ function animation() {
             }
         }
 
-        animationCooldown = 5
+        animationCooldown = 4
     }
 
     for (let i = 0; i < animations.length; i += 1) {
