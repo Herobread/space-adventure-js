@@ -9,6 +9,8 @@ export class Asteroid {
         this.x = x
         this.y = y
 
+        this.hp = 3
+
         this.hitCooldown = 100
 
         const randomAsteroid = randomInRange(0, art.textures.asteroids.length - 1)
@@ -24,7 +26,11 @@ export class Asteroid {
     }
 
     setDeleter(deleter) {
-        this.deleter = deleter
+        this.deleter = () => {
+            animations.animate(art.animations.particle, this.x + randomInRange(0, this.w), this.y + randomInRange(0, this.h))
+
+            deleter()
+        }
     }
 
     tick() {
@@ -34,24 +40,50 @@ export class Asteroid {
         this.x += this.xVelocity
         this.y += this.yVelocity
 
-        if (this.x < -this.w) {
+        if (this.x < -this.w || this.x > window.w + 20) {
             this.deleter()
         }
 
         const onColision = (reason) => {
-            if (this.hitCooldown > 0) {
-                this.yVelocity = randomInRangeFloat(-0.5, 0.5)
+            if (!this.hitCooldown) {
+                this.hp -= 1
+                this.hitCooldown = 20
 
-                if (reason == 'ship') {
-                    this.xVelocity *= 0.2
-                }
+                if (reason == 'ship' || reason == 'asteroid') {
+                    // this.xVelocity *= 0.5
+                    if (this.xVelocity < 0.05)
+                        this.xVelocity = randomInRangeFloat(0.05, 0.1)
 
-                if (reason == 'asteroid') {
-                    this.xVelocity += 0.02
+                    this.yVelocity = randomInRangeFloat(-0.08, 0.08)
                 }
 
                 if (reason == 'bullet') {
-                    this.xVelocity = -this.xVelocity
+                    this.deleter()
+                    for (let i = 0; i < 10; i += 1) {
+                        animations.animate(art.animations.particle,
+                            this.x + randomInRange(0, this.w),
+                            this.y + randomInRange(0, this.h),
+                            randomInRangeFloat(-0.6, 0.6) + this.xVelocity,
+                            randomInRangeFloat(-0.6, 0.6) + this.yVelocity,
+                            {
+                                moveSpeed: 10,
+                                tickSpeed: 30
+                            }
+                        )
+                    }
+                }
+
+                if (reason == 'asteroid') {
+                    animations.animate(art.animations.particle,
+                        this.x + randomInRange(0, this.w),
+                        this.y + randomInRange(0, this.h),
+                        randomInRangeFloat(-0.6, 0.6) + this.xVelocity,
+                        randomInRangeFloat(-0.6, 0.6) + this.yVelocity,
+                        {
+                            moveSpeed: 10,
+                            tickSpeed: 30
+                        }
+                    )
                 }
             }
         }
@@ -60,19 +92,6 @@ export class Asteroid {
     }
 
     draw() {
-        // if (window.clock % 100 === 0) {
-        //     animations.animate(art.animations.smallParticle,
-        //         this.x + randomInRange(0, this.w),
-        //         this.y + randomInRange(1, this.h - 1),
-        //         randomInRangeFloat(0.1, 0.2),
-        //         randomInRangeFloat(-0.1, 0.1),
-        //         {
-        //             tickSpeed: 50,
-        //             moveSpeed: 20
-        //         }
-        //     )
-        // }
-
         renderer.drawObject(this.sprite.img, this.x, this.y)
     }
 }

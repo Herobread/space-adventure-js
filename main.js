@@ -6,7 +6,7 @@ import { pages } from './pages.js'
 
 // editable config //
 
-const startPageId = 1
+const startPageId = 0
 // window.showPerformance = true
 
 // end editable config //

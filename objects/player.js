@@ -12,7 +12,10 @@ export class Player {
 
         this.dead = false
         this.hp = 3
+
         this.bullets = []
+        this.shootCooldown = 0
+
         this.hitCooldown = 0
         this.invincibility = 400
         this.hitAnimation = 0
@@ -31,8 +34,8 @@ export class Player {
         this.maxBackwardsXVelocity = -0.1
 
         this.yVelocity = 0
-        this.yAcceleration = 0.0022
-        this.maxYVelocity = 0.17
+        this.yAcceleration = 0.0025
+        this.maxYVelocity = 0.2
 
         // slow the ship acceleration down when it goes from negative speed
         this.stopper = 0.6
@@ -41,14 +44,43 @@ export class Player {
     }
 
     shoot() {
-        this.bullets.push({
-            x: this.x + this.w,
-            y: this.y + this.h / 2,
-            yVelocity: -1
+        // if (this.shootCooldown > 0) {
+        //     this.shootCooldown -= 1
+        // }
+        if (!this.shootCooldown) {
+            // this.shootCooldown = 100
+
+            this.bullets.push({
+                x: this.x + this.w,
+                y: this.y + this.h / 2,
+                xVelocity: 1,
+                yVelocity: this.yVelocity * 0.5
+            })
+        }
+    }
+
+    handleBullets() {
+        this.bullets.map((bullet, i) => {
+            renderer.drawObject('=', bullet.x, bullet.y)
+
+            if (window.clock % 2 == 0) {
+                animations.animate(art.animations.particle, bullet.x, bullet.y)
+            }
+
+            bullet.x += bullet.xVelocity
+            bullet.y += bullet.yVelocity
+
+            if (bullet.x > window.w + 10)
+                this.bullets.splice(i, 1)
+
+            colisions.addRectangleColision({ w: 2, h: 2, x: bullet.x, y: bullet.y }, 'bullet', () => {
+                this.bullets.splice(i, 1)
+            })
         })
     }
 
     tick(pointer, keyboard) {
+        this.handleBullets()
         if (this.y > window.h) {
             this.y = -this.h
         }
@@ -112,9 +144,9 @@ export class Player {
                 }
 
 
-                if (keyboard.down[' ']) {
-                    this.shoot()
-                }
+                // if (keyboard.new[' ']) {
+                //     this.shoot()
+                // }
             }
 
             // if very small velocity set it to 0

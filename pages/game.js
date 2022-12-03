@@ -37,13 +37,14 @@ export function game() {
     asteroids.forEach((asteroid, i) => {
         asteroid.setDeleter(() => {
             asteroids.splice(i, 1)
+            console.log('deleting', i)
         })
         asteroid.tick()
         asteroid.draw()
     })
 
     if (window.clock % parseInt(201 / difficulty) == 0) {
-        asteroids.push(new Asteroid(window.w, randomInRange(0, window.h - 5), randomInRangeFloat(-0.5, -0.2) * difficulty, 0))
+        asteroids.push(new Asteroid(window.w, randomInRange(0, window.h - 6), randomInRangeFloat(-0.5, -0.2) * difficulty, 0))
     }
 
     particles.forEach(particle => {
