@@ -4,31 +4,30 @@ import { mouse } from '../lib/mouse.js'
 import { randomInRange } from '../lib/util.js'
 import { Block } from '../objects/block.js'
 import { colisions } from '../lib/colisions.js'
+import { renderer } from '../lib/renderer.js'
+import { art } from '../art.js'
+import { ui } from '../lib/ui.js'
 
-let blocks = []
+export function initMainMenu() {
 
-export function initGame() {
-    for (let i = 0; i < 2; i += 1) {
-        blocks.push(new Block(randomInRange(0, window.w), randomInRange(0, window.h)))
-    }
 }
 
-export function game() {
+export function mainMenu() {
     const pointer = mouse.info()
     const keyboard = kb.info()
 
+    const logo = art.textures.logo
+    renderer.drawObject(logo.img, window.w / 2 - logo.w / 2, window.h / 3)
 
-    blocks.forEach(block => {
-        block.draw()
-        block.logic()
+    ui.button({
+        content: 'Play',
+        x: window.w / 2 - 3,
+        y: window.h / 3 + 8,
+        pointer: pointer,
+        onClick: () => {
+            window.page = 'game'
+        }
     })
-
-    blocks[0].setPos(pointer.x - 1, pointer.y - 1)
-
-    if (pointer.click) {
-        blocks.push(new Block(pointer.x - 1, pointer.y - 1))
-    }
-
 
     tick()
     mouse.showCursor()

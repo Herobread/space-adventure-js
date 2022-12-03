@@ -1,4 +1,5 @@
-import { game, initGame } from "./pages/main.js"
+import { game, initGame } from "./pages/game.js"
+import { initMainMenu, mainMenu } from "./pages/mainMenu.js"
 import { animationViewer, initAnimationViewer } from "./utilityPages/viewAnimations.js"
 import { assetsViewer, initAssetsViewer } from "./utilityPages/viewAssets.js"
 
@@ -6,7 +7,13 @@ const fps = 144
 
 export const pages = [
     {
-        name: 'main',
+        name: 'mainMenu',
+        func: mainMenu,
+        fps: fps,
+        init: initMainMenu
+    },
+    {
+        name: 'game',
         func: game,
         fps: fps,
         init: initGame

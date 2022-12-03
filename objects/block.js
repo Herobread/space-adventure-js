@@ -11,22 +11,11 @@ export class Block {
         this.sprite = `···\n···\n···`
     }
 
+    tick() {
+        colisions.addRectangleColision(this, 'rect', () => { })
+    }
+
     draw() {
         renderer.drawObject(this.sprite, this.x, this.y)
-    }
-
-    logic() {
-        this.sprite = `···\n···\n···`
-
-
-        colisions.addRectangleColision(this, 'block', (name) => {
-            console.log(name)
-            this.sprite = '###\n###\n###'
-        })
-    }
-
-    setPos(x, y) {
-        this.x = x
-        this.y = y
     }
 }

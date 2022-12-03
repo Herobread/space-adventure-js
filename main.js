@@ -41,9 +41,9 @@ function resizer() {
 }
 
 window.onload = function () {
+    resizer()
     asciiMap.init()
     pages[startPageId].init()
-    resizer()
 
     window.addEventListener('resize', resizer, false)
 
