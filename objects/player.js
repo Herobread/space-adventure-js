@@ -30,8 +30,8 @@ export class Player {
 
         this.xVelocity = 0
         this.xAcceleration = 0.003
-        this.maxForwardXVelocity = 0.12
-        this.maxBackwardsXVelocity = -0.1
+        this.maxForwardXVelocity = 0.1
+        this.maxBackwardsXVelocity = -0.15
 
         this.yVelocity = 0
         this.yAcceleration = 0.0025
@@ -44,16 +44,16 @@ export class Player {
     }
 
     shoot() {
-        // if (this.shootCooldown > 0) {
-        //     this.shootCooldown -= 1
-        // }
+        if (this.shootCooldown > 0) {
+            this.shootCooldown -= 1
+        }
         if (!this.shootCooldown) {
-            // this.shootCooldown = 100
+            this.shootCooldown = 100
 
             this.bullets.push({
                 x: this.x + this.w,
                 y: this.y + this.h / 2,
-                xVelocity: 1,
+                xVelocity: 1.5,
                 yVelocity: this.yVelocity * 0.5
             })
         }
@@ -63,9 +63,10 @@ export class Player {
         this.bullets.map((bullet, i) => {
             renderer.drawObject('=', bullet.x, bullet.y)
 
-            if (window.clock % 2 == 0) {
-                animations.animate(art.animations.particle, bullet.x, bullet.y)
-            }
+            animations.animate(art.animations.smallParticle, bullet.x, bullet.y, bullet.xVelocity * 0.5 * 0, bullet.yVelocity + randomInRange(-0.1, 0.1), {
+                tickSpeed: randomInRange(2, 3),
+                moveSpeed: randomInRange(11, 21),
+            })
 
             bullet.x += bullet.xVelocity
             bullet.y += bullet.yVelocity
@@ -73,7 +74,12 @@ export class Player {
             if (bullet.x > window.w + 10)
                 this.bullets.splice(i, 1)
 
-            colisions.addRectangleColision({ w: 2, h: 2, x: bullet.x, y: bullet.y }, 'bullet', () => {
+            colisions.addRectangleColision({ w: 1, h: 1, x: bullet.x, y: bullet.y }, 'bullet', () => {
+                animations.animate(art.animations.particle, bullet.x, bullet.y, bullet.xVelocity, bullet.yVelocity, {
+                    tickSpeed: 20,
+                    moveSpeed: 20
+                })
+
                 this.bullets.splice(i, 1)
             })
         })
@@ -144,9 +150,11 @@ export class Player {
                 }
 
 
-                // if (keyboard.new[' ']) {
-                //     this.shoot()
-                // }
+                if (keyboard.down[' ']) {
+                    this.shoot()
+                } else {
+                    this.shootCooldown = 0
+                }
             }
 
             // if very small velocity set it to 0

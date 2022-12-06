@@ -1,5 +1,5 @@
 import { renderer } from "../lib/renderer.js"
-import { randomInRange, randomInRangeFloat } from "../lib/util.js"
+import { cropImg, randomInRange, randomInRangeFloat } from "../lib/util.js"
 import { art } from "../art.js"
 import { animations } from "../lib/animations.js"
 import { colisions } from "../lib/colisions.js"
@@ -9,9 +9,11 @@ export class Asteroid {
         this.x = x
         this.y = y
 
-        this.hp = 3
+        this.hp = 1
+        this.dead = false
 
-        this.hitCooldown = 100
+        this.asteroidHitCooldown = 10
+        this.bulletHitCooldown = 10
 
         const randomAsteroid = randomInRange(0, art.textures.asteroids.length - 1)
         this.sprite = art.textures.asteroids[randomAsteroid]
@@ -22,21 +24,33 @@ export class Asteroid {
         this.xVelocity = xVelocity
         this.yVelocity = yVelocity
 
+        this.destruction = { sprites: art.animations.explosion.map(cropImg, this.w, this.h) }
+
         this.deleter = () => { }
     }
 
     setDeleter(deleter) {
         this.deleter = () => {
-            animations.animate(art.animations.particle, this.x + randomInRange(0, this.w), this.y + randomInRange(0, this.h))
+            for (let i = 0; i < 10; i += 1) {
+                animations.animate(art.animations.particle, this.x + randomInRange(0, this.w), this.y + randomInRange(0, this.h), this.xVelocity, this.yVelocity, {
+                    tickSpeed: 10,
+                    moveSpeed: 1,
+                })
+            }
+
 
             deleter()
         }
     }
 
     tick() {
-        if (this.hitCooldown > 0) {
-            this.hitCooldown -= 1
+        if (this.asteroidHitCooldown > 0) {
+            this.asteroidHitCooldown -= 1
         }
+        if (this.bulletHitCooldown > 0) {
+            this.bulletHitCooldown -= 1
+        }
+
         this.x += this.xVelocity
         this.y += this.yVelocity
 
@@ -45,11 +59,20 @@ export class Asteroid {
         }
 
         const onColision = (reason) => {
-            if (!this.hitCooldown) {
+            if (!this.asteroidHitCooldown) {
                 this.hp -= 1
-                this.hitCooldown = 20
+                this.asteroidHitCooldown = 20
 
-                if (reason == 'ship' || reason == 'asteroid') {
+                if (this.hp === 0) {
+                    if (!this.dead) {
+                        // animations.animate(this.destruction, this.x, this.y, this.xVelocity, this.yVelocity, {
+                        //     tickSpeed: 900
+                        // })
+                        this.dead = true
+                    }
+                }
+
+                if (reason !== 'bullet') {
                     // this.xVelocity *= 0.5
                     if (this.xVelocity < 0.05)
                         this.xVelocity = randomInRangeFloat(0.05, 0.1)
@@ -57,23 +80,25 @@ export class Asteroid {
                     this.yVelocity = randomInRangeFloat(-0.08, 0.08)
                 }
 
-                if (reason == 'bullet') {
-                    this.deleter()
-                    for (let i = 0; i < 10; i += 1) {
-                        animations.animate(art.animations.particle,
-                            this.x + randomInRange(0, this.w),
-                            this.y + randomInRange(0, this.h),
-                            randomInRangeFloat(-0.6, 0.6) + this.xVelocity,
-                            randomInRangeFloat(-0.6, 0.6) + this.yVelocity,
-                            {
-                                moveSpeed: 10,
-                                tickSpeed: 30
-                            }
-                        )
-                    }
-                }
 
                 if (reason == 'asteroid') {
+                    animations.animate(art.animations.particle,
+                        this.x + randomInRange(0, this.w),
+                        this.y + randomInRange(0, this.h),
+                        randomInRangeFloat(-0.6, 0.6) + this.xVelocity,
+                        randomInRangeFloat(-0.6, 0.6) + this.yVelocity,
+                        {
+                            moveSpeed: 10,
+                            tickSpeed: 30
+                        }
+                    )
+                }
+            }
+
+            if (reason == 'bullet' && !this.bulletHitCooldown) {
+                this.deleter()
+                this.bulletHitCooldown = 100
+                for (let i = 0; i < 15; i += 1) {
                     animations.animate(art.animations.particle,
                         this.x + randomInRange(0, this.w),
                         this.y + randomInRange(0, this.h),

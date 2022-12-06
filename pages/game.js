@@ -8,14 +8,18 @@ import { Player } from '../objects/player.js'
 import { Asteroid } from '../objects/asteroid.js'
 import { Particle } from '../objects/particle.js'
 import { renderer } from '../lib/renderer.js'
+import { Ufo } from '../objects/ufo.js'
 
 let asteroids = []
 let particles = []
+let enemies = []
 
 let player
 
 let difficultyStart = 0.7
 let difficulty = difficultyStart
+
+let ufoSpawnCooldown = 2000
 
 export function initGame() {
     player = new Player(window.w / 3, window.h / 2)
@@ -24,6 +28,10 @@ export function initGame() {
 export function game() {
     const pointer = mouse.info()
     const keyboard = kb.info()
+
+    if (ufoSpawnCooldown > 0) {
+        ufoSpawnCooldown -= 1
+    }
 
     let str = ''
 
@@ -37,7 +45,6 @@ export function game() {
     asteroids.forEach((asteroid, i) => {
         asteroid.setDeleter(() => {
             asteroids.splice(i, 1)
-            console.log('deleting', i)
         })
         asteroid.tick()
         asteroid.draw()
@@ -45,6 +52,19 @@ export function game() {
 
     if (window.clock % parseInt(201 / difficulty) == 0) {
         asteroids.push(new Asteroid(window.w, randomInRange(0, window.h - 6), randomInRangeFloat(-0.5, -0.2) * difficulty, 0))
+    }
+
+    enemies.forEach((enemy, i) => {
+        enemy.setDeleter(() => {
+            enemies.splice(i, 1)
+            ufoSpawnCooldown = 2000
+        })
+        enemy.tick(player)
+        enemy.draw()
+    })
+
+    if (!ufoSpawnCooldown && !enemies.length) {
+        enemies.push(new Ufo(window.w, randomInRange(0, window.h)))
     }
 
     particles.forEach(particle => {
