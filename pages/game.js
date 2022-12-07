@@ -26,6 +26,8 @@ let difficulty = difficultyStart
 
 let ufoSpawnCooldown = 3000
 let planetSpawnCooldown = 1000
+// let asteroidPackSpawnCooldown = 2500
+let asteroidPackSpawnCooldown = 200
 
 export function initGame() {
     player = new Player(window.w / 3, window.h / 2)
@@ -43,20 +45,36 @@ export function game() {
     if (ufoSpawnCooldown > 0) {
         ufoSpawnCooldown -= 1
     }
+    if (asteroidPackSpawnCooldown > 0) {
+        asteroidPackSpawnCooldown -= 1
+    } else {
+        let x = window.w + randomInRange(0, 20)
+        let y = randomInRange(0, 30)
+
+        asteroids.push(new Asteroid(x, y))
+        asteroids.push(new Asteroid(x + randomInRange(7, 12), y + randomInRange(7, 12)))
+        asteroids.push(new Asteroid(x - 50, y + randomInRange(7 * 2, 12 * 2)))
+        asteroids.push(new Asteroid(x - 50, y + randomInRange(7 * 4, 12 * 4)))
+
+        asteroidPackSpawnCooldown = 2500
+    }
+
     if (planetSpawnCooldown > 0) {
         planetSpawnCooldown -= 1
     } else {
         planets.push(new Planet(window.w, 'auto'))
-        planetSpawnCooldown = 3000
+        planetSpawnCooldown = 9000
     }
 
     if (difficulty <= 1.3) {
         difficulty += 0.00004
     }
 
+
     planets.forEach((planet, i) => {
         planet.setDeleter(() => {
             planets.splice(i, 1)
+            planetSpawnCooldown = 1400
         })
         planet.tick()
         planet.draw()

@@ -1,20 +1,20 @@
 import { art } from "../art.js"
 import { renderer } from "../lib/renderer.js"
-import { randomInRange } from "../lib/util.js"
+import { randomInRange, randomInRangeFloat } from "../lib/util.js"
 
 export class Planet {
     constructor(x, y) {
         this.x = x
 
-        this.xVelocity = -0.1
+        this.xVelocity = randomInRangeFloat(-0.09, -0.03)
         this.yVelocity = 0
 
-        const max = art.textures.planets.length
+        const max = art.textures.planets.length - 1
         let sprite = art.textures.planets[randomInRange(0, max)]
 
+        this.sprite = sprite.img
         this.w = sprite.w
         this.h = sprite.h
-        this.sprite = sprite.img
 
         if (y !== 'auto')
             this.y = y

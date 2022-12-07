@@ -101,6 +101,8 @@ export class Ufo {
                 if (!this.asteroidHitCooldown) {
                     this.hp -= 1
                 }
+
+                this.yVelocity = randomInRange(0, 1) ? -0.25 : 0.25
                 this.asteroidHitCooldown = 10
             }
             if (reason === 'bullet') {
@@ -108,7 +110,7 @@ export class Ufo {
                     this.hp -= 1
                 }
 
-                this.bulletHitCooldown = 100
+                this.bulletHitCooldown = 10
             }
         })
 
@@ -121,7 +123,7 @@ export class Ufo {
             this.shootCooldown -= 1
         }
         if (!this.shootCooldown) {
-            this.shootCooldown = 300
+            this.shootCooldown = 500
 
             this.bullets.push({
                 x: this.x - 1,
