@@ -7,6 +7,7 @@ import { colisions } from '../lib/colisions.js'
 import { renderer } from '../lib/renderer.js'
 import { art } from '../art.js'
 import { ui } from '../lib/ui.js'
+import { gamepad } from '../lib/gamepad.js'
 
 export function initMainMenu() {
 
@@ -15,9 +16,14 @@ export function initMainMenu() {
 export function mainMenu() {
     const pointer = mouse.info()
     const keyboard = kb.info()
+    const pad = gamepad.info()
 
     const logo = art.textures.logo
     renderer.drawObject(logo.img, window.w / 2 - logo.w / 2, window.h / 3)
+
+    if (pad?.buttons.cross) {
+        window.page = 'game'
+    }
 
     ui.button({
         content: 'Play',

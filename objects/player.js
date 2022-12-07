@@ -74,7 +74,10 @@ export class Player {
             if (bullet.x > window.w + 10)
                 this.bullets.splice(i, 1)
 
-            colisions.addRectangleColision({ w: 1, h: 1, x: bullet.x, y: bullet.y }, 'bullet', () => {
+            colisions.addRectangleColision({ w: 1, h: 1, x: bullet.x, y: bullet.y }, 'bullet', (reason) => {
+                if (reason === 'bullet')
+                    return
+
                 animations.animate(art.animations.particle, bullet.x, bullet.y, bullet.xVelocity, bullet.yVelocity, {
                     tickSpeed: 20,
                     moveSpeed: 20
@@ -85,7 +88,7 @@ export class Player {
         })
     }
 
-    tick(pointer, keyboard) {
+    tick(pointer, keyboard, pad) {
         this.handleBullets()
         if (this.y > window.h) {
             this.y = -this.h
@@ -122,38 +125,62 @@ export class Player {
                 }
             }
 
-            if (this.hitAnimation <= 0) {
-                if (keyboard.down['w']) {
-                    const stopper = this.yVelocity < 0 ? this.stopper : 1
+            if (pad) {
+                const stopper = this.yVelocity < 0 ? this.stopper : 1
 
-                    if (this.yVelocity > -this.maxYVelocity) {
-                        this.isBottomEngineWorking = true
-                        this.yVelocity -= this.yAcceleration * stopper
-                    }
-                }
-                if (keyboard.down['s']) {
-                    const stopper = this.yVelocity > 0 ? this.stopper : 1
-
-                    if (this.yVelocity < this.maxYVelocity) {
+                if (this.yVelocity > -this.maxYVelocity) {
+                    if (pad.axes.y1 > 0.1) {
                         this.isTopEngineWorking = true
-                        this.yVelocity += this.yAcceleration * stopper
                     }
+                    if (pad.axes.y1 < -0.1) {
+                        this.isBottomEngineWorking = true
+                    }
+                    this.yVelocity += this.yAcceleration * stopper * pad.axes.y1
                 }
 
-                if (keyboard.down['a']) {
-                    if (this.xVelocity > this.maxBackwardsXVelocity)
-                        this.xVelocity -= this.xAcceleration
-                }
-                if (keyboard.down['d']) {
-                    if (this.xVelocity < this.maxForwardXVelocity)
-                        this.xVelocity += this.xAcceleration
-                }
+                if (this.xVelocity > this.maxBackwardsXVelocity)
+                    this.xVelocity += this.xAcceleration * pad.axes.x1
 
-
-                if (keyboard.down[' ']) {
+                if (pad.buttons['cross']) {
                     this.shoot()
                 } else {
                     this.shootCooldown = 0
+                }
+            } else {
+
+                if (this.hitAnimation <= 0) {
+                    if (keyboard.down['w']) {
+                        const stopper = this.yVelocity < 0 ? this.stopper : 1
+
+                        if (this.yVelocity > -this.maxYVelocity) {
+                            this.isBottomEngineWorking = true
+                            this.yVelocity -= this.yAcceleration * stopper
+                        }
+                    }
+                    if (keyboard.down['s']) {
+                        const stopper = this.yVelocity > 0 ? this.stopper : 1
+
+                        if (this.yVelocity < this.maxYVelocity) {
+                            this.isTopEngineWorking = true
+                            this.yVelocity += this.yAcceleration * stopper
+                        }
+                    }
+
+                    if (keyboard.down['a']) {
+                        if (this.xVelocity > this.maxBackwardsXVelocity)
+                            this.xVelocity -= this.xAcceleration
+                    }
+                    if (keyboard.down['d']) {
+                        if (this.xVelocity < this.maxForwardXVelocity)
+                            this.xVelocity += this.xAcceleration
+                    }
+
+
+                    if (keyboard.down[' ']) {
+                        this.shoot()
+                    } else {
+                        this.shootCooldown = 0
+                    }
                 }
             }
 

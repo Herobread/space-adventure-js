@@ -147,7 +147,10 @@ export class Ufo {
             if (bullet.x > window.w + 10 || bullet.x < -10)
                 this.bullets.splice(i, 1)
 
-            colisions.addRectangleColision({ w: 1, h: 1, x: bullet.x, y: bullet.y }, 'bullet', () => {
+            colisions.addRectangleColision({ w: 1, h: 1, x: bullet.x, y: bullet.y }, 'bullet', (reason) => {
+                if (reason === 'bullet')
+                    return
+
                 animations.animate(art.animations.particle, bullet.x, bullet.y, bullet.xVelocity, bullet.yVelocity, {
                     tickSpeed: 20,
                     moveSpeed: 20

@@ -9,17 +9,23 @@ import { Asteroid } from '../objects/asteroid.js'
 import { Particle } from '../objects/particle.js'
 import { renderer } from '../lib/renderer.js'
 import { Ufo } from '../objects/ufo.js'
+import { gamepad } from '../lib/gamepad.js'
+import { Planet } from '../objects/planet.js'
 
 let asteroids = []
 let particles = []
 let enemies = []
+let planets = []
 
 let player
+
+let str = ''
 
 let difficultyStart = 0.7
 let difficulty = difficultyStart
 
-let ufoSpawnCooldown = 2000
+let ufoSpawnCooldown = 3000
+let planetSpawnCooldown = 1000
 
 export function initGame() {
     player = new Player(window.w / 3, window.h / 2)
@@ -28,19 +34,33 @@ export function initGame() {
 export function game() {
     const pointer = mouse.info()
     const keyboard = kb.info()
+    let pad = gamepad.info()
+
+    if (Object.keys(keyboard.down).length) {
+        pad = null
+    }
 
     if (ufoSpawnCooldown > 0) {
         ufoSpawnCooldown -= 1
     }
-
-    let str = ''
+    if (planetSpawnCooldown > 0) {
+        planetSpawnCooldown -= 1
+    } else {
+        planets.push(new Planet(window.w, 'auto'))
+        planetSpawnCooldown = 3000
+    }
 
     if (difficulty <= 1.3) {
         difficulty += 0.00004
     }
 
-    player.tick(pointer, keyboard)
-    player.draw()
+    planets.forEach((planet, i) => {
+        planet.setDeleter(() => {
+            planets.splice(i, 1)
+        })
+        planet.tick()
+        planet.draw()
+    })
 
     asteroids.forEach((asteroid, i) => {
         asteroid.setDeleter(() => {
@@ -57,7 +77,7 @@ export function game() {
     enemies.forEach((enemy, i) => {
         enemy.setDeleter(() => {
             enemies.splice(i, 1)
-            ufoSpawnCooldown = 2000
+            ufoSpawnCooldown = 3000
         })
         enemy.tick(player)
         enemy.draw()
@@ -79,15 +99,21 @@ export function game() {
         particles.push(new Particle(window.w, randomInRange(0, window.h), randomInRangeFloat(-0.7, -0.4) * difficulty, 0))
     }
 
+    player.tick(pointer, keyboard, pad)
+    player.draw()
+
     if (player.dead) {
         str = 'You died!'
         renderer.drawObject(`${str}`, window.w / 2 - str.length / 2, window.h / 2 - 2)
         str = `Score: ${player.score}`
         renderer.drawObject(`${str}`, window.w / 2 - str.length / 2, window.h / 2)
         str = 'Press Enter to respawn'
+        if (pad) {
+            str = 'Press triangle to respawn'
+        }
         renderer.drawObject(`${str}`, window.w / 2 - str.length / 2, window.h / 2 + 2)
 
-        if (keyboard.new['Enter']) {
+        if (keyboard.new['Enter'] || pad?.buttons.triangle) {
             player = new Player(window.w / 3, window.h / 2)
             difficulty = difficultyStart
         }
