@@ -21,8 +21,12 @@ export function mainMenu() {
     const logo = art.textures.logo
     renderer.drawObject(logo.img, window.w / 2 - logo.w / 2, window.h / 3)
 
-    if (pad?.buttons.cross) {
+    const start = () => {
         window.page = 'game'
+    }
+
+    if (pad?.buttons.cross || keyboard.new['Enter'] || keyboard.new[' ']) {
+        start()
     }
 
     ui.button({
@@ -30,9 +34,7 @@ export function mainMenu() {
         x: window.w / 2 - 3,
         y: window.h / 3 + 8,
         pointer: pointer,
-        onClick: () => {
-            window.page = 'game'
-        }
+        onClick: start
     })
 
     tick()

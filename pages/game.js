@@ -12,6 +12,8 @@ import { Ufo } from '../objects/ufo.js'
 import { gamepad } from '../lib/gamepad.js'
 import { Planet } from '../objects/planet.js'
 
+let isPaused = false
+
 let asteroids = []
 let particles = []
 let enemies = []
@@ -42,62 +44,73 @@ export function game() {
         pad = null
     }
 
-    if (ufoSpawnCooldown > 0) {
-        ufoSpawnCooldown -= 1
-    }
-    if (asteroidPackSpawnCooldown > 0) {
-        asteroidPackSpawnCooldown -= 1
-    } else {
-        let x = window.w + randomInRange(0, 20)
-        let y = randomInRange(0, 30)
+    if (!isPaused) {
+        if (ufoSpawnCooldown > 0) {
+            ufoSpawnCooldown -= 1
+        }
+        if (asteroidPackSpawnCooldown > 0) {
+            asteroidPackSpawnCooldown -= 1
+        } else {
+            let x = window.w + randomInRange(0, 20)
+            let y = randomInRange(0, 30)
 
-        asteroids.push(new Asteroid(x, y))
-        asteroids.push(new Asteroid(x + randomInRange(7, 12), y + randomInRange(7, 12)))
-        asteroids.push(new Asteroid(x - 50, y + randomInRange(7 * 2, 12 * 2)))
-        asteroids.push(new Asteroid(x - 50, y + randomInRange(7 * 4, 12 * 4)))
+            asteroids.push(new Asteroid(x, y))
+            asteroids.push(new Asteroid(x + randomInRange(7, 12), y + randomInRange(7, 12)))
+            asteroids.push(new Asteroid(x - 50, y + randomInRange(7 * 2, 12 * 2)))
+            asteroids.push(new Asteroid(x - 50, y + randomInRange(7 * 4, 12 * 4)))
 
-        asteroidPackSpawnCooldown = 2500
-    }
+            asteroidPackSpawnCooldown = 2500
+        }
 
-    if (planetSpawnCooldown > 0) {
-        planetSpawnCooldown -= 1
-    } else {
-        planets.push(new Planet(window.w, 'auto'))
-        planetSpawnCooldown = 9000
-    }
+        if (planetSpawnCooldown > 0) {
+            planetSpawnCooldown -= 1
+        } else {
+            planets.push(new Planet(window.w, 'auto'))
+            planetSpawnCooldown = 9000
+        }
 
-    if (difficulty <= 1.3) {
-        difficulty += 0.00004
+        if (difficulty <= 1.3) {
+            difficulty += 0.00004
+        }
     }
 
 
     planets.forEach((planet, i) => {
-        planet.setDeleter(() => {
-            planets.splice(i, 1)
-            planetSpawnCooldown = 1400
-        })
-        planet.tick()
+        if (!isPaused) {
+            planet.setDeleter(() => {
+                planets.splice(i, 1)
+                planetSpawnCooldown = 1400
+            })
+            planet.tick()
+        }
         planet.draw()
     })
 
     asteroids.forEach((asteroid, i) => {
-        asteroid.setDeleter(() => {
-            asteroids.splice(i, 1)
-        })
-        asteroid.tick()
+        if (!isPaused) {
+
+            asteroid.setDeleter(() => {
+                asteroids.splice(i, 1)
+            })
+            asteroid.tick()
+        }
         asteroid.draw()
     })
 
-    if (window.clock % parseInt(201 / difficulty) == 0) {
-        asteroids.push(new Asteroid(window.w, randomInRange(0, window.h - 6), randomInRangeFloat(-0.5, -0.2) * difficulty, 0))
+    if (!isPaused) {
+        if (window.clock % parseInt(201 / difficulty) == 0) {
+            asteroids.push(new Asteroid(window.w, randomInRange(0, window.h - 6), randomInRangeFloat(-0.5, -0.2) * difficulty, 0))
+        }
     }
 
     enemies.forEach((enemy, i) => {
-        enemy.setDeleter(() => {
-            enemies.splice(i, 1)
-            ufoSpawnCooldown = 3000
-        })
-        enemy.tick(player)
+        if (!isPaused) {
+            enemy.setDeleter(() => {
+                enemies.splice(i, 1)
+                ufoSpawnCooldown = 3000
+            })
+            enemy.tick(player)
+        }
         enemy.draw()
     })
 
@@ -106,19 +119,24 @@ export function game() {
     }
 
     particles.forEach(particle => {
-        particle.tick()
+        if (!isPaused)
+            particle.tick()
+
         particle.draw()
     })
 
-    if (window.clock % 40 == 0) {
-        particles.push(new Particle(window.w, randomInRange(0, window.h), randomInRangeFloat(-0.4, -0.2) * difficulty, 0))
-    }
-    if (window.clock % 40 - 20 == 0) {
-        particles.push(new Particle(window.w, randomInRange(0, window.h), randomInRangeFloat(-0.7, -0.4) * difficulty, 0))
-    }
+    if (!isPaused) {
 
-    player.tick(pointer, keyboard, pad)
-    player.draw()
+        if (window.clock % 40 == 0) {
+            particles.push(new Particle(window.w, randomInRange(0, window.h), randomInRangeFloat(-0.4, -0.2) * difficulty, 0))
+        }
+        if (window.clock % 40 - 20 == 0) {
+            particles.push(new Particle(window.w, randomInRange(0, window.h), randomInRangeFloat(-0.7, -0.4) * difficulty, 0))
+        }
+
+        player.tick(pointer, keyboard, pad)
+    }
+    player.draw(isPaused)
 
     if (player.dead) {
         str = 'You died!'
@@ -136,8 +154,21 @@ export function game() {
             difficulty = difficultyStart
         }
     } else {
+        console.log(keyboard.new)
+        if (keyboard.new['Escape']) {// todo: add option button from controller
+            isPaused = !isPaused
+        }
+
+
         str = `${player.score}`
         renderer.drawObject(`${str}`, window.w / 2 - str.length / 2, window.h - 3)
+    }
+
+    if (isPaused) {
+        str = `Game is paused`
+        renderer.drawObject(`${str}`, window.w / 2 - str.length / 2, window.h / 2 - 1)
+        str = `Press escape to unpause`
+        renderer.drawObject(`${str}`, window.w / 2 - str.length / 2, window.h / 2 + 1)
     }
 
     tick()
@@ -147,7 +178,9 @@ export function game() {
 function tick() {
     colisions.check()
 
-    animations.move()
-    animations.tick()
+    if (!isPaused) {
+        animations.move()
+        animations.tick()
+    }
     animations.render()
 }

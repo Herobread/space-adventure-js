@@ -248,9 +248,16 @@ export class Player {
         }
     }
 
-    draw() {
-        // ship texture + particles
+    draw(isPaused) {
+        // ship texture
         renderer.drawObject(this.sprite.img, this.x, this.y)
+
+        // ui(hp)
+        const hp = ['- - -', '# - -', '# # -', '# # #']
+
+        // particles
+        renderer.drawObject(`${hp[this.hp]}`, this.x, this.y + this.h + 2)
+        if (isPaused) return
 
         if (window.clock % 3 == 0 && !this.dead) {
             if (this.isTopEngineWorking)
@@ -274,19 +281,5 @@ export class Player {
         if (this.dead && window.clock % 20 == 0) {
             animations.animate(art.animations.fire, this.x + randomInRange(0, this.w), this.y + randomInRange(0, this.h), randomInRangeFloat(-1, 1), randomInRangeFloat(-1, 1), { tickSpeed: 10, moveSpeed: 20 })
         }
-
-        // ui(hp)
-
-        const hp = ['- - -', '# - -', '# # -', '# # #']
-
-        const healPercentage = (this.regenerationCooldown / this.regenerationCooldownMax * 100)
-
-        let healPercentageStr = ''
-        // if (this.hp < 3)
-        // healPercentageStr = `${healPercentage.toFixed(1)}%`
-
-        renderer.drawObject(`${hp[this.hp]} ${healPercentageStr}`, this.x, this.y + this.h + 2)
-
-
     }
 }
