@@ -29,6 +29,7 @@ export function mainMenu() {
         start()
     }
 
+
     ui.button({
         content: 'Play',
         x: window.w / 2 - 3,

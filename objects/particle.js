@@ -2,6 +2,7 @@ import { renderer } from "../lib/renderer.js"
 
 export class Particle {
     constructor(x, y, xVelocity, yVelocity) {
+        this.name = 'particle'
         this.x = x
         this.y = y
 

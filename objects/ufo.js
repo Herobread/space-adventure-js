@@ -6,6 +6,7 @@ import { randomInRange, randomInRangeFloat } from "../lib/util.js"
 
 export class Ufo {
     constructor(x, y) {
+        this.name = 'ufo'
         this.x = x
         this.y = y
         this.w = art.textures.ufo.w
@@ -82,7 +83,7 @@ export class Ufo {
             this.deleter()
         }
 
-        colisions.addRectangleColision(this, 'ufo', (reason) => {
+        colisions.addRectangleColision(this, (object) => {
             if (!this.asteroidHitCooldown && !this.bulletHitCooldown)
                 for (let i = 0; i < 10; i += 1) {
                     animations.animate(art.animations.particle,
@@ -97,15 +98,15 @@ export class Ufo {
                     )
                 }
 
-            if (reason === 'asteroid') {
+            if (object.name === 'asteroid') {
                 if (!this.asteroidHitCooldown) {
                     this.hp -= 1
                 }
 
-                this.yVelocity = randomInRange(0, 1) ? -0.25 : 0.25
+                this.yVelocity = -object.yVelocity
                 this.asteroidHitCooldown = 10
             }
-            if (reason === 'bullet') {
+            if (object.name === 'bullet') {
                 if (!this.bulletHitCooldown) {
                     this.hp -= 1
                 }
@@ -149,8 +150,8 @@ export class Ufo {
             if (bullet.x > window.w + 10 || bullet.x < -10)
                 this.bullets.splice(i, 1)
 
-            colisions.addRectangleColision({ w: 1, h: 1, x: bullet.x, y: bullet.y }, 'bullet', (reason) => {
-                if (reason === 'bullet')
+            colisions.addRectangleColision({ w: 1, h: 1, x: bullet.x, y: bullet.y, name: 'bullet' }, (object) => {
+                if (object.name === 'bullet')
                     return
 
                 animations.animate(art.animations.particle, bullet.x, bullet.y, bullet.xVelocity, bullet.yVelocity, {

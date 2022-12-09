@@ -6,12 +6,14 @@ import { isBetween, randomInRange, randomInRangeFloat } from "../lib/util.js"
 
 export class Player {
     constructor(x, y) {
+        this.name = 'player'
         this.x = x
         this.y = y
         this.score = 0
 
         this.dead = false
-        this.hp = 3
+        this.maxHp = 3
+        this.hp = this.maxHp
 
         this.bullets = []
         this.shootCooldown = 0
@@ -74,8 +76,8 @@ export class Player {
             if (bullet.x > window.w + 10)
                 this.bullets.splice(i, 1)
 
-            colisions.addRectangleColision({ w: 1, h: 1, x: bullet.x, y: bullet.y }, 'bullet', (reason) => {
-                if (reason === 'bullet')
+            colisions.addRectangleColision({ w: 1, h: 1, x: bullet.x, y: bullet.y, name: 'bullet' }, (reason) => {
+                if (reason.name === 'bullet')
                     return
 
                 animations.animate(art.animations.particle, bullet.x, bullet.y, bullet.xVelocity, bullet.yVelocity, {
@@ -194,7 +196,7 @@ export class Player {
             this.xVelocity *= this.loss
             this.yVelocity *= this.loss
 
-            const onColision = (name) => {
+            const onColision = (object) => {
                 if (this.hitCooldown <= 0 && !this.invincibility) {
                     this.hp -= 1
                     this.regenerationCooldown += this.regenerationCooldownMax / 5
@@ -220,7 +222,7 @@ export class Player {
                 this.hitAnimation = 100
             }
 
-            colisions.addRectangleColision(this, 'ship', onColision)
+            colisions.addRectangleColision(this, onColision)
         }
         if (this.hp === 0 && !this.dead) {
             this.deathAnimation = 10000
@@ -255,8 +257,10 @@ export class Player {
         // ui(hp)
         const hp = ['- - -', '# - -', '# # -', '# # #']
 
+        if (this.maxHp !== this.hp)
+            renderer.drawObject(`${hp[this.hp]}`, this.x, this.y + this.h + 2)
+
         // particles
-        renderer.drawObject(`${hp[this.hp]}`, this.x, this.y + this.h + 2)
         if (isPaused) return
 
         if (window.clock % 3 == 0 && !this.dead) {

@@ -4,6 +4,7 @@ import { randomInRange, randomInRangeFloat } from "../lib/util.js"
 
 export class Planet {
     constructor(x, y) {
+        this.name = 'planet'
         this.x = x
 
         this.xVelocity = randomInRangeFloat(-0.09, -0.03)
@@ -19,7 +20,7 @@ export class Planet {
         if (y !== 'auto')
             this.y = y
         else
-            this.y = randomInRange(5, window.h - this.h)
+            this.y = randomInRange(5, window.h - this.h - 20)
     }
 
     setDeleter(deleter) {
@@ -37,7 +38,6 @@ export class Planet {
     }
 
     draw() {
-        console.log(this.sprite, this.x, this.y)
         renderer.drawTransparentObject(this.sprite, this.x, this.y)
     }
 }

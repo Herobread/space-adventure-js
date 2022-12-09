@@ -25,6 +25,7 @@ export const art = {
     },
     asteroids: [
       {
+        m: 10,
         w: 6,
         h: 7,
         img: `_/\\
@@ -35,6 +36,7 @@ export const art = {
  \\/`
       },
       {
+        m: 3,
         w: 5,
         h: 5,
         img: `  _
@@ -43,6 +45,7 @@ export const art = {
  \\_/`
       },
       {
+        m: 10,
         w: 7,
         h: 6,
         img: ` ___
@@ -52,6 +55,7 @@ export const art = {
    \\/`
       },
       {
+        m: 10,
         w: 7,
         h: 7,
         img: `  _
@@ -62,6 +66,7 @@ export const art = {
  \\_/`
       },
       {
+        m: 8,
         w: 6,
         h: 6,
         img: `  _
@@ -71,6 +76,7 @@ export const art = {
  \\/`
       },
       {
+        m: 8,
         w: 6,
         h: 6,
         img: ` /\\
@@ -80,6 +86,7 @@ export const art = {
  \\/`
       },
       {
+        m: 7,
         w: 5,
         h: 6,
         img: `  _
