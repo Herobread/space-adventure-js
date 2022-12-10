@@ -7,7 +7,7 @@ import { pages } from './pages.js'
 window.renderer = {}
 
 //// editable config
-
+//(also, you can change them in console)
 const startPageId = 0 // selects corresponding page in page.js file
 
 // window.renderer.showPerformance = true // show perfomance overlay

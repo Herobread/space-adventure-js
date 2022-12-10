@@ -21,7 +21,7 @@ export const art = {
  /__/
 </`,
       w: 6,
-      h: 4
+      h: 5
     },
     asteroids: [
       {

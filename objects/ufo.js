@@ -150,7 +150,7 @@ export class Ufo {
             if (bullet.x > window.w + 10 || bullet.x < -10)
                 this.bullets.splice(i, 1)
 
-            colisions.addRectangleColision({ w: 1, h: 1, x: bullet.x, y: bullet.y, name: 'bullet' }, (object) => {
+            colisions.addRectangleColision({ w: 1, h: 1, x: bullet.x, y: bullet.y, xVelocity: bullet.xVelocity, yVelocity: bullet.yVelocity, name: 'bullet' }, (object) => {
                 if (object.name === 'bullet')
                     return
 
