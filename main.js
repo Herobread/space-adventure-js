@@ -12,6 +12,7 @@ const startPageId = 0 // selects corresponding page in page.js file
 
 // window.renderer.showPerformance = true // show perfomance overlay
 // window.showPerformanceLogs = true // log average render and logic time for 200 frames in console 
+// window.showColisionBoxes = true // draws colision boxes
 
 window.renderer.blendMode = true // blend blendable symbols when drawing them (for example: '-' and '|' to '+')
 
@@ -20,7 +21,7 @@ window.renderer.blendMode = true // blend blendable symbols when drawing them (f
 
 window.frt = 0 // frame render time
 window.logic = 0 // logic processing time
-window.objects = 0 // WIP amount of active objects
+// window.objects = 0 // WIP amount of active objects
 window.activeAnimations = 0 // amount of active animations
 window.clock = 0 // counts from 0 to 1000, adds 1 every frame
 window.fps = 0 // target fps

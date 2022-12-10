@@ -51,7 +51,7 @@ export function game() {
             planetSpawnCooldown -= 1
         } else {
             planets.push(new Planet(window.w, 'auto'))
-            planetSpawnCooldown = 9000
+            planetSpawnCooldown = 90000
         }
 
         if (difficulty <= 1.3) {
@@ -64,7 +64,7 @@ export function game() {
         if (!isPaused) {
             planet.setDeleter(() => {
                 planets.splice(i, 1)
-                planetSpawnCooldown = 1400
+                planetSpawnCooldown = 4000
             })
             planet.tick()
         }

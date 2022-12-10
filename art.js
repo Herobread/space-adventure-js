@@ -26,7 +26,7 @@ export const art = {
     asteroids: [
       {
         m: 10,
-        w: 6,
+        w: 5,
         h: 7,
         img: `_/\\
 \\. \\
@@ -37,7 +37,7 @@ export const art = {
       },
       {
         m: 3,
-        w: 5,
+        w: 4,
         h: 5,
         img: `  _
  /.\\
@@ -46,8 +46,8 @@ export const art = {
       },
       {
         m: 10,
-        w: 7,
-        h: 6,
+        w: 6,
+        h: 5,
         img: ` ___
 / . \\
 |   .\\
@@ -56,8 +56,8 @@ export const art = {
       },
       {
         m: 10,
-        w: 7,
-        h: 7,
+        w: 6,
+        h: 6,
         img: `  _
  /.\\
 /  .\\
@@ -67,8 +67,8 @@ export const art = {
       },
       {
         m: 8,
-        w: 6,
-        h: 6,
+        w: 5,
+        h: 5,
         img: `  _
  /.\\
 |  .|
@@ -77,8 +77,8 @@ export const art = {
       },
       {
         m: 8,
-        w: 6,
-        h: 6,
+        w: 5,
+        h: 5,
         img: ` /\\
 | .|
 |  .\\
@@ -87,8 +87,8 @@ export const art = {
       },
       {
         m: 7,
-        w: 5,
-        h: 6,
+        w: 4,
+        h: 5,
         img: `  _
  /.\\
 |  .\\
@@ -98,9 +98,8 @@ export const art = {
     ],
     ufo: {
       w: 10,
-      h: 6,
-      img: `
-   .-.
+      h: 5,
+      img: `   .-.
   _|_|_
 -=_   _=-
    \\_/`

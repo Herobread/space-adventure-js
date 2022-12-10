@@ -127,6 +127,13 @@ export class Player {
                 }
             }
 
+            if (this.x <= 0) {
+                this.xVelocity = 0.2
+            }
+            if (this.x + this.w > window.w) {
+                this.xVelocity = -0.2
+            }
+
             if (pad) {
                 const stopper = this.yVelocity < 0 ? this.stopper : 1
 
