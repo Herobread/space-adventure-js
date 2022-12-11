@@ -3,7 +3,7 @@ import { getBestScores, submitScore } from "../firebase/scoreboard.js"
 import { animations } from "../lib/animations.js"
 import { colisions } from "../lib/colisions.js"
 import { renderer } from "../lib/renderer.js"
-import { isBetween, randomInRange, randomInRangeFloat } from "../lib/util.js"
+import { isBetween, numberWithCommas, randomInRange, randomInRangeFloat } from "../lib/util.js"
 
 export class Player {
     constructor(x, y) {
@@ -32,18 +32,18 @@ export class Player {
         this.h = this.sprite.h
 
         this.xVelocity = 0
-        this.xAcceleration = 0.003
+        this.xAcceleration = 0.0032
         this.maxForwardXVelocity = 0.1
         this.maxBackwardsXVelocity = -0.15
 
         this.yVelocity = 0
-        this.yAcceleration = 0.0025
+        this.yAcceleration = 0.0048
         this.maxYVelocity = 0.2
 
         // slow the ship acceleration down when it goes from negative speed
         this.stopper = 0.6
 
-        this.loss = 0.99
+        this.loss = 0.98
     }
 
     shoot() {
@@ -158,7 +158,7 @@ export class Player {
                 }
             } else {
                 if (this.hitAnimation <= 0) {
-                    if (keyboard.down['w']) {
+                    if (keyboard.down['w'] || keyboard.down['W'] || keyboard.down['ц'] || keyboard.down['Ц']) {
                         const stopper = this.yVelocity < 0 ? this.stopper : 1
 
                         if (this.yVelocity > -this.maxYVelocity) {
@@ -166,7 +166,7 @@ export class Player {
                             this.yVelocity -= this.yAcceleration * stopper
                         }
                     }
-                    if (keyboard.down['s']) {
+                    if (keyboard.down['s'] || keyboard.down['S'] || keyboard.down['ы'] || keyboard.down['Ы'] || keyboard.down['і'] || keyboard.down['І']) {
                         const stopper = this.yVelocity > 0 ? this.stopper : 1
 
                         if (this.yVelocity < this.maxYVelocity) {
@@ -175,11 +175,11 @@ export class Player {
                         }
                     }
 
-                    if (keyboard.down['a']) {
+                    if (keyboard.down['a'] || keyboard.down['A'] || keyboard.down['ф'] || keyboard.down['Ф']) {
                         if (this.xVelocity > this.maxBackwardsXVelocity)
                             this.xVelocity -= this.xAcceleration
                     }
-                    if (keyboard.down['d']) {
+                    if (keyboard.down['d'] || keyboard.down['D'] || keyboard.down['в'] || keyboard.down['В']) {
                         if (this.xVelocity < this.maxForwardXVelocity)
                             this.xVelocity += this.xAcceleration
                     }
@@ -239,11 +239,11 @@ export class Player {
             window.formatedScores = 'Loading scores'
             await submitScore(window.username, this.score)
 
-            const scores = await getBestScores()
-            let res = 'Scores:\n\n'
+            const scores = await getBestScores(10)
+            let res = 'Scores:\n\n\n'
 
             window.formatedScores = scores.forEach((record, i) => {
-                res += `${i + 1}. ${record.name} - ${record.score}\n`
+                res += `${i + 1}. ${record.name} - ${numberWithCommas(record.score)}\n\n`
             })
 
             window.formatedScores = res

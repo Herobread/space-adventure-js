@@ -7,7 +7,8 @@ import {
     doc,
     orderBy,
     query,
-    limit
+    limit,
+    arrayUnion
 } from 'https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore.js'
 
 
@@ -31,14 +32,29 @@ export async function submitScore(name, score) {
         await setDoc(doc(db, "scores", name), {
             name: name,
             score: score,
-            timestamp: now
+            timestamp: now,
+            attempts: [{
+                score: score,
+                timestamp: now,
+            }]
         })
-    } else if (previousResult.score < score) {
+    } else {
+        // if highscore => update
+        if (previousResult.score < score) {
+            await setDoc(doc(db, "scores", name), {
+                name: name,
+                score: score,
+                timestamp: now,
+            }, { merge: true })
+        }
+
+        // add to history
         await setDoc(doc(db, "scores", name), {
-            name: name,
-            score: score,
-            timestamp: now
-        })
+            attempts: arrayUnion({
+                score: score,
+                timestamp: now
+            })
+        }, { merge: true })
     }
 }
 
