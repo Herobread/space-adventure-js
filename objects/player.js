@@ -1,4 +1,5 @@
 import { art } from "../art.js"
+import { getBestScores, submitScore } from "../firebase/scoreboard.js"
 import { animations } from "../lib/animations.js"
 import { colisions } from "../lib/colisions.js"
 import { renderer } from "../lib/renderer.js"
@@ -90,7 +91,7 @@ export class Player {
         })
     }
 
-    tick(pointer, keyboard, pad) {
+    async tick(pointer, keyboard, pad) {
         this.handleBullets()
         if (this.y > window.h) {
             this.y = -this.h
@@ -156,7 +157,6 @@ export class Player {
                     this.shootCooldown = 0
                 }
             } else {
-
                 if (this.hitAnimation <= 0) {
                     if (keyboard.down['w']) {
                         const stopper = this.yVelocity < 0 ? this.stopper : 1
@@ -234,6 +234,24 @@ export class Player {
         if (this.hp === 0 && !this.dead) {
             this.deathAnimation = 10000
             this.dead = true
+
+
+            window.formatedScores = 'Loading scores'
+            await submitScore(window.username, this.score)
+
+            const scores = await getBestScores()
+            let res = 'Scores:\n\n'
+
+            window.formatedScores = scores.forEach((record, i) => {
+                res += `${i + 1}. ${record.name} - ${record.score}\n`
+            })
+
+            window.formatedScores = res
+
+            if (!window.formatedScores) {
+                window.formatedScores = 'Loading scores'
+            }
+
 
             for (let i = 0; i < 10; i += 1) {
                 animations.animate(art.animations.particle,

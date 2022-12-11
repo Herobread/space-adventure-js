@@ -136,7 +136,6 @@ export class Asteroid {
             if (object.name == 'bullet' && !this.bulletHitCooldown) {
                 this.hitAnimation()
                 this.xVelocity += object.xVelocity * 0.2
-                console.log(object)
                 this.hp -= 1
                 this.bulletHitCooldown = 30
             }

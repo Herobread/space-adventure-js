@@ -12,6 +12,8 @@ import { Ufo } from '../objects/ufo.js'
 import { gamepad } from '../lib/gamepad.js'
 import { Planet } from '../objects/planet.js'
 
+window.formatedScores = 'Loading scores'
+
 let isPaused = false
 
 let asteroids = []
@@ -33,7 +35,7 @@ export function initGame() {
     player = new Player(window.w / 3, window.h / 2)
 }
 
-export function game() {
+export async function game() {
     const pointer = mouse.info()
     const keyboard = kb.info()
     let pad = gamepad.info()
@@ -138,6 +140,9 @@ export function game() {
             player = new Player(window.w / 3, window.h / 2)
             difficulty = difficultyStart
         }
+
+
+        renderer.drawObject(window.formatedScores, 10, 10)
     } else {
         if (keyboard.new['Escape']) {// todo: add option button from controller
             isPaused = !isPaused
