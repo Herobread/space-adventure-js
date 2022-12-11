@@ -279,7 +279,7 @@ export class Player {
         // ship texture
 
         renderer.drawObject(this.sprite.img, this.x, this.y)
-        renderer.drawObject(this.regenerationCooldown + 's', this.x + 20, this.y)
+        // renderer.drawObject(this.regenerationCooldown + 's', this.x + 20, this.y)
 
         // ui(hp)
         const hp = ['- - -', '# - -', '# # -', '# # #']
