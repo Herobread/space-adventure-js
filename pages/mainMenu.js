@@ -16,6 +16,7 @@ export function initMainMenu() {
 
     if (!window.username) {
         window.username = `player${randomInRange(0, 10000)}`
+        localStorage.setItem('username', window.username)
     }
 }
 

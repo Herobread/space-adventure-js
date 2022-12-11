@@ -24,7 +24,7 @@ export class Player {
         this.hitAnimation = 0
         this.deathAnimation = 0
         this.regenerationCooldownMax = 4000
-        this.regenerationCooldown = this.regenerationCooldownMax / 5
+        this.regenerationCooldown = this.regenerationCooldownMax / 3
 
         this.sprite = art.textures.ship
 
@@ -121,10 +121,10 @@ export class Player {
 
         if (this.hp > 0) {
             this.score += 1
-            if (this.regenerationCooldown === 0) {
+            if (this.regenerationCooldown <= 0) {
                 if (this.hp < 3) {
                     this.hp += 1
-                    this.regenerationCooldown = this.regenerationCooldownMax / 5
+                    this.regenerationCooldown = this.regenerationCooldownMax / 3
                 }
             }
 
@@ -206,7 +206,7 @@ export class Player {
             const onColision = (object) => {
                 if (this.hitCooldown <= 0 && !this.invincibility) {
                     this.hp -= 1
-                    this.regenerationCooldown += this.regenerationCooldownMax / 5
+                    this.regenerationCooldown += this.regenerationCooldownMax / 3
 
                     for (let i = 0; i < 10; i += 1) {
                         animations.animate(art.animations.particle,
@@ -277,7 +277,9 @@ export class Player {
 
     draw(isPaused) {
         // ship texture
+
         renderer.drawObject(this.sprite.img, this.x, this.y)
+        renderer.drawObject(this.regenerationCooldown + 's', this.x + 20, this.y)
 
         // ui(hp)
         const hp = ['- - -', '# - -', '# # -', '# # #']
