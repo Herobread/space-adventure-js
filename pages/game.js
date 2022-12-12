@@ -2,7 +2,6 @@ import { animations } from '../lib/animations.js'
 import { kb } from '../lib/keyboard.js'
 import { mouse } from '../lib/mouse.js'
 import { randomInRange, randomInRangeFloat } from '../lib/util.js'
-import { Block } from '../objects/block.js'
 import { colisions } from '../lib/colisions.js'
 import { Player } from '../objects/player.js'
 import { Asteroid } from '../objects/asteroid.js'
@@ -31,6 +30,12 @@ let difficulty = difficultyStart
 let ufoSpawnCooldown = 6000
 let planetSpawnCooldown = 1000
 
+let asteroidBeltSpawnCooldown = 100
+let asteroidBeltSpawnCooldownMax = 15000
+let asteroidBeltCooldown = 0
+let asteroidBeltCooldownMax = 3000
+
+
 export function initGame() {
     player = new Player(window.w / 3, window.h / 2)
 }
@@ -45,6 +50,17 @@ export async function game() {
     }
 
     if (!isPaused) {
+        if (asteroidBeltSpawnCooldown > 0) {
+            asteroidBeltSpawnCooldown -= 1
+        } else {
+            asteroidBeltCooldown = asteroidBeltCooldownMax
+            asteroidBeltSpawnCooldown = asteroidBeltSpawnCooldownMax
+        }
+
+        if (asteroidBeltCooldown > 0) {
+            asteroidBeltCooldown -= 1
+        }
+
         if (ufoSpawnCooldown > 0) {
             ufoSpawnCooldown -= 1
         }
@@ -56,7 +72,7 @@ export async function game() {
             planetSpawnCooldown = 90000
         }
 
-        if (difficulty <= 1.3) {
+        if (difficulty <= 1.4) {
             difficulty += 0.00004
         }
     }
@@ -87,6 +103,12 @@ export async function game() {
     if (!isPaused) {
         if (window.clock % parseInt(201 / difficulty) == 0) {
             asteroids.push(new Asteroid(window.w, randomInRange(0, window.h - 6), randomInRangeFloat(-0.5, -0.2) * difficulty, 0))
+        }
+        if (asteroidBeltCooldown) {
+            if (window.clock % parseInt(201 / difficulty) - 100 == 0) {
+                asteroids.push(new Asteroid(window.w, randomInRange(0, window.h - 6), randomInRangeFloat(-0.5, -0.2) * difficulty, 0))
+                asteroids.push(new Asteroid(window.w, randomInRange(0, window.h - 6), randomInRangeFloat(-0.5, -0.2) * difficulty, 0))
+            }
         }
     }
 
@@ -157,6 +179,12 @@ export async function game() {
         renderer.drawObject(`${str}`, window.w / 2 - str.length / 2, window.h / 2 - 1)
         str = `Press escape to unpause`
         renderer.drawObject(`${str}`, window.w / 2 - str.length / 2, window.h / 2 + 1)
+    }
+
+
+    if (asteroidBeltCooldown) {
+        str = 'Asteroid cluster detected!'
+        renderer.drawObject(str, window.w / 2 - str.length / 2, window.h - 1)
     }
 
     tick()
