@@ -2,20 +2,19 @@ import { animations } from '../lib/animations.js'
 import { kb } from '../lib/keyboard.js'
 import { mouse } from '../lib/mouse.js'
 import { randomInRange } from '../lib/util.js'
-import { Block } from '../objects/block.js'
 import { colisions } from '../lib/colisions.js'
 import { renderer } from '../lib/renderer.js'
 import { art } from '../art.js'
 import { ui } from '../lib/ui.js'
 import { gamepad } from '../lib/gamepad.js'
 
-window.username = `player${randomInRange(0, 10000)}`
+window.username = `player${randomInRange(0, 10_000)}`
 
 export function initMainMenu() {
     window.username = localStorage.getItem('username')
 
     if (!window.username) {
-        window.username = `player${randomInRange(0, 10000)}`
+        window.username = `player${randomInRange(0, 10_000)}`
         localStorage.setItem('username', window.username)
     }
 }

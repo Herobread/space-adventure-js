@@ -100,12 +100,7 @@ export class Asteroid {
 
                 if (object.name === 'asteroid') {
                     this.hp -= 1
-                    // this.xVelocity *= 0.5
-                    // this.xVelocity = object.xVelocity * 0.4
-                    // if (Math.abs(this.xVelocity) < 0.05)
-                    // this.xVelocity = 0.4 * Math.sign(object.xVelocity)
 
-                    //v = (m2v1 - m2v2)/ 2(m1+m2)
                     let signX = 1
                     let signY = 1
                     // if opposite directions
