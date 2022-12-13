@@ -30,7 +30,7 @@ let difficulty = difficultyStart
 let ufoSpawnCooldown = 6000
 let planetSpawnCooldown = 1000
 
-let asteroidBeltSpawnCooldown = 100
+let asteroidBeltSpawnCooldown = 3000
 let asteroidBeltSpawnCooldownMax = 15000
 let asteroidBeltCooldown = 0
 let asteroidBeltCooldownMax = 3000
@@ -69,7 +69,7 @@ export async function game() {
             planetSpawnCooldown -= 1
         } else {
             planets.push(new Planet(window.w, 'auto'))
-            planetSpawnCooldown = 90000
+            planetSpawnCooldown = 60000
         }
 
         if (difficulty <= 1.4) {
@@ -77,12 +77,18 @@ export async function game() {
         }
     }
 
+    particles.forEach(particle => {
+        if (!isPaused)
+            particle.tick()
+
+        particle.draw()
+    })
 
     planets.forEach((planet, i) => {
         if (!isPaused) {
             planet.setDeleter(() => {
                 planets.splice(i, 1)
-                planetSpawnCooldown = 4000
+                planetSpawnCooldown = 6000
             })
             planet.tick()
         }
@@ -127,12 +133,6 @@ export async function game() {
         enemies.push(new Ufo(window.w, randomInRange(0, window.h)))
     }
 
-    particles.forEach(particle => {
-        if (!isPaused)
-            particle.tick()
-
-        particle.draw()
-    })
 
     if (!isPaused) {
         if (window.clock % 40 == 0) {

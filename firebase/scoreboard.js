@@ -23,7 +23,7 @@ export async function submitScore(name, score) {
     let now = new Date()
     now = now.getTime()
 
-    console.log(name, score)
+    // console.log(name, score)
 
     let previousResult = await getDoc(doc(db, 'scores', name))
     previousResult = previousResult.data()

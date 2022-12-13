@@ -14,7 +14,7 @@ const startPageId = 0 // selects corresponding page in page.js file
 // window.showPerformanceLogs = true // log average render and logic time for 200 frames in console 
 // window.showColisionBoxes = true // draws colision boxes
 
-window.renderer.blendMode = true // blend blendable symbols when drawing them (for example: '-' and '|' to '+')
+// window.renderer.blendMode = true // blend blendable symbols when drawing them (for example: '-' and '|' to '+')
 
 //// end editable config
 //// info variables

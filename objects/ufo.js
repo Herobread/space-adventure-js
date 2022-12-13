@@ -24,7 +24,7 @@ export class Ufo {
         this.asteroidHitCooldown = 0
         this.bulletHitCooldown = 0
 
-        this.sprite = art.textures.ufo.img
+        this.sprite = art.textures.ufo
 
         this.bullets = []
         this.shootCooldown = 0

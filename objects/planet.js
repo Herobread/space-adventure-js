@@ -11,9 +11,10 @@ export class Planet {
         this.yVelocity = 0
 
         const max = art.textures.planets.length - 1
+
         let sprite = art.textures.planets[randomInRange(0, max)]
 
-        this.sprite = sprite.img
+        this.sprite = sprite
         this.w = sprite.w
         this.h = sprite.h
 
