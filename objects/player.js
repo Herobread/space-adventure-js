@@ -278,7 +278,7 @@ export class Player {
     draw(isPaused) {
         // ship texture
 
-        renderer.drawObject(this.sprite.img, this.x, this.y)
+        renderer.drawTransparentObject(this.sprite, this.x, this.y)
         // renderer.drawObject(this.regenerationCooldown + 's', this.x + 20, this.y)
 
         // ui(hp)

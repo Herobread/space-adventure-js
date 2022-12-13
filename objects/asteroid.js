@@ -28,8 +28,6 @@ export class Asteroid {
         this.xVelocity = xVelocity
         this.yVelocity = yVelocity
 
-        this.destruction = { sprites: art.animations.explosion.map(cropImg, this.w, this.h) }
-
         this.deleter = () => { }
     }
 
@@ -150,6 +148,6 @@ export class Asteroid {
             renderer.drawObject(hp[Math.floor(this.hp)], this.x, this.y + this.h)
         }
 
-        renderer.drawObject(this.sprite.img, this.x, this.y)
+        renderer.drawTransparentObject(this.sprite, this.x, this.y)
     }
 }

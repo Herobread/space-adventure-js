@@ -10,12 +10,10 @@ import { ui } from '../lib/ui.js'
 import { gamepad } from '../lib/gamepad.js'
 import { getBestScores, getScores, submitScore } from '../firebase/scoreboard.js'
 
+let id = 0
+
 export async function initScores() {
-    const scores = await getScores()
 
-    console.log('first')
-
-    console.log(scores)
 }
 
 export function scores() {
@@ -23,41 +21,14 @@ export function scores() {
     const keyboard = kb.info()
     const pad = gamepad.info()
 
-    const onClick = async () => {
-        await submitScore(`player${randomInRange(0, 100)}`, randomInRange(0, 3000))
+    if (keyboard.new['d']) {
+        id += 1
+    }
+    if (keyboard.new['a']) {
+        id -= 1
     }
 
-    ui.button({
-        content: 'add random score record',
-        x: 10,
-        y: 30,
-        pointer: pointer,
-        onClick: onClick
-    })
-
-    ui.button({
-        content: 'get all',
-        x: 10,
-        y: 20,
-        pointer: pointer,
-        onClick: async () => {
-            const scores = await getScores()
-            console.log(scores)
-        }
-    })
-
-    ui.button({
-        content: 'get query',
-        x: 10,
-        y: 40,
-        pointer: pointer,
-        onClick: async () => {
-            const scores = await getBestScores()
-            console.log(scores)
-        }
-    })
-
-    renderer.drawObject('aaaaaaa', 10, 10)
+    renderer.drawObject(art.textures.planets[id].img, 10, 10)
 
     tick()
     mouse.showCursor()
