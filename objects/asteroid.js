@@ -119,7 +119,7 @@ export class Asteroid {
                 const thisCentre = this.y + this.h / 2
                 let yDistortion = objectCentre < thisCentre ? 0.02 : -0.02
 
-                if (objectCentre === thisCentre || Math.abs(objectCentre - thisCentre) < 1.5) {
+                if (Math.abs(objectCentre - thisCentre) < 1.5) {
                     yDistortion = 0
                 }
 
@@ -130,7 +130,7 @@ export class Asteroid {
                 this.hitAnimation()
                 this.xVelocity += object.xVelocity * 0.2
                 this.hp -= 1
-                this.bulletHitCooldown = 30
+                this.bulletHitCooldown = 10
             }
         }
 

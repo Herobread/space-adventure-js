@@ -43,6 +43,8 @@ export class Player {
         // slow the ship acceleration down when it goes from negative speed
         this.stopper = 0.6
 
+        this.bulletCooldown = 0
+
         this.loss = 0.98
     }
 
@@ -77,7 +79,9 @@ export class Player {
             if (bullet.x > window.w + 10)
                 this.bullets.splice(i, 1)
 
-            colisions.addRectangleColision({ w: 1, h: 1, x: bullet.x, y: bullet.y, xVelocity: bullet.xVelocity, yVelocity: bullet.yVelocity, name: 'bullet' }, (reason) => {
+            colisions.addRectangleColision({ w: 1, h: 1, x: bullet.x, y: bullet.y, xVelocity: bullet.xVelocity, yVelocity: bullet.yVelocity, name: 'bullet' }, async (reason) => {
+                console.log('colided', i)
+
                 if (reason.name === 'bullet')
                     return
 
@@ -86,8 +90,15 @@ export class Player {
                     moveSpeed: 20
                 })
 
-                this.bullets.splice(i, 1)
+
+
+                if (!this.bulletCooldown)
+                    this.bullets.splice(i, 1)
+                this.bulletCooldown = 5
             })
+            if (this.bulletCooldown) {
+                this.bulletCooldown -= 1
+            }
         })
     }
 

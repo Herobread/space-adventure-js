@@ -4,7 +4,7 @@ import { initScores, scores } from "./pages/scores.js"
 import { animationViewer, initAnimationViewer } from "./utilityPages/viewAnimations.js"
 import { assetsViewer, initAssetsViewer } from "./utilityPages/viewAssets.js"
 
-const fps = 144
+const fps = 60
 
 export const pages = [
     {
