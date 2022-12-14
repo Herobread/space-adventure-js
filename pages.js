@@ -4,7 +4,9 @@ import { initScores, scores } from "./pages/scores.js"
 import { animationViewer, initAnimationViewer } from "./utilityPages/viewAnimations.js"
 import { assetsViewer, initAssetsViewer } from "./utilityPages/viewAssets.js"
 
-const fps = 60
+// fps of the game
+// also you can set fps individualy for every page
+const fps = 144
 
 export const pages = [
     {

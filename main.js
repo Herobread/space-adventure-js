@@ -17,7 +17,7 @@ const startPageId = 0 // start page, selects page with corresponding id in page.
 
 window.renderer.blendMode = true // blend blendable symbols when drawing them (for example: '-' and '|' to '+')
 // window.renderer.showTransperencyOverlays = true // helps to configure transperency maps, works only for renderer.drawTransparentObject(...)
-// window.showUndefinedTransperencyMapWarning = true // show error info near the object and log warn to the console if there is no 'tm' attribute in sprite, that was sent to renderer.drawTransparentObject(...)
+window.showUndefinedTransperencyMapWarning = true // show error info near the object and log warn to the console if there is no 'tm' attribute in sprite, that was sent to renderer.drawTransparentObject(...)
 
 //// end editable config
 //// info variables
