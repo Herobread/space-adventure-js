@@ -1,4 +1,4 @@
-import { shapes } from "./shapes"
+import { shapes } from "lib/shapes"
 
 interface rectangle {
     x: number,

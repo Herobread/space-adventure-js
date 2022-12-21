@@ -1,5 +1,5 @@
 import { art } from "../art"
-import { renderer } from "../lib/renderer"
+import { renderer } from "../renderer"
 import { randomInRange, randomInRangeFloat } from "../lib/util"
 
 export class Planet {

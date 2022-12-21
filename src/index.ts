@@ -1,8 +1,8 @@
-import { kb } from './lib/keyboard.js'
-// import { logger } from 'lib/logger'
-// import { mouse } from 'lib/mouse'
-// import { asciiMap, renderer } from './lib/renderer'
-// import { pages } from './pageLayout'
+import { kb } from './lib/keyboard'
+import { logger } from 'lib/logger'
+import { mouse } from 'lib/mouse'
+import { asciiMap, renderer } from './renderer'
+import { pages } from './pageLayout'
 
 declare global {
     interface Window {

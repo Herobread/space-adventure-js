@@ -1,6 +1,6 @@
 import { kb } from "../lib/keyboard"
 import { mouse } from "../lib/mouse"
-import { renderer } from "../lib/renderer"
+import { renderer } from "../renderer"
 import { ui } from "../lib/ui"
 import { art } from "../art"
 import { getDimensions } from "../lib/util"

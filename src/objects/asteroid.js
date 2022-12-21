@@ -1,4 +1,4 @@
-import { renderer } from "../lib/renderer"
+import { renderer } from "../renderer"
 import { cropImg, randomInRange, randomInRangeFloat } from "../lib/util"
 import { art } from "../art"
 import { animations } from "../lib/animations"

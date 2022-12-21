@@ -1,7 +1,7 @@
 import { art } from "../art"
 import { animations } from "../lib/animations"
 import { colisions } from "../lib/colisions"
-import { renderer } from "../lib/renderer"
+import { renderer } from "../renderer"
 import { randomInRange, randomInRangeFloat } from "../lib/util"
 
 export class Ufo {

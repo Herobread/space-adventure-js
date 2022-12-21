@@ -2,7 +2,7 @@ import { art } from "../art"
 import { getBestScores, submitScore } from "../firebase/scoreboard"
 import { animations } from "../lib/animations"
 import { colisions } from "../lib/colisions"
-import { renderer } from "../lib/renderer"
+import { renderer } from "../renderer"
 import { isBetween, numberWithCommas, randomInRange, randomInRangeFloat } from "../lib/util"
 
 export class Player {

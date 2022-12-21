@@ -5,7 +5,7 @@ import { assetsViewer, initAssetsViewer } from "utilityPages/viewAssets"
 
 // fps of the game
 // also you can set fps individualy for every page
-const fps = 10
+const fps = 144
 
 interface Page {
     name: string,

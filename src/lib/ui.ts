@@ -1,5 +1,5 @@
 import { shapes } from "./shapes"
-import { renderer } from "./renderer"
+import { renderer } from "../renderer"
 import { checkIfPointInRectangle, repeatSymbol } from "./util"
 
 interface opened {

@@ -1,4 +1,4 @@
-import { logger } from "./logger"
+import { logger } from "./lib/logger"
 
 window.fsize = 10
 window.clock = 0

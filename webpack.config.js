@@ -1,8 +1,7 @@
 const path = require('path')
+const Dotenv = require('dotenv-webpack')
 
 module.exports = {
-    mode: 'development',
-    devtool: 'eval-source-map',
     entry: './src/index.ts',
     module: {
         rules: [
@@ -20,7 +19,6 @@ module.exports = {
     output: {
         filename: 'bundle.js',
         path: path.resolve(__dirname, 'public'),
-        // publicPath: "/PAGE/",
     },
     resolve: {
         extensions: ['.ts', '.js'],
@@ -29,16 +27,16 @@ module.exports = {
             pages: path.resolve(__dirname, 'src/pages'),
             utilityPages: path.resolve(__dirname, 'src/utilityPages'),
             objects: path.resolve(__dirname, 'src/objects')
-        }
+        },
+        fallback: {
+            "fs": false,
+            "path": false,
+            "os": false,
+        },
     },
-    // plugins: [
-    //     new Dotenv()
-    // ],
-    // resolve: {
-    //     fallback: {
-    //         "fs": false,
-    //         "path": false,
-    //         "os": false,
-    //     },
-    // }
+    plugins: [
+        new Dotenv()
+    ],
+    devtool: 'source-map',
+    mode: 'development',
 }

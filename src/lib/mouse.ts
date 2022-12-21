@@ -1,4 +1,4 @@
-import { renderer } from './renderer'
+import { renderer } from '../renderer'
 
 let x = 0
 let y = 0

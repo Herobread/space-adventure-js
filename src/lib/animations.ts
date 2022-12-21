@@ -1,4 +1,4 @@
-import { renderer } from "lib/renderer"
+import { renderer } from "../renderer"
 
 const debug = false
 

@@ -1,5 +1,5 @@
 import { colisions } from "lib/colisions"
-import { renderer } from "lib/renderer"
+import { renderer } from "../renderer"
 import { shapes } from "lib/shapes"
 import { repeatSymbol } from "./util"
 
