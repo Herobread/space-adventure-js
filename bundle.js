@@ -25163,7 +25163,7 @@ class Player {
             this.dead = true
 
 
-            window.formatedScores = 'Loading scores'
+            window.formatedScores = 'Loading scores\n\n(under maintenance)'
             await (0,_firebase_scoreboard__WEBPACK_IMPORTED_MODULE_1__.submitScore)(window.username, this.score)
 
             const scores = await (0,_firebase_scoreboard__WEBPACK_IMPORTED_MODULE_1__.getBestScores)(10)
