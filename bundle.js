@@ -24422,12 +24422,12 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const firebaseConfig = {
-    apiKey: "MISSING_ENV_VAR".API_KEY,
-    authDomain: "MISSING_ENV_VAR".AUTH_DOMAIN,
-    projectId: "MISSING_ENV_VAR".DATABASE_URL,
-    storageBucket: "MISSING_ENV_VAR".PROJECT_ID,
-    messagingSenderId: "MISSING_ENV_VAR".STORAGE_BUCKET,
-    appId: "MISSING_ENV_VAR".APP_ID,
+    apiKey: "AIzaSyDSizzeaFa-gmS-gkkjW-k6MwLQPhsRiSM",
+    authDomain: "space-adventure-js.firebaseapp.com",
+    projectId: "space-adventure-js",
+    storageBucket: "space-adventure-js.appspot.com",
+    messagingSenderId: "MISSING_ENV_VAR".MESSAGING_SENDER_ID,
+    appId: "1:844833013830:web:6cc56c88e74e8070f54a47",
 }
 
 const app = (0,firebase_app__WEBPACK_IMPORTED_MODULE_0__.initializeApp)(firebaseConfig)
