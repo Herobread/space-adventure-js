@@ -247,7 +247,7 @@ export class Player {
             this.dead = true
 
 
-            window.formatedScores = 'Loading scores'
+            window.formatedScores = 'Loading scores\n\n(under maintenance)'
             await submitScore(window.username, this.score)
 
             const scores = await getBestScores(10)

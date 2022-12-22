@@ -35,7 +35,7 @@ module.exports = {
         },
     },
     plugins: [
-        new Dotenv()
+        new Dotenv({ systemvars: true })
     ],
     devtool: 'source-map',
     mode: 'development',
