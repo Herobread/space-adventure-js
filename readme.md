@@ -6,11 +6,11 @@ Get ready to blast off into the cosmos with this exciting space game featuring A
 ## Controls
 In this space game, you'll have a variety of control options to choose from. The WASD keys and space bar provide a classic keyboard setup, allowing you to easily maneuver your spacecraft through the infinite expanse of outer space. Alternatively, you can use a game controller for a more immersive experience. The controller support in this game is intuitive and responsive, ensuring that you can easily navigate your way through the cosmos. Whether you prefer traditional keyboard controls or the convenience of a gamepad, this game has you covered
 
-## scoreboard
+## Scoreboard
 
 In this space game, you'll have the opportunity to compete for a spot on the scoreboard, which showcases the top 10 players. This scoreboard serves as a leaderboard, allowing you to see how your skills compare to other players. Whether you're looking to climb the ranks or simply want to see where you stand among the competition, the scoreboard is a great way to track your progress and see how you measure up. With 10 spots available, there's always room for improvement and the chance to rise through the ranks and claim a top spot on the leaderboard.
 
-## development
+## Development
 
 To set up this game for development, you'll need to install the necessary dependencies. To do so, run the following command in your terminal:
 
