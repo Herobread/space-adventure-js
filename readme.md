@@ -1,5 +1,5 @@
 # Space adveture
-_created using (PAGE)[https://github.com/Herobread/PAGE]_
+_created using [PAGE](https://github.com/Herobread/PAGE)_
 
 Get ready to blast off into the cosmos with this exciting space game featuring ASCII graphics. In this game, you'll have the chance to take on asteroids as you fly through an infinite expanse of space. Whether you're a seasoned space explorer or new to the world of sci-fi gaming, this game has something for everyone. With fast-paced gameplay and intuitive controls, you'll be able to fully immerse yourself in the excitement of space travel. So strap in, power up your engines, and get ready to shoot for the stars!
 
