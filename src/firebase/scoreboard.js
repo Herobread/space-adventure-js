@@ -37,7 +37,7 @@ export async function submitScore(name, score) {
             }]
         })
     } else {
-        // if highscore => update
+        // if highscore => update highscore
         if (previousResult.score < score) {
             await setDoc(doc(db, "scores", name), {
                 name: name,
