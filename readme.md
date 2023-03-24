@@ -1,9 +1,11 @@
 # Space adveture
+
 _created using [PAGE](https://github.com/Herobread/PAGE)_
 
 Get ready to blast off into the cosmos with this exciting space game featuring ASCII graphics. In this game, you'll have the chance to take on asteroids as you fly through an infinite expanse of space. Whether you're a seasoned space explorer or new to the world of sci-fi gaming, this game has something for everyone. With fast-paced gameplay and intuitive controls, you'll be able to fully immerse yourself in the excitement of space travel. So strap in, power up your engines, and get ready to shoot for the stars!
 
 ## Controls
+
 In this space game, you'll have a variety of control options to choose from. The WASD keys and space bar provide a classic keyboard setup, allowing you to easily maneuver your spacecraft through the infinite expanse of outer space. Alternatively, you can use a game controller for a more immersive experience. The controller support in this game is intuitive and responsive, ensuring that you can easily navigate your way through the cosmos. Whether you prefer traditional keyboard controls or the convenience of a gamepad, this game has you covered
 
 ## Scoreboard

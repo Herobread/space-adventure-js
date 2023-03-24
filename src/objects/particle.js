@@ -1,37 +1,36 @@
 import { renderer } from "../renderer"
 
 export class Particle {
-    constructor(x, y, xVelocity, yVelocity) {
-        this.name = 'particle'
-        this.x = x
-        this.y = y
+	constructor(x, y, xVelocity, yVelocity) {
+		this.name = "particle"
+		this.x = x
+		this.y = y
 
-        this.xVelocity = xVelocity
-        this.yVelocity = yVelocity
+		this.xVelocity = xVelocity
+		this.yVelocity = yVelocity
 
-        this.w = 1
-        this.h = 1
+		this.w = 1
+		this.h = 1
 
-        this.sprite = '-'
+		this.sprite = "-"
 
-        this.deleter = () => { }
-    }
+		this.deleter = () => {}
+	}
 
-    setDeleter(deleter) {
-        this.deleter = deleter
-    }
+	setDeleter(deleter) {
+		this.deleter = deleter
+	}
 
-    tick() {
-        this.x += this.xVelocity
-        this.y += this.yVelocity
+	tick() {
+		this.x += this.xVelocity
+		this.y += this.yVelocity
 
+		if (this.x < 0) {
+			this.deleter()
+		}
+	}
 
-        if (this.x < 0) {
-            this.deleter()
-        }
-    }
-
-    draw() {
-        renderer.drawObject(this.sprite, this.x, this.y)
-    }
+	draw() {
+		renderer.drawObject(this.sprite, this.x, this.y)
+	}
 }

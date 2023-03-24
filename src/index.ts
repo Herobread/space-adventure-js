@@ -1,43 +1,42 @@
-import { kb } from './lib/keyboard'
-import { logger } from 'lib/logger'
-import { mouse } from 'lib/mouse'
-import { asciiMap, renderer } from './renderer'
-import { pages } from './pageLayout'
+import { kb } from "./lib/keyboard"
+import { logger } from "lib/logger"
+import { mouse } from "lib/mouse"
+import { asciiMap, renderer } from "./renderer"
+import { pages } from "./pageLayout"
 
 declare global {
-    interface Window {
-        renderer: {
-            showTransperencyOverlays: boolean,
-            showPerformance: boolean
-        },
-        showUndefinedTransperencyMapWarning: boolean
-        showPerformanceLogs: boolean,
-        showColisionBoxes: boolean,
+	interface Window {
+		renderer: {
+			showTransperencyOverlays: boolean
+			showPerformance: boolean
+		}
+		showUndefinedTransperencyMapWarning: boolean
+		showPerformanceLogs: boolean
+		showColisionBoxes: boolean
 
-        objects: number,
-        colisionObjects: number,
-        renderTime: number,
-        frameTime: number,
-        frt: number,
-        logic: number,
-        activeAnimations: number,
-        clock: number,
-        fps: number,
-        w: number,
-        h: number,
-        page: string,
-        currentPage: string
-        currentPageFunction: Function,
-        asciiScreen: HTMLElement,
-        fsize: number
-    }
+		objects: number
+		colisionObjects: number
+		renderTime: number
+		frameTime: number
+		frt: number
+		logic: number
+		activeAnimations: number
+		clock: number
+		fps: number
+		w: number
+		h: number
+		page: string
+		currentPage: string
+		currentPageFunction: Function
+		asciiScreen: HTMLElement
+		fsize: number
+	}
 }
 
-
-/** editable config 
+/** editable config
  * also, you can change it in js console
  * by typing "window.setting = value"
-*/
+ */
 
 /* start page, selects page with corresponding id in page.js file */
 const startPageId = 0
@@ -48,8 +47,8 @@ const startPageId = 0
 // window.showColisionBoxes = true
 
 window.renderer = {
-    showTransperencyOverlays: false, // helps to configure transperency maps, works only for renderer.drawTransparentObject(...)
-    showPerformance: false, // show perfomance overlay
+	showTransperencyOverlays: false, // helps to configure transperency maps, works only for renderer.drawTransparentObject(...)
+	showPerformance: false, // show perfomance overlay
 }
 window.showUndefinedTransperencyMapWarning = true // show error info near the object and log warn to the console if there is no 'tm' attribute in sprite, that was sent to renderer.drawTransparentObject(...)
 
@@ -77,83 +76,83 @@ const symbolHeight = 1.22
 
 let interval: NodeJS.Timer
 
-window.asciiScreen = document.getElementById('asciicontainer') as HTMLElement
+window.asciiScreen = document.getElementById("asciicontainer") as HTMLElement
 
-window.page = 'main'
+window.page = "main"
 window.currentPage = window.page
 window.currentPageFunction = pages[startPageId].func
 window.fps = pages[startPageId].fps
 
 function resizer() {
-    window.w = Math.floor(window.innerWidth / (window.fsize * symbolWidth))
-    window.h = Math.floor(window.innerHeight / (window.fsize * symbolHeight)) + 1
+	window.w = Math.floor(window.innerWidth / (window.fsize * symbolWidth))
+	window.h =
+		Math.floor(window.innerHeight / (window.fsize * symbolHeight)) + 1
 
-    asciiMap.init()
+	asciiMap.init()
 }
 
 window.onload = function () {
-    resizer()
-    pages[startPageId].init()
-    asciiMap.init()
+	resizer()
+	pages[startPageId].init()
+	asciiMap.init()
 
-    window.addEventListener('resize', resizer, false)
+	window.addEventListener("resize", resizer, false)
 
-    updateFps(window.fps)
+	updateFps(window.fps)
 
-    mouse.init()
-    kb.init()
+	mouse.init()
+	kb.init()
 
-    interval = setInterval(main, 1000 / 1000)
+	interval = setInterval(main, 1000 / 1000)
 }
 
-
 export function updateFps(fps: number) {
-    clearInterval(interval)
+	clearInterval(interval)
 
-    window.fps = fps
-    window.renderTime = 1000 / fps
-    interval = setInterval(main, window.renderTime)
+	window.fps = fps
+	window.renderTime = 1000 / fps
+	interval = setInterval(main, window.renderTime)
 }
 
 function main() {
-    const renderTimeStart = performance.now()
+	const renderTimeStart = performance.now()
 
-    renderer.render()
+	renderer.render()
 
-    if (window.currentPage === window.page) {
-        const logicTimeStart = performance.now()
+	if (window.currentPage === window.page) {
+		const logicTimeStart = performance.now()
 
-        window.currentPageFunction()
-        logger.log('logic', performance.now() - logicTimeStart)
+		window.currentPageFunction()
+		logger.log("logic", performance.now() - logicTimeStart)
 
-        if (window.showPerformanceLogs && window.clock % 200 === 1) {
-            console.log('logic: ', logger.getLog('logic'))
-        }
-    } else {
-        pages.forEach(page => {
-            if (page.name === window.page) {
-                updateFps(page.fps)
+		if (window.showPerformanceLogs && window.clock % 200 === 1) {
+			console.log("logic: ", logger.getLog("logic"))
+		}
+	} else {
+		pages.forEach((page) => {
+			if (page.name === window.page) {
+				updateFps(page.fps)
 
-                window.currentPage = window.page
-                window.currentPageFunction = page.func
+				window.currentPage = window.page
+				window.currentPageFunction = page.func
 
-                page.init()
-            }
-        })
-    }
+				page.init()
+			}
+		})
+	}
 
-    const renderTimeEnd = performance.now()
-    const renderTime = renderTimeEnd - renderTimeStart
+	const renderTimeEnd = performance.now()
+	const renderTime = renderTimeEnd - renderTimeStart
 
-    logger.log('rendertime', renderTime)
+	logger.log("rendertime", renderTime)
 
-    window.frameTime = renderTime
+	window.frameTime = renderTime
 
-    if (window.clock % 20 === 0) {
-        const frt = logger.getLog('rendertime')
-        const logic = logger.getLog('logic')
+	if (window.clock % 20 === 0) {
+		const frt = logger.getLog("rendertime")
+		const logic = logger.getLog("logic")
 
-        window.frt = frt
-        window.logic = logic
-    }
+		window.frt = frt
+		window.logic = logic
+	}
 }
