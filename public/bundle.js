@@ -24158,6 +24158,9 @@ const soundPaths = {
     ufoShoot: "sounds/ufo-shoot.wav",
     asteroidBelt: "sounds/asteroid-belt.wav",
     playerSpawn: "sounds/player-spawn.wav",
+    dog: "sounds/dog.wav",
+    bong: "sounds/bong.wav",
+    orbs: "sounds/orbs.wav",
     // Add more sound paths as needed
 };
 loadSounds(soundPaths);
@@ -24877,11 +24880,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "clamp": () => (/* binding */ clamp),
 /* harmony export */   "cropImg": () => (/* binding */ cropImg),
 /* harmony export */   "getDimensions": () => (/* binding */ getDimensions),
-/* harmony export */   "getRandomItemFromArray": () => (/* binding */ getRandomItemFromArray),
 /* harmony export */   "isBetween": () => (/* binding */ isBetween),
 /* harmony export */   "numberWithCommas": () => (/* binding */ numberWithCommas),
 /* harmony export */   "randomInRange": () => (/* binding */ randomInRange),
 /* harmony export */   "randomInRangeFloat": () => (/* binding */ randomInRangeFloat),
+/* harmony export */   "randomItemFromArray": () => (/* binding */ randomItemFromArray),
 /* harmony export */   "repeatSymbol": () => (/* binding */ repeatSymbol)
 /* harmony export */ });
 function center(width) {
@@ -24965,7 +24968,7 @@ function numberWithCommas(x) {
 	return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
 }
 
-function getRandomItemFromArray(array) {
+function randomItemFromArray(array) {
 	// Check if the array is empty
 	if (array.length === 0) {
 		return undefined // Return undefined if the array is empty
@@ -25105,7 +25108,8 @@ class Asteroid {
 			if (!this.asteroidHitCooldown) {
 				this.asteroidHitCooldown = 100
 
-				_lib_sounds__WEBPACK_IMPORTED_MODULE_5__.sounds.play("bonk")
+				const soundEffects = ["bonk", "bong", "orbs"]
+				_lib_sounds__WEBPACK_IMPORTED_MODULE_5__.sounds.play((0,_lib_util__WEBPACK_IMPORTED_MODULE_1__.randomItemFromArray)(soundEffects))
 
 				if (object.name === "player") {
 					this.hp -= 1

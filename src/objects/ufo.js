@@ -7,7 +7,7 @@ import { sounds } from "../lib/sounds"
 
 export class Ufo {
 	constructor(x, y) {
-		sounds.play("emergency")
+		sounds.play("ufoAlert")
 
 		this.name = "ufo"
 		this.x = x
@@ -84,7 +84,7 @@ export class Ufo {
 		this.yVelocity *= this.loss
 
 		if (this.hp <= 0) {
-			sounds.play("kill")
+			sounds.play("ufoDeath")
 			this.deleter()
 		}
 
@@ -105,7 +105,7 @@ export class Ufo {
 				}
 
 				if (object.name === "asteroid") {
-					sounds.play("oof")
+					sounds.play("hit")
 
 					if (!this.asteroidHitCooldown) {
 						this.hp -= 1
@@ -115,7 +115,7 @@ export class Ufo {
 					this.asteroidHitCooldown = 100
 				}
 				if (object.name === "bullet") {
-					sounds.play("oof")
+					sounds.play("hit")
 
 					if (!this.bulletHitCooldown) {
 						this.hp -= 1

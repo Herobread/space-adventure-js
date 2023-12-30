@@ -162,6 +162,7 @@ export class Player {
 			this.score += 1
 			if (this.regenerationCooldown <= 0) {
 				if (this.hp < 3) {
+					sounds.play("playerRegen")
 					this.hp += 1
 					this.regenerationCooldown = this.regenerationCooldownMax / 3
 				}
@@ -277,7 +278,7 @@ export class Player {
 
 			const onColision = (object) => {
 				if (this.hitCooldown <= 0 && !this.invincibility) {
-					sounds.play("hit")
+					sounds.play("playerHit")
 					this.hp -= 1
 					this.regenerationCooldown +=
 						this.regenerationCooldownMax / 3
@@ -310,7 +311,7 @@ export class Player {
 			this.deathAnimation = 10000
 			this.dead = true
 
-			sounds.play("death")
+			sounds.play("playerDeath")
 
 			window.formatedScores = "Loading scores\n\n(under maintenance)"
 			await submitScore(window.username, this.score)

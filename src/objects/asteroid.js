@@ -101,7 +101,7 @@ export class Asteroid {
 		this.y += this.yVelocity
 
 		if (this.dead) {
-			sounds.play("bell")
+			sounds.play("asteroidExplosion")
 		}
 
 		if (this.x < -this.w - 10 || this.x > window.w + 20 || this.dead) {
@@ -112,8 +112,7 @@ export class Asteroid {
 			if (!this.asteroidHitCooldown) {
 				this.asteroidHitCooldown = 100
 
-				const soundEffects = ["bonk", "bong", "orbs"]
-				sounds.play(randomItemFromArray(soundEffects))
+				sounds.play("asteroidHit")
 
 				if (object.name === "player") {
 					this.hp -= 1

@@ -50,10 +50,14 @@ export async function game() {
 	}
 
 	if (!isPaused) {
+		if (player.score % 2500 === 0) {
+			sounds.play("bigScore")
+		}
+
 		if (asteroidBeltSpawnCooldown > 0) {
 			asteroidBeltSpawnCooldown -= 1
 		} else {
-			sounds.play("asteroidBelt")
+			sounds.play("asteroidBeltAlert")
 			asteroidBeltCooldown = asteroidBeltCooldownMax
 			asteroidBeltSpawnCooldown = asteroidBeltSpawnCooldownMax
 		}

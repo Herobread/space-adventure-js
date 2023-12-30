@@ -34,24 +34,20 @@ function loadSounds(soundPaths: SoundPaths): void {
 	}
 }
 
-// Example usage:
 const soundPaths: SoundPaths = {
 	shoot: "sounds/shoot.wav",
-	hit: "sounds/hit.wav",
-	death: "sounds/death.wav",
-	kill: "sounds/kill.wav",
-	oof: "sounds/oof.wav",
-	bell: "sounds/bell.wav",
-	bonk: "sounds/bonk.wav",
-	pan: "sounds/pan.wav",
-	emergency: "sounds/emergency.wav",
+	asteroidHit: "sounds/asteroid-hit.wav",
+	asteroidExplosion: "sounds/asteroid-explosion.wav",
+	asteroidBeltAlert: "sounds/asteroid-belt-alert.wav",
+	ufoAlert: "sounds/ufo-alert.wav",
+	ufoDeath: "sounds/ufo-death.wav",
+	playerDeath: "sounds/player-death.wav",
 	ufoShoot: "sounds/ufo-shoot.wav",
 	asteroidBelt: "sounds/asteroid-belt.wav",
 	playerSpawn: "sounds/player-spawn.wav",
-	dog: "sounds/dog.wav",
-	bong: "sounds/bong.wav",
-	orbs: "sounds/orbs.wav",
-	// Add more sound paths as needed
+	bigScore: "sounds/big-score.wav",
+	playerHit: "sounds/player-hit.wav",
+	playerRegen: "sounds/player-regen.wav",
 }
 
 loadSounds(soundPaths)
