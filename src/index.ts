@@ -27,6 +27,7 @@ declare global {
 		h: number
 		page: string
 		currentPage: string
+		formatedScores: string
 		currentPageFunction: Function
 		asciiScreen: HTMLElement
 		fsize: number

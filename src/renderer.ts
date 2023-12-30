@@ -137,21 +137,19 @@ export const renderer = {
 	},
 	render: async function () {
 		if (window.renderer.showPerformance) {
-			this.drawObject(
-				`Page ${window.page}.js h=${window.h} w=${
-					window.w
-				}, \nFrame render time = ${window.frt.toFixed(2)} ms${(
-					1000 / window.frt
-				).toFixed(2)}, logic time = ${window.logic.toFixed(2)}, (${(
-					(window.logic / window.frt) *
-					100
-				).toFixed(2)}%)
+			const message = `Page ${window.page}.js h=${window.h} w=${
+				window.w
+			}, \nFrame render time = ${window.frt.toFixed(2)} ms${(
+				1000 / window.frt
+			).toFixed(2)}, logic time = ${window.logic.toFixed(2)}, (${(
+				(window.logic / window.frt) *
+				100
+			).toFixed(2)}%)
 Active animations:${window.activeAnimations}, objects: ${
-					window.objects
-				}, colision obj: ${window.colisionObjects}`,
-				5,
-				5
-			)
+				window.objects
+			}, colision obj: ${window.colisionObjects}`
+
+			this.drawObject(message, 5, 5)
 		}
 
 		const start = performance.now()

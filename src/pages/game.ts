@@ -15,12 +15,12 @@ window.formatedScores = "Loading scores"
 
 let isPaused = false
 
-let asteroids = []
-let particles = []
-let enemies = []
-let planets = []
+let asteroids: Asteroid[] = []
+let particles: Particle[] = []
+let enemies: Ufo[] = []
+let planets: Planet[] = []
 
-let player
+let player: Player
 
 let str = ""
 
@@ -76,8 +76,13 @@ export async function game() {
 		}
 	}
 
-	particles.forEach((particle) => {
-		if (!isPaused) particle.tick()
+	particles.forEach((particle, i) => {
+		if (!isPaused) {
+			particle.setDeleter(() => {
+				particles.splice(i, 1)
+			})
+			particle.tick()
+		}
 
 		particle.draw()
 	})
@@ -104,7 +109,7 @@ export async function game() {
 	})
 
 	if (!isPaused) {
-		if (window.clock % parseInt(201 / difficulty) == 0) {
+		if (window.clock % Math.floor(201 / difficulty) == 0) {
 			asteroids.push(
 				new Asteroid(
 					window.w,
@@ -115,7 +120,7 @@ export async function game() {
 			)
 		}
 		if (asteroidBeltCooldown) {
-			if ((window.clock % parseInt(201 / difficulty)) - 100 == 0) {
+			if ((window.clock % Math.floor(201 / difficulty)) - 100 == 0) {
 				asteroids.push(
 					new Asteroid(
 						window.w,
@@ -153,24 +158,32 @@ export async function game() {
 
 	if (!isPaused) {
 		if (window.clock % 40 == 0) {
-			particles.push(
-				new Particle(
-					window.w,
-					randomInRange(0, window.h),
-					randomInRangeFloat(-0.4, -0.2) * difficulty,
-					0
-				)
+			const particle = new Particle(
+				window.w,
+				randomInRange(0, window.h),
+				randomInRangeFloat(-0.4, -0.2) * difficulty,
+				0
 			)
+
+			particle.setDeleter(() => {
+				// deleter
+			})
+
+			particles.push(particle)
 		}
 		if ((window.clock % 40) - 20 == 0) {
-			particles.push(
-				new Particle(
-					window.w,
-					randomInRange(0, window.h),
-					randomInRangeFloat(-0.7, -0.4) * difficulty,
-					0
-				)
+			const particle = new Particle(
+				window.w,
+				randomInRange(0, window.h),
+				randomInRangeFloat(-0.7, -0.4) * difficulty,
+				0
 			)
+
+			particle.setDeleter(() => {
+				// deleter
+			})
+
+			particles.push(particle)
 		}
 
 		player.tick(pointer, keyboard, pad)

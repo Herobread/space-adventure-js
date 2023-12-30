@@ -101,8 +101,6 @@ export class Player {
 					name: "bullet",
 				},
 				async (reason) => {
-					console.log("colided", i)
-
 					if (reason.name === "bullet") return
 
 					animations.animate(
