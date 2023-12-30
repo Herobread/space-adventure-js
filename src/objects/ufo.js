@@ -3,9 +3,12 @@ import { animations } from "../lib/animations"
 import { colisions } from "../lib/colisions"
 import { renderer } from "../renderer"
 import { randomInRange, randomInRangeFloat } from "../lib/util"
+import { sounds } from "../lib/sounds"
 
 export class Ufo {
 	constructor(x, y) {
+		sounds.play("emergency")
+
 		this.name = "ufo"
 		this.x = x
 		this.y = y
@@ -81,11 +84,12 @@ export class Ufo {
 		this.yVelocity *= this.loss
 
 		if (this.hp <= 0) {
+			sounds.play("kill")
 			this.deleter()
 		}
 
 		colisions.addRectangleColision(this, (object) => {
-			if (!this.asteroidHitCooldown && !this.bulletHitCooldown)
+			if (!this.asteroidHitCooldown && !this.bulletHitCooldown) {
 				for (let i = 0; i < 10; i += 1) {
 					animations.animate(
 						art.animations.particle,
@@ -100,20 +104,25 @@ export class Ufo {
 					)
 				}
 
-			if (object.name === "asteroid") {
-				if (!this.asteroidHitCooldown) {
-					this.hp -= 1
-				}
+				if (object.name === "asteroid") {
+					sounds.play("oof")
 
-				this.yVelocity = -object.yVelocity
-				this.asteroidHitCooldown = 10
-			}
-			if (object.name === "bullet") {
-				if (!this.bulletHitCooldown) {
-					this.hp -= 1
-				}
+					if (!this.asteroidHitCooldown) {
+						this.hp -= 1
+					}
 
-				this.bulletHitCooldown = 10
+					this.yVelocity = -object.yVelocity
+					this.asteroidHitCooldown = 100
+				}
+				if (object.name === "bullet") {
+					sounds.play("oof")
+
+					if (!this.bulletHitCooldown) {
+						this.hp -= 1
+					}
+
+					this.bulletHitCooldown = 10
+				}
 			}
 		})
 
@@ -126,6 +135,8 @@ export class Ufo {
 			this.shootCooldown -= 1
 		}
 		if (!this.shootCooldown) {
+			sounds.play("ufoShoot")
+
 			this.shootCooldown = 500
 
 			this.bullets.push({

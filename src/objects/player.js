@@ -9,9 +9,12 @@ import {
 	randomInRange,
 	randomInRangeFloat,
 } from "../lib/util"
+import { sounds } from "../lib/sounds"
 
 export class Player {
 	constructor(x, y) {
+		sounds.play("playerSpawn")
+
 		this.name = "player"
 		this.x = x
 		this.y = y
@@ -58,6 +61,8 @@ export class Player {
 			this.shootCooldown -= 1
 		}
 		if (!this.shootCooldown) {
+			sounds.play("shoot")
+
 			this.shootCooldown = 100
 
 			this.bullets.push({
@@ -272,6 +277,7 @@ export class Player {
 
 			const onColision = (object) => {
 				if (this.hitCooldown <= 0 && !this.invincibility) {
+					sounds.play("hit")
 					this.hp -= 1
 					this.regenerationCooldown +=
 						this.regenerationCooldownMax / 3
@@ -303,6 +309,8 @@ export class Player {
 		if (this.hp === 0 && !this.dead) {
 			this.deathAnimation = 10000
 			this.dead = true
+
+			sounds.play("death")
 
 			window.formatedScores = "Loading scores\n\n(under maintenance)"
 			await submitScore(window.username, this.score)

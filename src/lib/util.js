@@ -78,3 +78,16 @@ export function getDimensions(text) {
 export function numberWithCommas(x) {
 	return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
 }
+
+export function getRandomItemFromArray(array) {
+	// Check if the array is empty
+	if (array.length === 0) {
+		return undefined // Return undefined if the array is empty
+	}
+
+	// Generate a random index within the array length
+	const randomIndex = Math.floor(Math.random() * array.length)
+
+	// Return the random item from the array
+	return array[randomIndex]
+}

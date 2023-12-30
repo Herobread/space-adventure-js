@@ -10,6 +10,7 @@ import { renderer } from "../renderer"
 import { Ufo } from "../objects/ufo"
 import { gamepad } from "../lib/gamepad"
 import { Planet } from "../objects/planet"
+import { sounds } from "../lib/sounds"
 
 window.formatedScores = "Loading scores"
 
@@ -52,6 +53,7 @@ export async function game() {
 		if (asteroidBeltSpawnCooldown > 0) {
 			asteroidBeltSpawnCooldown -= 1
 		} else {
+			sounds.play("asteroidBelt")
 			asteroidBeltCooldown = asteroidBeltCooldownMax
 			asteroidBeltSpawnCooldown = asteroidBeltSpawnCooldownMax
 		}

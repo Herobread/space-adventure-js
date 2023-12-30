@@ -1,8 +1,14 @@
 import { renderer } from "../renderer"
-import { cropImg, randomInRange, randomInRangeFloat } from "../lib/util"
+import {
+	cropImg,
+	getRandomItemFromArray,
+	randomInRange,
+	randomInRangeFloat,
+} from "../lib/util"
 import { art } from "../art"
 import { animations } from "../lib/animations"
 import { colisions } from "../lib/colisions"
+import { sounds } from "../lib/sounds"
 
 export class Asteroid {
 	constructor(x, y, xVelocity, yVelocity) {
@@ -93,6 +99,10 @@ export class Asteroid {
 		this.x += this.xVelocity
 		this.y += this.yVelocity
 
+		if (this.dead) {
+			sounds.play("bell")
+		}
+
 		if (this.x < -this.w - 10 || this.x > window.w + 20 || this.dead) {
 			this.deleter()
 		}
@@ -100,6 +110,8 @@ export class Asteroid {
 		const onColision = (object) => {
 			if (!this.asteroidHitCooldown) {
 				this.asteroidHitCooldown = 100
+
+				sounds.play("bonk")
 
 				if (object.name === "player") {
 					this.hp -= 1
