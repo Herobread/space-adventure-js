@@ -14,6 +14,7 @@ declare global {
 		showPerformanceLogs: boolean
 		showColisionBoxes: boolean
 
+		soundInstances: number
 		objects: number
 		colisionObjects: number
 		renderTime: number

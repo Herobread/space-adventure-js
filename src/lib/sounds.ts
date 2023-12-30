@@ -17,7 +17,17 @@ const sounds: Sounds = {
 		soundInstances.push(newSound)
 		this.sounds[soundKey] = soundInstances
 
+		window.soundInstances = soundInstances.length
+
 		newSound.play()
+
+		newSound.addEventListener("ended", () => {
+			const index = soundInstances.indexOf(newSound)
+			if (index !== -1) {
+				soundInstances.splice(index, 1)
+				window.soundInstances = soundInstances.length
+			}
+		})
 	},
 }
 

@@ -147,7 +147,9 @@ export const renderer = {
 			).toFixed(2)}%)
 Active animations:${window.activeAnimations}, objects: ${
 				window.objects
-			}, colision obj: ${window.colisionObjects}`
+			}, colision obj: ${window.colisionObjects}\nLast sound instances: ${
+				window.soundInstances
+			}`
 
 			this.drawObject(message, 5, 5)
 		}
