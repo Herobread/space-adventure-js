@@ -165,10 +165,6 @@ export async function game() {
 				0
 			)
 
-			particle.setDeleter(() => {
-				// deleter
-			})
-
 			particles.push(particle)
 		}
 		if ((window.clock % 40) - 20 == 0) {
@@ -178,10 +174,6 @@ export async function game() {
 				randomInRangeFloat(-0.7, -0.4) * difficulty,
 				0
 			)
-
-			particle.setDeleter(() => {
-				// deleter
-			})
 
 			particles.push(particle)
 		}

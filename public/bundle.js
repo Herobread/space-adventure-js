@@ -22929,7 +22929,7 @@ __webpack_require__.r(__webpack_exports__);
 // helps to ignore spaces after and before object, but keep spaces inside it
 const art = {
     cursor: {
-        img: `+`
+        img: `+`,
     },
     textures: {
         logo: {
@@ -22941,7 +22941,7 @@ const art = {
     /_/                                                             
 `,
             w: 79,
-            h: 6
+            h: 6,
         },
         ship: {
             img: `<\\__   
@@ -22955,7 +22955,7 @@ const art = {
  ::::  
 ::`,
             w: 6,
-            h: 5
+            h: 5,
         },
         asteroids: [
             {
@@ -22973,7 +22973,7 @@ const art = {
 ::::: 
 ::::::
 ::::: 
- ::`
+ ::`,
             },
             {
                 m: 3,
@@ -22988,7 +22988,7 @@ const art = {
  ::: 
 :::::
  ::: 
-`
+`,
             },
             {
                 m: 10,
@@ -23005,7 +23005,7 @@ const art = {
 ::::::
  :::::
    :: 
-`
+`,
             },
             {
                 m: 10,
@@ -23024,7 +23024,7 @@ const art = {
 ::::::
 ::::: 
  :::  
-`
+`,
             },
             {
                 m: 8,
@@ -23041,7 +23041,7 @@ const art = {
 :::::
 :::: 
  ::  
-`
+`,
             },
             {
                 m: 8,
@@ -23058,7 +23058,7 @@ const art = {
 :::::
 :::::
  ::  
-`
+`,
             },
             {
                 m: 7,
@@ -23075,8 +23075,8 @@ const art = {
 :::::
 :::::
  ::::
-`
-            }
+`,
+            },
         ],
         ufo: {
             w: 10,
@@ -23090,11 +23090,11 @@ const art = {
   :::::  
 :::::::::
    :::   
-`
+`,
         },
         planets: [
             {
-                name: 'Mercury',
+                name: "Mercury",
                 img: `         _____         
      .-''     ''-.     
    .* '.  .'     '*.   
@@ -23126,10 +23126,10 @@ const art = {
      :::::::::::::     
 `,
                 w: 22,
-                h: 13
+                h: 13,
             },
             {
-                name: 'Venus',
+                name: "Venus",
                 img: `         _____         
      .-''     ''-.     
    .*        .   '*.   
@@ -23161,10 +23161,10 @@ const art = {
      :::::::::::::     
 `,
                 w: 22,
-                h: 13
+                h: 13,
             },
             {
-                name: 'Earth',
+                name: "Earth",
                 img: `         _____         
      .-'':    ''-.     
    .*  .'  ': ...'*.   
@@ -23196,10 +23196,10 @@ const art = {
      :::::::::::::     
 `,
                 w: 22,
-                h: 13
+                h: 13,
             },
             {
-                name: 'Mars',
+                name: "Mars",
                 w: 24,
                 h: 14,
                 img: `         __.-----.__         
@@ -23236,10 +23236,10 @@ const art = {
     :::::::::::::::::::::    
       :::::::::::::::::      
            :::::::           
-`
+`,
             },
             {
-                name: 'Jupiter',
+                name: "Jupiter",
                 w: 24,
                 h: 14,
                 img: `          _..---.._          
@@ -23278,10 +23278,10 @@ const art = {
     :::::::::::::::::::::    
       :::::::::::::::::      
           :::::::::          
-`
+`,
             },
             {
-                name: 'Saturn',
+                name: "Saturn",
                 img: `                               ..    
                             ..:''':, 
               __..----..__..:'     ::
@@ -23325,10 +23325,10 @@ const art = {
 :::::::::::::::::::::::::::::::      
     :::::::::::::::::::::::::        
                 ::::::::             
-`
+`,
             },
             {
-                name: 'Neptune',
+                name: "Neptune",
                 w: 28,
                 h: 17,
                 img: `         __-------__         
@@ -23368,10 +23368,10 @@ const art = {
     :::::::::::::::::::::    
        :::::::::::::::       
            :::::::           
-`
+`,
             },
             {
-                name: 'Amagos star',
+                name: "Amagos star",
                 w: 14,
                 h: 7,
                 img: `      ,
@@ -23423,7 +23423,7 @@ _ _\\#####/_ _
   ::::::::::::::::::  
    ::::::::::::::::   
      ::::::::::::     
-`
+`,
             },
             {
                 img: `.                     
@@ -23445,7 +23445,7 @@ _ _\\#####/_ _
           . *  ..  .  
                    .  
                      .
-`
+`,
             },
             {
                 img: `            .              
@@ -23536,29 +23536,86 @@ _ _\\#####/_ _
                                                                                               '            ...   
                                                                                                                 .
 `,
-            }
-        ]
+            },
+        ],
     },
     animations: {
         particle: {
-            sprites: [
-                '#', '%', '#', '+', '-', '+', '.', '`'
-            ]
+            sprites: ["#", "%", "#", "+", "-", "+", ".", "`"],
         },
         smallParticle: {
-            sprites: [
-                '=', '-', '+', '-', '·'
-            ]
+            sprites: ["=", "-", "+", "-", "·"],
         },
         fire: {
-            sprites: [
-                '#', '%', ')', '(', '|', '(', ':', `'`, '`'
-            ]
+            sprites: ["#", "%", ")", "(", "|", "(", ":", `'`, "`"],
         },
         letters: {
-            sprites: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
-        }
-    }
+            sprites: [
+                "A",
+                "B",
+                "C",
+                "D",
+                "E",
+                "F",
+                "G",
+                "H",
+                "I",
+                "J",
+                "K",
+                "L",
+                "M",
+                "N",
+                "O",
+                "P",
+                "Q",
+                "R",
+                "S",
+                "T",
+                "U",
+                "V",
+                "W",
+                "X",
+                "Y",
+                "Z",
+                "a",
+                "b",
+                "c",
+                "d",
+                "e",
+                "f",
+                "g",
+                "h",
+                "i",
+                "j",
+                "k",
+                "l",
+                "m",
+                "n",
+                "o",
+                "p",
+                "q",
+                "r",
+                "s",
+                "t",
+                "u",
+                "v",
+                "w",
+                "x",
+                "y",
+                "z",
+                "0",
+                "1",
+                "2",
+                "3",
+                "4",
+                "5",
+                "6",
+                "7",
+                "8",
+                "9",
+            ],
+        },
+    },
 };
 /*
          _____
@@ -23575,7 +23632,7 @@ _ _\\#####/_ _
   \                 /
    *,             ,*
      '-:._____:--'
-*/ 
+*/
 
 
 /***/ }),
@@ -23608,7 +23665,7 @@ const animations = {
     animate: function (animation, x, y, xVel = 0, yVel = 0, options = {
         tickSpeed: 5,
         moveSpeed: 1,
-        loop: false
+        loop: false,
     }) {
         return __awaiter(this, void 0, void 0, function* () {
             let { tickSpeed, moveSpeed, loop } = options || {};
@@ -23645,7 +23702,10 @@ const animations = {
             if (loop && animation.stage >= animation.sprites.length) {
                 animation.stage = 0;
             }
-            if (animation.x > window.w || animation.x < 0 || animation.y > window.h || animation.y < 0) {
+            if (animation.x > window.w ||
+                animation.x < 0 ||
+                animation.y > window.h ||
+                animation.y < 0) {
                 activeAnimations.splice(id, 1);
             }
             if (animation.stage >= animation.sprites.length) {
@@ -23657,7 +23717,7 @@ const animations = {
         });
     },
     move: function () {
-        activeAnimations.map(animation => {
+        activeAnimations.map((animation) => {
             const { xVel, yVel, moveSpeed } = animation;
             animation.x += xVel / moveSpeed;
             animation.y += yVel / moveSpeed;
@@ -23666,10 +23726,10 @@ const animations = {
     },
     render: function () {
         this.amount = activeAnimations.length;
-        activeAnimations.forEach(animation => {
+        activeAnimations.forEach((animation) => {
             _renderer__WEBPACK_IMPORTED_MODULE_0__.renderer.drawObject(animation.sprites[animation.stage], animation.x, animation.y);
         });
-    }
+    },
 };
 
 
@@ -23709,7 +23769,8 @@ const colisions = {
             rectangle1.h + rectangle1.y >= rectangle2.y);
     },
     distance: function (point1, point2) {
-        return Math.sqrt((point1.x - point2.x) * (point1.x - point2.x) + (point1.y - point2.y) * (point1.y - point2.y));
+        return Math.sqrt((point1.x - point2.x) * (point1.x - point2.x) +
+            (point1.y - point2.y) * (point1.y - point2.y));
     },
     addRectangleColision: function (object, onColision) {
         const { w, h, x, y, name } = object;
@@ -23720,16 +23781,16 @@ const colisions = {
             w: w,
             h: h,
             x: x,
-            y: y
+            y: y,
         });
     },
     check: function () {
         window.colisionObjects = objects.length;
-        objects.forEach(object1 => {
+        objects.forEach((object1) => {
             if (window.showColisionBoxes) {
-                lib_shapes__WEBPACK_IMPORTED_MODULE_0__.shapes.rectangle('#', object1.x, object1.y, object1.x + object1.w, object1.y + object1.h - 1);
+                lib_shapes__WEBPACK_IMPORTED_MODULE_0__.shapes.rectangle("#", object1.x, object1.y, object1.x + object1.w, object1.y + object1.h - 1);
             }
-            objects.forEach(object2 => {
+            objects.forEach((object2) => {
                 if (object1 !== object2) {
                     if (this.checkRectanglesColision(object1, object2)) {
                         object1.onColision(object2.object);
@@ -23739,7 +23800,7 @@ const colisions = {
             });
         });
         objects = [];
-    }
+    },
 };
 
 
@@ -23789,12 +23850,12 @@ const gamepad = {
                     right: gamepads[id].buttons[15].pressed,
                     ps: gamepads[id].buttons[16].pressed,
                     touchpad: gamepads[id].buttons[17].pressed,
-                }
+                },
             };
             return buttons;
         }
         return null;
-    }
+    },
 };
 
 
@@ -23814,7 +23875,7 @@ let pressedKeys = {};
 let newKeys = {};
 const kb = {
     init: function () {
-        window.addEventListener('keydown', (e) => {
+        window.addEventListener("keydown", (e) => {
             pressedKeys[e.key] = {
                 pressed: true,
                 alt: e.altKey,
@@ -23826,7 +23887,7 @@ const kb = {
                 ctrl: e.ctrlKey,
             };
         });
-        window.addEventListener('keyup', (e) => {
+        window.addEventListener("keyup", (e) => {
             delete pressedKeys[e.key];
         });
     },
@@ -23835,9 +23896,9 @@ const kb = {
         newKeys = {};
         return {
             down: pressedKeys,
-            new: temp // strangely timed key info. Example: k *delay* kkkkkkk. Good for UI
+            new: temp, // strangely timed key info. Example: k *delay* kkkkkkk. Good for UI
         };
-    }
+    },
 };
 
 
@@ -23870,14 +23931,14 @@ const logger = {
         this.checkForExistance(name);
         let total = 0;
         let amount = logs[name].length;
-        logs[name].forEach(log => {
+        logs[name].forEach((log) => {
             total += log;
         });
         if (isConsoleLog)
             console.log(`${name}: ${total / amount}(${amount})`);
         logs[name] = [];
         return total / amount;
-    }
+    },
 };
 
 
@@ -23905,7 +23966,7 @@ let isNewClick = false;
 let isMouseDown = false;
 let scroll = 0;
 const mouse = {
-    showCursor: function (cursor = '+') {
+    showCursor: function (cursor = "+") {
         _renderer__WEBPACK_IMPORTED_MODULE_0__.renderer.drawObject(cursor, xReal, yReal);
     },
     info: function () {
@@ -23913,11 +23974,13 @@ const mouse = {
         if (isNewClick) {
             isNewClick = false;
         }
-        const click = isNew ? {
-            x: Math.floor(clickX / (window.fsize * 0.66)),
-            y: Math.floor(clickY / (window.fsize * 1.22)),
-            new: isNew
-        } : null;
+        const click = isNew
+            ? {
+                x: Math.floor(clickX / (window.fsize * 0.66)),
+                y: Math.floor(clickY / (window.fsize * 1.22)),
+                new: isNew,
+            }
+            : null;
         const tempScroll = scroll;
         scroll = 0;
         return {
@@ -23925,7 +23988,7 @@ const mouse = {
             y: yReal,
             down: isMouseDown,
             click: click,
-            scroll: tempScroll
+            scroll: tempScroll,
         };
     },
     tick: function (event) {
@@ -23951,12 +24014,12 @@ const mouse = {
         scroll = e.deltaY > 0 ? 1 : -1;
     },
     init: function () {
-        window.addEventListener('mousemove', this.tick);
-        window.addEventListener('click', this.click);
-        window.addEventListener('mousedown', this.onMouseDown);
-        window.addEventListener('mouseup', this.onMouseUp);
-        window.addEventListener('wheel', this.wheel);
-    }
+        window.addEventListener("mousemove", this.tick);
+        window.addEventListener("click", this.click);
+        window.addEventListener("mousedown", this.onMouseDown);
+        window.addEventListener("mouseup", this.onMouseUp);
+        window.addEventListener("wheel", this.wheel);
+    },
 };
 
 
@@ -24039,15 +24102,15 @@ const shapes = {
         let xlast = x;
         let ylast = y;
         for (var angle = 0; angle <= 720; angle++) {
-            let X = Math.floor(x + (a * Math.cos(angle * 2 * (Math.PI / 720))) + 0.5);
-            let Y = Math.floor(y + (b * Math.sin(angle * 2 * (Math.PI / 720))) + 0.5);
+            let X = Math.floor(x + a * Math.cos(angle * 2 * (Math.PI / 720)) + 0.5);
+            let Y = Math.floor(y + b * Math.sin(angle * 2 * (Math.PI / 720)) + 0.5);
             if (xlast != X || ylast != Y) {
                 xlast = X;
                 ylast = Y;
             }
             _renderer__WEBPACK_IMPORTED_MODULE_0__.renderer.drawSymbol(symbol, X, Y);
         }
-    }
+    },
 };
 
 
@@ -24083,16 +24146,17 @@ const ui = {
         const xEnd = x + content.length + 1;
         const yEnd = y + 2;
         const isHovered = this.checkHover(content, x, y, pointer);
-        const isClicked = pointer.click && (0,_util__WEBPACK_IMPORTED_MODULE_2__.checkIfPointInRectangle)(pointer.click.x, pointer.click.y, x, y, xEnd, yEnd);
+        const isClicked = pointer.click &&
+            (0,_util__WEBPACK_IMPORTED_MODULE_2__.checkIfPointInRectangle)(pointer.click.x, pointer.click.y, x, y, xEnd, yEnd);
         if (isClicked && !disabled) {
             onClick();
         }
         // rendering button
-        if (style === 'underlined')
-            _shapes__WEBPACK_IMPORTED_MODULE_0__.shapes.line('-', x, yEnd, xEnd, yEnd);
+        if (style === "underlined")
+            _shapes__WEBPACK_IMPORTED_MODULE_0__.shapes.line("-", x, yEnd, xEnd, yEnd);
         if (isHovered && !disabled) {
             _renderer__WEBPACK_IMPORTED_MODULE_1__.renderer.drawObject(content.toUpperCase(), x + 1, y + 1);
-            _shapes__WEBPACK_IMPORTED_MODULE_0__.shapes.line('=', x, yEnd, xEnd, yEnd);
+            _shapes__WEBPACK_IMPORTED_MODULE_0__.shapes.line("=", x, yEnd, xEnd, yEnd);
         }
         else {
             _renderer__WEBPACK_IMPORTED_MODULE_1__.renderer.drawObject(content, x + 1, y + 1);
@@ -24101,9 +24165,9 @@ const ui = {
     buttonRow: function (buttons, x, y, pointer) {
         let x_ = x;
         let y_ = y;
-        buttons.forEach(button => {
-            if (button.content === 'split_') {
-                _renderer__WEBPACK_IMPORTED_MODULE_1__.renderer.drawObject(':\n:\n:', x_, y_);
+        buttons.forEach((button) => {
+            if (button.content === "split_") {
+                _renderer__WEBPACK_IMPORTED_MODULE_1__.renderer.drawObject(":\n:\n:", x_, y_);
                 x_ += 2;
             }
             else {
@@ -24115,7 +24179,7 @@ const ui = {
     buttonColumn: function (buttons, x, y, pointer) {
         let x_ = x;
         let y_ = y;
-        buttons.forEach(button => {
+        buttons.forEach((button) => {
             this.button(Object.assign({}, button));
             y_ += 3;
         });
@@ -24126,11 +24190,11 @@ const ui = {
         onOpen !== null && onOpen !== void 0 ? onOpen : (onOpen = () => { });
         onClose !== null && onClose !== void 0 ? onClose : (onClose = () => { });
         if (opened[name]) {
-            _shapes__WEBPACK_IMPORTED_MODULE_0__.shapes.line(':', x, y, x, y + options.length * 2);
-            _renderer__WEBPACK_IMPORTED_MODULE_1__.renderer.drawObject('+ ' + name, x, y);
+            _shapes__WEBPACK_IMPORTED_MODULE_0__.shapes.line(":", x, y, x, y + options.length * 2);
+            _renderer__WEBPACK_IMPORTED_MODULE_1__.renderer.drawObject("+ " + name, x, y);
         }
         else {
-            _renderer__WEBPACK_IMPORTED_MODULE_1__.renderer.drawObject('- ' + name, x, y);
+            _renderer__WEBPACK_IMPORTED_MODULE_1__.renderer.drawObject("- " + name, x, y);
         }
         let maxWidth = 0;
         options.forEach((option) => {
@@ -24143,12 +24207,12 @@ const ui = {
                 let x_ = x + 2;
                 let y_ = y + 2 + i * 2;
                 if (option.split) {
-                    _renderer__WEBPACK_IMPORTED_MODULE_1__.renderer.drawObject('=' + (0,_util__WEBPACK_IMPORTED_MODULE_2__.repeatSymbol)('-', maxWidth + 1), x, y + 2 + i * 2);
+                    _renderer__WEBPACK_IMPORTED_MODULE_1__.renderer.drawObject("=" + (0,_util__WEBPACK_IMPORTED_MODULE_2__.repeatSymbol)("-", maxWidth + 1), x, y + 2 + i * 2);
                 }
                 else {
                     _renderer__WEBPACK_IMPORTED_MODULE_1__.renderer.drawObject(option.content, x + 2, y + 2 + i * 2);
                     if ((0,_util__WEBPACK_IMPORTED_MODULE_2__.checkIfPointInRectangle)(pointer.x, pointer.y, x_, y_, x_ + option.content.length, y_ + 1)) {
-                        _renderer__WEBPACK_IMPORTED_MODULE_1__.renderer.drawObject('+>', x_ - 2, y_);
+                        _renderer__WEBPACK_IMPORTED_MODULE_1__.renderer.drawObject("+>", x_ - 2, y_);
                         if (pointer.click) {
                             opened[name] = false;
                             option.onClick();
@@ -24161,7 +24225,6 @@ const ui = {
         if (pointer.click) {
             if ((0,_util__WEBPACK_IMPORTED_MODULE_2__.checkIfPointInRectangle)(pointer.x, pointer.y, x, y, x + name.length + 2, y)) {
                 onOpen();
-                // console.log('first')
                 opened[name] = !opened[name];
             }
             else if (opened[name]) {
@@ -24171,9 +24234,9 @@ const ui = {
         }
         return {
             width: totalX,
-            height: totalY
+            height: totalY,
         };
-    }
+    },
 };
 
 
@@ -24189,7 +24252,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "pages": () => (/* binding */ pages)
 /* harmony export */ });
-/* harmony import */ var pages_game__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! pages/game */ "./src/pages/game.js");
+/* harmony import */ var pages_game__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! pages/game */ "./src/pages/game.ts");
 /* harmony import */ var pages_mainMenu__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! pages/mainMenu */ "./src/pages/mainMenu.js");
 /* harmony import */ var utilityPages_viewAnimations__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! utilityPages/viewAnimations */ "./src/utilityPages/viewAnimations.js");
 /* harmony import */ var utilityPages_viewAssets__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! utilityPages/viewAssets */ "./src/utilityPages/viewAssets.js");
@@ -24202,31 +24265,253 @@ __webpack_require__.r(__webpack_exports__);
 const fps = 144;
 const pages = [
     {
-        name: 'mainMenu',
+        name: "mainMenu",
         func: pages_mainMenu__WEBPACK_IMPORTED_MODULE_1__.mainMenu,
         fps: fps,
-        init: pages_mainMenu__WEBPACK_IMPORTED_MODULE_1__.initMainMenu
+        init: pages_mainMenu__WEBPACK_IMPORTED_MODULE_1__.initMainMenu,
     },
     {
-        name: 'game',
+        name: "game",
         func: pages_game__WEBPACK_IMPORTED_MODULE_0__.game,
         fps: fps,
-        init: pages_game__WEBPACK_IMPORTED_MODULE_0__.initGame
+        init: pages_game__WEBPACK_IMPORTED_MODULE_0__.initGame,
     },
     /// utility pages
     {
-        name: 'utility-asset-viewer',
+        name: "utility-asset-viewer",
         func: utilityPages_viewAssets__WEBPACK_IMPORTED_MODULE_3__.assetsViewer,
         fps: fps,
-        init: () => { (0,utilityPages_viewAssets__WEBPACK_IMPORTED_MODULE_3__.initAssetsViewer)(); }
+        init: () => {
+            (0,utilityPages_viewAssets__WEBPACK_IMPORTED_MODULE_3__.initAssetsViewer)();
+        },
     },
     {
-        name: 'utility-animation-viewer',
-        func: () => { (0,utilityPages_viewAnimations__WEBPACK_IMPORTED_MODULE_2__.animationViewer)(); },
+        name: "utility-animation-viewer",
+        func: () => {
+            (0,utilityPages_viewAnimations__WEBPACK_IMPORTED_MODULE_2__.animationViewer)();
+        },
         fps: fps,
-        init: () => { (0,utilityPages_viewAnimations__WEBPACK_IMPORTED_MODULE_2__.initAnimationViewer)(); }
-    }
+        init: () => {
+            (0,utilityPages_viewAnimations__WEBPACK_IMPORTED_MODULE_2__.initAnimationViewer)();
+        },
+    },
 ];
+
+
+/***/ }),
+
+/***/ "./src/pages/game.ts":
+/*!***************************!*\
+  !*** ./src/pages/game.ts ***!
+  \***************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "game": () => (/* binding */ game),
+/* harmony export */   "initGame": () => (/* binding */ initGame)
+/* harmony export */ });
+/* harmony import */ var _lib_animations__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../lib/animations */ "./src/lib/animations.ts");
+/* harmony import */ var _lib_keyboard__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../lib/keyboard */ "./src/lib/keyboard.ts");
+/* harmony import */ var _lib_mouse__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../lib/mouse */ "./src/lib/mouse.ts");
+/* harmony import */ var _lib_util__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../lib/util */ "./src/lib/util.js");
+/* harmony import */ var _lib_colisions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../lib/colisions */ "./src/lib/colisions.ts");
+/* harmony import */ var _objects_player__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../objects/player */ "./src/objects/player.js");
+/* harmony import */ var _objects_asteroid__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../objects/asteroid */ "./src/objects/asteroid.js");
+/* harmony import */ var _objects_particle__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../objects/particle */ "./src/objects/particle.js");
+/* harmony import */ var _renderer__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../renderer */ "./src/renderer.ts");
+/* harmony import */ var _objects_ufo__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../objects/ufo */ "./src/objects/ufo.js");
+/* harmony import */ var _lib_gamepad__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../lib/gamepad */ "./src/lib/gamepad.ts");
+/* harmony import */ var _objects_planet__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../objects/planet */ "./src/objects/planet.js");
+var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+
+
+
+
+
+
+
+
+
+
+
+
+window.formatedScores = "Loading scores";
+let isPaused = false;
+let asteroids = [];
+let particles = [];
+let enemies = [];
+let planets = [];
+let player;
+let str = "";
+let difficultyStart = 0.7;
+let difficulty = difficultyStart;
+let ufoSpawnCooldown = 6000;
+let planetSpawnCooldown = 1000;
+let asteroidBeltSpawnCooldown = 3000;
+let asteroidBeltSpawnCooldownMax = 15000;
+let asteroidBeltCooldown = 0;
+let asteroidBeltCooldownMax = 3000;
+function initGame() {
+    player = new _objects_player__WEBPACK_IMPORTED_MODULE_5__.Player(window.w / 3, window.h / 2);
+}
+function game() {
+    return __awaiter(this, void 0, void 0, function* () {
+        const pointer = _lib_mouse__WEBPACK_IMPORTED_MODULE_2__.mouse.info();
+        const keyboard = _lib_keyboard__WEBPACK_IMPORTED_MODULE_1__.kb.info();
+        let pad = _lib_gamepad__WEBPACK_IMPORTED_MODULE_10__.gamepad.info();
+        if (Object.keys(keyboard.down).length) {
+            pad = null;
+        }
+        if (!isPaused) {
+            if (asteroidBeltSpawnCooldown > 0) {
+                asteroidBeltSpawnCooldown -= 1;
+            }
+            else {
+                asteroidBeltCooldown = asteroidBeltCooldownMax;
+                asteroidBeltSpawnCooldown = asteroidBeltSpawnCooldownMax;
+            }
+            if (asteroidBeltCooldown > 0) {
+                asteroidBeltCooldown -= 1;
+            }
+            if (ufoSpawnCooldown > 0) {
+                ufoSpawnCooldown -= 1;
+            }
+            if (planetSpawnCooldown > 0) {
+                planetSpawnCooldown -= 1;
+            }
+            else {
+                planets.push(new _objects_planet__WEBPACK_IMPORTED_MODULE_11__.Planet(window.w, "auto"));
+                planetSpawnCooldown = 60000;
+            }
+            if (difficulty <= 1.4) {
+                difficulty += 0.00004;
+            }
+        }
+        particles.forEach((particle, i) => {
+            if (!isPaused) {
+                particle.setDeleter(() => {
+                    particles.splice(i, 1);
+                });
+                particle.tick();
+            }
+            particle.draw();
+        });
+        planets.forEach((planet, i) => {
+            if (!isPaused) {
+                planet.setDeleter(() => {
+                    planets.splice(i, 1);
+                    planetSpawnCooldown = 6000;
+                });
+                planet.tick();
+            }
+            planet.draw();
+        });
+        asteroids.forEach((asteroid, i) => {
+            if (!isPaused) {
+                asteroid.setDeleter(() => {
+                    asteroids.splice(i, 1);
+                });
+                asteroid.tick();
+            }
+            asteroid.draw();
+        });
+        if (!isPaused) {
+            if (window.clock % Math.floor(201 / difficulty) == 0) {
+                asteroids.push(new _objects_asteroid__WEBPACK_IMPORTED_MODULE_6__.Asteroid(window.w, (0,_lib_util__WEBPACK_IMPORTED_MODULE_3__.randomInRange)(0, window.h - 6), (0,_lib_util__WEBPACK_IMPORTED_MODULE_3__.randomInRangeFloat)(-0.5, -0.2) * difficulty, 0));
+            }
+            if (asteroidBeltCooldown) {
+                if ((window.clock % Math.floor(201 / difficulty)) - 100 == 0) {
+                    asteroids.push(new _objects_asteroid__WEBPACK_IMPORTED_MODULE_6__.Asteroid(window.w, (0,_lib_util__WEBPACK_IMPORTED_MODULE_3__.randomInRange)(0, window.h - 6), (0,_lib_util__WEBPACK_IMPORTED_MODULE_3__.randomInRangeFloat)(-0.5, -0.2) * difficulty, 0));
+                    asteroids.push(new _objects_asteroid__WEBPACK_IMPORTED_MODULE_6__.Asteroid(window.w, (0,_lib_util__WEBPACK_IMPORTED_MODULE_3__.randomInRange)(0, window.h - 6), (0,_lib_util__WEBPACK_IMPORTED_MODULE_3__.randomInRangeFloat)(-0.5, -0.2) * difficulty, 0));
+                }
+            }
+        }
+        enemies.forEach((enemy, i) => {
+            if (!isPaused) {
+                enemy.setDeleter(() => {
+                    enemies.splice(i, 1);
+                    ufoSpawnCooldown = 8000;
+                });
+                enemy.tick(player);
+            }
+            enemy.draw();
+        });
+        if (!ufoSpawnCooldown && !enemies.length) {
+            enemies.push(new _objects_ufo__WEBPACK_IMPORTED_MODULE_9__.Ufo(window.w, (0,_lib_util__WEBPACK_IMPORTED_MODULE_3__.randomInRange)(0, window.h)));
+        }
+        if (!isPaused) {
+            if (window.clock % 40 == 0) {
+                const particle = new _objects_particle__WEBPACK_IMPORTED_MODULE_7__.Particle(window.w, (0,_lib_util__WEBPACK_IMPORTED_MODULE_3__.randomInRange)(0, window.h), (0,_lib_util__WEBPACK_IMPORTED_MODULE_3__.randomInRangeFloat)(-0.4, -0.2) * difficulty, 0);
+                particle.setDeleter(() => {
+                    // deleter
+                });
+                particles.push(particle);
+            }
+            if ((window.clock % 40) - 20 == 0) {
+                const particle = new _objects_particle__WEBPACK_IMPORTED_MODULE_7__.Particle(window.w, (0,_lib_util__WEBPACK_IMPORTED_MODULE_3__.randomInRange)(0, window.h), (0,_lib_util__WEBPACK_IMPORTED_MODULE_3__.randomInRangeFloat)(-0.7, -0.4) * difficulty, 0);
+                particle.setDeleter(() => {
+                    // deleter
+                });
+                particles.push(particle);
+            }
+            player.tick(pointer, keyboard, pad);
+        }
+        player.draw(isPaused);
+        if (player.dead) {
+            str = "You died!";
+            _renderer__WEBPACK_IMPORTED_MODULE_8__.renderer.drawObject(`${str}`, window.w / 2 - str.length / 2, window.h / 2 - 2);
+            str = `Score: ${player.score}`;
+            _renderer__WEBPACK_IMPORTED_MODULE_8__.renderer.drawObject(`${str}`, window.w / 2 - str.length / 2, window.h / 2);
+            str = "Press Enter to respawn";
+            if (pad) {
+                str = "Press triangle to respawn";
+            }
+            _renderer__WEBPACK_IMPORTED_MODULE_8__.renderer.drawObject(`${str}`, window.w / 2 - str.length / 2, window.h / 2 + 2);
+            if (keyboard.new["Enter"] || (pad === null || pad === void 0 ? void 0 : pad.buttons.triangle)) {
+                player = new _objects_player__WEBPACK_IMPORTED_MODULE_5__.Player(window.w / 3, window.h / 2);
+                difficulty = difficultyStart;
+            }
+            _renderer__WEBPACK_IMPORTED_MODULE_8__.renderer.drawObject(window.formatedScores, 10, 10);
+        }
+        else {
+            if (keyboard.new["Escape"]) {
+                // todo: add option button from controller
+                isPaused = !isPaused;
+            }
+            str = `${player.score}`;
+            _renderer__WEBPACK_IMPORTED_MODULE_8__.renderer.drawObject(`${str}`, window.w / 2 - str.length / 2, window.h - 3);
+        }
+        if (isPaused) {
+            str = `Game is paused`;
+            _renderer__WEBPACK_IMPORTED_MODULE_8__.renderer.drawObject(`${str}`, window.w / 2 - str.length / 2, window.h / 2 - 1);
+            str = `Press escape to unpause`;
+            _renderer__WEBPACK_IMPORTED_MODULE_8__.renderer.drawObject(`${str}`, window.w / 2 - str.length / 2, window.h / 2 + 1);
+        }
+        if (asteroidBeltCooldown) {
+            str = "Asteroid cluster detected!";
+            _renderer__WEBPACK_IMPORTED_MODULE_8__.renderer.drawObject(str, window.w / 2 - str.length / 2, window.h - 1);
+        }
+        tick();
+        _lib_mouse__WEBPACK_IMPORTED_MODULE_2__.mouse.showCursor();
+    });
+}
+function tick() {
+    _lib_colisions__WEBPACK_IMPORTED_MODULE_4__.colisions.check();
+    if (!isPaused) {
+        _lib_animations__WEBPACK_IMPORTED_MODULE_0__.animations.move();
+        _lib_animations__WEBPACK_IMPORTED_MODULE_0__.animations.tick();
+    }
+    _lib_animations__WEBPACK_IMPORTED_MODULE_0__.animations.render();
+}
 
 
 /***/ }),
@@ -24255,7 +24540,9 @@ var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _argume
 
 window.fsize = 10;
 window.clock = 0;
-let screen = Array(window.w).fill(' ').map(() => Array(window.h));
+let screen = Array(window.w)
+    .fill(" ")
+    .map(() => Array(window.h));
 const asciiMap = {
     putSymbol: function (char, x, y) {
         if (x >= 0 && x < window.w && y >= 0 && y < window.h && screen) {
@@ -24266,7 +24553,9 @@ const asciiMap = {
         return screen[y][x];
     },
     init: function () {
-        screen = Array(window.w).fill(null).map(() => Array(window.h));
+        screen = Array(window.w)
+            .fill(null)
+            .map(() => Array(window.h));
     },
 };
 const renderer = {
@@ -24279,7 +24568,7 @@ const renderer = {
         x = Math.floor(x);
         y = Math.floor(y);
         if (!symbol) {
-            throw 'Object to draw is not defined';
+            throw "Object to draw is not defined";
         }
         if (x == undefined) {
             throw `X is not defined(${symbol})`;
@@ -24292,7 +24581,7 @@ const renderer = {
     drawObject: function (object, x, y) {
         return __awaiter(this, void 0, void 0, function* () {
             if (!object) {
-                throw 'Object to draw is not defined';
+                throw "Object to draw is not defined";
             }
             if (x == undefined) {
                 throw `X is not defined(${object})`;
@@ -24305,7 +24594,7 @@ const renderer = {
             x = Math.floor(x);
             y = Math.floor(y);
             for (let i = 0; i < object.length; i++) {
-                if (object.charAt(i) != '\n') {
+                if (object.charAt(i) != "\n") {
                     asciiMap.putSymbol(object.charAt(i), x + _x, y + _y);
                     _x++;
                 }
@@ -24327,8 +24616,8 @@ const renderer = {
             for (let i = 0; i < img.length; i++) {
                 if (!transperencyMap) {
                     // legacy support
-                    if (img.charAt(i) !== '\n') {
-                        if (img.charAt(i) !== ' ') {
+                    if (img.charAt(i) !== "\n") {
+                        if (img.charAt(i) !== " ") {
                             asciiMap.putSymbol(img.charAt(i), x + _x, y + _y);
                             // asciiMap.putSymbol('$', x + _x, y + _y)
                         }
@@ -24341,11 +24630,11 @@ const renderer = {
                 }
                 else {
                     // transperency map found
-                    if (img.charAt(i) !== '\n') {
-                        if (transperencyMap.charAt(i) !== ' ') {
+                    if (img.charAt(i) !== "\n") {
+                        if (transperencyMap.charAt(i) !== " ") {
                             asciiMap.putSymbol(img.charAt(i), x + _x, y + _y);
                             if (window.renderer.showTransperencyOverlays) {
-                                asciiMap.putSymbol(':', x + _x, y + _y);
+                                asciiMap.putSymbol(":", x + _x, y + _y);
                             }
                         }
                         _x += 1;
@@ -24358,7 +24647,7 @@ const renderer = {
             }
             if (!transperencyMap && window.showUndefinedTransperencyMapWarning) {
                 console.warn(`No transperency map found for ${object.img}`);
-                this.drawObject('transperency map\nnot found\n<--for this object', x + 10, y - 1);
+                this.drawObject("transperency map\nnot found\n<--for this object", x + 10, y - 1);
             }
         });
     },
@@ -24370,36 +24659,38 @@ const renderer = {
     render: function () {
         return __awaiter(this, void 0, void 0, function* () {
             if (window.renderer.showPerformance) {
-                this.drawObject(`Page ${window.page}.js h=${window.h} w=${window.w}, \nFrame render time = ${window.frt.toFixed(2)} ms${(1000 / window.frt).toFixed(2)}, logic time = ${window.logic.toFixed(2)}, (${(window.logic / window.frt * 100).toFixed(2)}%)
-Active animations:${window.activeAnimations}, objects: ${window.objects}, colision obj: ${window.colisionObjects}`, 5, 5);
+                const message = `Page ${window.page}.js h=${window.h} w=${window.w}, \nFrame render time = ${window.frt.toFixed(2)} ms${(1000 / window.frt).toFixed(2)}, logic time = ${window.logic.toFixed(2)}, (${((window.logic / window.frt) *
+                    100).toFixed(2)}%)
+Active animations:${window.activeAnimations}, objects: ${window.objects}, colision obj: ${window.colisionObjects}`;
+                this.drawObject(message, 5, 5);
             }
             const start = performance.now();
             window.clock += 1;
             if (window.clock === 1001) {
                 window.clock = 0;
             }
-            let res = '';
+            let res = "";
             for (let y = 0; y < window.h; y += 1) {
                 for (let x = 0; x < window.w; x += 1) {
                     const symbol = asciiMap.getSymbol(x, y);
                     if (symbol)
                         res += symbol;
                     else
-                        res += ' ';
+                        res += " ";
                 }
-                res += '\n';
+                res += "\n";
             }
             this.put(res);
             this.clear();
             const end = performance.now();
-            _lib_logger__WEBPACK_IMPORTED_MODULE_0__.logger.log('render', end - start);
+            _lib_logger__WEBPACK_IMPORTED_MODULE_0__.logger.log("render", end - start);
             if (window.clock % 200 == 0) {
                 if (window.showPerformanceLogs) {
-                    console.log(_lib_logger__WEBPACK_IMPORTED_MODULE_0__.logger.getLog('render'));
+                    console.log(_lib_logger__WEBPACK_IMPORTED_MODULE_0__.logger.getLog("render"));
                 }
             }
         });
-    }
+    },
 };
 
 
@@ -24422,12 +24713,12 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const firebaseConfig = {
-    apiKey: "AIzaSyDSizzeaFa-gmS-gkkjW-k6MwLQPhsRiSM",
-    authDomain: "space-adventure-js.firebaseapp.com",
-    projectId: "space-adventure-js",
-    storageBucket: "space-adventure-js.appspot.com",
-    messagingSenderId: "MISSING_ENV_VAR".MESSAGING_SENDER_ID,
-    appId: "1:844833013830:web:6cc56c88e74e8070f54a47",
+	apiKey: "AIzaSyDSizzeaFa-gmS-gkkjW-k6MwLQPhsRiSM",
+	authDomain: "space-adventure-js.firebaseapp.com",
+	projectId: "space-adventure-js",
+	storageBucket: "space-adventure-js.appspot.com",
+	messagingSenderId: "MISSING_ENV_VAR".MESSAGING_SENDER_ID,
+	appId: "1:844833013830:web:6cc56c88e74e8070f54a47",
 }
 
 const app = (0,firebase_app__WEBPACK_IMPORTED_MODULE_0__.initializeApp)(firebaseConfig)
@@ -24453,62 +24744,76 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
 async function getScores() {
-    const scoresSnapshot = await (0,firebase_firestore__WEBPACK_IMPORTED_MODULE_1__.getDocs)((0,firebase_firestore__WEBPACK_IMPORTED_MODULE_1__.collection)(_firebase_js__WEBPACK_IMPORTED_MODULE_0__.db, 'scores'))
-    const scores = scoresSnapshot.docs.map(doc => doc.data())
+	const scoresSnapshot = await (0,firebase_firestore__WEBPACK_IMPORTED_MODULE_1__.getDocs)((0,firebase_firestore__WEBPACK_IMPORTED_MODULE_1__.collection)(_firebase_js__WEBPACK_IMPORTED_MODULE_0__.db, "scores"))
+	const scores = scoresSnapshot.docs.map((doc) => doc.data())
 
-    return scores
+	return scores
 }
 
 async function submitScore(name, score) {
-    let now = new Date()
-    now = now.getTime()
+	let now = new Date()
+	now = now.getTime()
 
-    let previousResult = await (0,firebase_firestore__WEBPACK_IMPORTED_MODULE_1__.getDoc)((0,firebase_firestore__WEBPACK_IMPORTED_MODULE_1__.doc)(_firebase_js__WEBPACK_IMPORTED_MODULE_0__.db, 'scores', name))
-    previousResult = previousResult.data()
+	let previousResult = await (0,firebase_firestore__WEBPACK_IMPORTED_MODULE_1__.getDoc)((0,firebase_firestore__WEBPACK_IMPORTED_MODULE_1__.doc)(_firebase_js__WEBPACK_IMPORTED_MODULE_0__.db, "scores", name))
+	previousResult = previousResult.data()
 
-    if (!previousResult) {
-        await (0,firebase_firestore__WEBPACK_IMPORTED_MODULE_1__.setDoc)((0,firebase_firestore__WEBPACK_IMPORTED_MODULE_1__.doc)(_firebase_js__WEBPACK_IMPORTED_MODULE_0__.db, "scores", name), {
-            name: name,
-            score: score,
-            timestamp: now,
-            attempts: [{
-                score: score,
-                timestamp: now,
-            }]
-        })
-    } else {
-        // if highscore => update
-        if (previousResult.score < score) {
-            await (0,firebase_firestore__WEBPACK_IMPORTED_MODULE_1__.setDoc)((0,firebase_firestore__WEBPACK_IMPORTED_MODULE_1__.doc)(_firebase_js__WEBPACK_IMPORTED_MODULE_0__.db, "scores", name), {
-                name: name,
-                score: score,
-                timestamp: now,
-            }, { merge: true })
-        }
+	if (!previousResult) {
+		await (0,firebase_firestore__WEBPACK_IMPORTED_MODULE_1__.setDoc)((0,firebase_firestore__WEBPACK_IMPORTED_MODULE_1__.doc)(_firebase_js__WEBPACK_IMPORTED_MODULE_0__.db, "scores", name), {
+			name: name,
+			score: score,
+			timestamp: now,
+			attempts: [
+				{
+					score: score,
+					timestamp: now,
+				},
+			],
+		})
+	} else {
+		// if highscore => update highscore
+		if (previousResult.score < score) {
+			await (0,firebase_firestore__WEBPACK_IMPORTED_MODULE_1__.setDoc)(
+				(0,firebase_firestore__WEBPACK_IMPORTED_MODULE_1__.doc)(_firebase_js__WEBPACK_IMPORTED_MODULE_0__.db, "scores", name),
+				{
+					name: name,
+					score: score,
+					timestamp: now,
+				},
+				{ merge: true }
+			)
+		}
 
-        // add to history
-        await (0,firebase_firestore__WEBPACK_IMPORTED_MODULE_1__.setDoc)((0,firebase_firestore__WEBPACK_IMPORTED_MODULE_1__.doc)(_firebase_js__WEBPACK_IMPORTED_MODULE_0__.db, "scores", name), {
-            attempts: (0,firebase_firestore__WEBPACK_IMPORTED_MODULE_1__.arrayUnion)({
-                score: score,
-                timestamp: now
-            })
-        }, { merge: true })
-    }
+		// add to history
+		await (0,firebase_firestore__WEBPACK_IMPORTED_MODULE_1__.setDoc)(
+			(0,firebase_firestore__WEBPACK_IMPORTED_MODULE_1__.doc)(_firebase_js__WEBPACK_IMPORTED_MODULE_0__.db, "scores", name),
+			{
+				attempts: (0,firebase_firestore__WEBPACK_IMPORTED_MODULE_1__.arrayUnion)({
+					score: score,
+					timestamp: now,
+				}),
+			},
+			{ merge: true }
+		)
+	}
 }
 
 async function getBestScores(amount = 5) {
-    const q = (0,firebase_firestore__WEBPACK_IMPORTED_MODULE_1__.query)((0,firebase_firestore__WEBPACK_IMPORTED_MODULE_1__.collection)(_firebase_js__WEBPACK_IMPORTED_MODULE_0__.db, 'scores'), (0,firebase_firestore__WEBPACK_IMPORTED_MODULE_1__.orderBy)('score', 'desc'), (0,firebase_firestore__WEBPACK_IMPORTED_MODULE_1__.limit)(amount))
+	const q = (0,firebase_firestore__WEBPACK_IMPORTED_MODULE_1__.query)(
+		(0,firebase_firestore__WEBPACK_IMPORTED_MODULE_1__.collection)(_firebase_js__WEBPACK_IMPORTED_MODULE_0__.db, "scores"),
+		(0,firebase_firestore__WEBPACK_IMPORTED_MODULE_1__.orderBy)("score", "desc"),
+		(0,firebase_firestore__WEBPACK_IMPORTED_MODULE_1__.limit)(amount)
+	)
 
-    const result = await (0,firebase_firestore__WEBPACK_IMPORTED_MODULE_1__.getDocs)(q)
+	const result = await (0,firebase_firestore__WEBPACK_IMPORTED_MODULE_1__.getDocs)(q)
 
-    const scores = result.docs.map((doc) => {
-        return doc.data()
-    })
+	const scores = result.docs.map((doc) => {
+		return doc.data()
+	})
 
-    return scores
+	return scores
 }
+
 
 /***/ }),
 
@@ -24532,87 +24837,86 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "repeatSymbol": () => (/* binding */ repeatSymbol)
 /* harmony export */ });
 function center(width) {
-    return parseInt(window.w / 2 - width / 2)
+	return parseInt(window.w / 2 - width / 2)
 }
 
 function checkIfPointInRectangle(x, y, x1, y1, x2, y2) {
-    return (isBetween(x, x1, x2) && isBetween(y, y1, y2))
+	return isBetween(x, x1, x2) && isBetween(y, y1, y2)
 }
 
 function isBetween(a, min, max) {
-    return (Math.min(min, max) <= a && a <= Math.max(min, max))
+	return Math.min(min, max) <= a && a <= Math.max(min, max)
 }
 
 function cropImg(img, width, height) {
-    if (width === -1 || height === -1)
-        return img
+	if (width === -1 || height === -1) return img
 
-    let res = ''
-    let _y = 0;
-    let _x = 0;
-    for (let i = 0; i < img.length; i++) {
-        if (img.charAt(i) !== '\n') {
-            if (_y < height && _x < width)
-                res += img.charAt(i)
-            _x++
-        } else {
-            res += '\n'
-            _x = 0
-            _y++
-        }
-    }
-    return res
+	let res = ""
+	let _y = 0
+	let _x = 0
+	for (let i = 0; i < img.length; i++) {
+		if (img.charAt(i) !== "\n") {
+			if (_y < height && _x < width) res += img.charAt(i)
+			_x++
+		} else {
+			res += "\n"
+			_x = 0
+			_y++
+		}
+	}
+	return res
 }
 
 function randomInRange(start, end) {
-    return Math.floor(Math.random() * (end - start + 1) + start);
+	return Math.floor(Math.random() * (end - start + 1) + start)
 }
 
 function randomInRangeFloat(start, end) {
-    start *= 100
-    end *= 100
-    return Math.floor(Math.random() * (end - start + 1) + start) / 100;
+	start *= 100
+	end *= 100
+	return Math.floor(Math.random() * (end - start + 1) + start) / 100
 }
 
 function clamp(num, min, max) {
-    return Math.min(Math.max(num, min), max)
+	return Math.min(Math.max(num, min), max)
 }
 
 function repeatSymbol(symbol, n) {
-    let symbol_ = symbol
-    for (let index = 0; index < n - 1; index++) {
-        symbol += symbol_
-    }
+	let symbol_ = symbol
+	for (let index = 0; index < n - 1; index++) {
+		symbol += symbol_
+	}
 
-    return symbol
+	return symbol
 }
 
 function getDimensions(text) {
-    console.log(text)
-    let rows = text.split('\n')
-    console.log(rows)
+	console.log(text)
+	let rows = text.split("\n")
+	console.log(rows)
 
-    const height = rows.length
+	const height = rows.length
 
-    let width = 0
+	let width = 0
 
-    rows.forEach(row => {
-        if (row.length > width) {
-            width = row.length
-        }
-    })
+	rows.forEach((row) => {
+		if (row.length > width) {
+			width = row.length
+		}
+	})
 
-    console.log(height, width)
+	console.log(height, width)
 
-    return {
-        height: height,
-        width: width
-    }
+	return {
+		height: height,
+		width: width,
+	}
 }
 
 function numberWithCommas(x) {
-    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+	return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
 }
+
 
 /***/ }),
 
@@ -24638,152 +24942,182 @@ __webpack_require__.r(__webpack_exports__);
 
 
 class Asteroid {
-    constructor(x, y, xVelocity, yVelocity) {
-        this.name = 'asteroid'
-        this.x = x
-        this.y = y
+	constructor(x, y, xVelocity, yVelocity) {
+		this.name = "asteroid"
+		this.x = x
+		this.y = y
 
-        this.maxHp = 3
-        this.hp = this.maxHp
-        this.dead = false
+		this.maxHp = 3
+		this.hp = this.maxHp
+		this.dead = false
 
-        this.asteroidHitCooldown = 10
-        this.bulletHitCooldown = 10
+		this.asteroidHitCooldown = 10
+		this.bulletHitCooldown = 10
 
-        const randomAsteroid = (0,_lib_util__WEBPACK_IMPORTED_MODULE_1__.randomInRange)(0, _art__WEBPACK_IMPORTED_MODULE_2__.art.textures.asteroids.length - 1)
-        this.sprite = _art__WEBPACK_IMPORTED_MODULE_2__.art.textures.asteroids[randomAsteroid]
+		const randomAsteroid = (0,_lib_util__WEBPACK_IMPORTED_MODULE_1__.randomInRange)(
+			0,
+			_art__WEBPACK_IMPORTED_MODULE_2__.art.textures.asteroids.length - 1
+		)
+		this.sprite = _art__WEBPACK_IMPORTED_MODULE_2__.art.textures.asteroids[randomAsteroid]
 
-        this.w = this.sprite.w
-        this.h = this.sprite.h
-        this.m = this.sprite.m
-        // this.m = 3
+		this.w = this.sprite.w
+		this.h = this.sprite.h
+		this.m = this.sprite.m
+		// this.m = 3
 
-        this.xVelocity = xVelocity
-        this.yVelocity = yVelocity
+		this.xVelocity = xVelocity
+		this.yVelocity = yVelocity
 
-        this.deleter = () => { }
-    }
+		this.deleter = () => {}
+	}
 
-    setDeleter(deleter) {
-        this.deleter = () => {
+	setDeleter(deleter) {
+		this.deleter = () => {
+			for (let i = 0; i < 10; i += 1) {
+				_lib_animations__WEBPACK_IMPORTED_MODULE_3__.animations.animate(
+					_art__WEBPACK_IMPORTED_MODULE_2__.art.animations.particle,
+					this.x + (0,_lib_util__WEBPACK_IMPORTED_MODULE_1__.randomInRange)(0, this.w),
+					this.y + (0,_lib_util__WEBPACK_IMPORTED_MODULE_1__.randomInRange)(0, this.h),
+					this.xVelocity,
+					this.yVelocity,
+					{
+						tickSpeed: 10,
+						moveSpeed: 1,
+					}
+				)
+			}
 
-            for (let i = 0; i < 10; i += 1) {
-                _lib_animations__WEBPACK_IMPORTED_MODULE_3__.animations.animate(_art__WEBPACK_IMPORTED_MODULE_2__.art.animations.particle, this.x + (0,_lib_util__WEBPACK_IMPORTED_MODULE_1__.randomInRange)(0, this.w), this.y + (0,_lib_util__WEBPACK_IMPORTED_MODULE_1__.randomInRange)(0, this.h), this.xVelocity, this.yVelocity, {
-                    tickSpeed: 10,
-                    moveSpeed: 1,
-                })
-            }
+			for (let i = 0; i < 15; i += 1) {
+				_lib_animations__WEBPACK_IMPORTED_MODULE_3__.animations.animate(
+					_art__WEBPACK_IMPORTED_MODULE_2__.art.animations.particle,
+					this.x + (0,_lib_util__WEBPACK_IMPORTED_MODULE_1__.randomInRange)(0, this.w),
+					this.y + (0,_lib_util__WEBPACK_IMPORTED_MODULE_1__.randomInRange)(0, this.h),
+					(0,_lib_util__WEBPACK_IMPORTED_MODULE_1__.randomInRangeFloat)(-0.6, 0.6) + this.xVelocity,
+					(0,_lib_util__WEBPACK_IMPORTED_MODULE_1__.randomInRangeFloat)(-0.6, 0.6) + this.yVelocity,
+					{
+						moveSpeed: 10,
+						tickSpeed: 30,
+					}
+				)
+			}
 
-            for (let i = 0; i < 15; i += 1) {
-                _lib_animations__WEBPACK_IMPORTED_MODULE_3__.animations.animate(_art__WEBPACK_IMPORTED_MODULE_2__.art.animations.particle,
-                    this.x + (0,_lib_util__WEBPACK_IMPORTED_MODULE_1__.randomInRange)(0, this.w),
-                    this.y + (0,_lib_util__WEBPACK_IMPORTED_MODULE_1__.randomInRange)(0, this.h),
-                    (0,_lib_util__WEBPACK_IMPORTED_MODULE_1__.randomInRangeFloat)(-0.6, 0.6) + this.xVelocity,
-                    (0,_lib_util__WEBPACK_IMPORTED_MODULE_1__.randomInRangeFloat)(-0.6, 0.6) + this.yVelocity,
-                    {
-                        moveSpeed: 10,
-                        tickSpeed: 30
-                    }
-                )
-            }
+			deleter()
+		}
+	}
 
-            deleter()
-        }
-    }
+	hitAnimation() {
+		_lib_animations__WEBPACK_IMPORTED_MODULE_3__.animations.animate(
+			_art__WEBPACK_IMPORTED_MODULE_2__.art.animations.particle,
+			this.x + (0,_lib_util__WEBPACK_IMPORTED_MODULE_1__.randomInRange)(0, this.w),
+			this.y + (0,_lib_util__WEBPACK_IMPORTED_MODULE_1__.randomInRange)(0, this.h),
+			(0,_lib_util__WEBPACK_IMPORTED_MODULE_1__.randomInRangeFloat)(-0.6, 0.6) + this.xVelocity,
+			(0,_lib_util__WEBPACK_IMPORTED_MODULE_1__.randomInRangeFloat)(-0.6, 0.6) + this.yVelocity,
+			{
+				moveSpeed: 10,
+				tickSpeed: 30,
+			}
+		)
+	}
 
-    hitAnimation() {
-        _lib_animations__WEBPACK_IMPORTED_MODULE_3__.animations.animate(_art__WEBPACK_IMPORTED_MODULE_2__.art.animations.particle,
-            this.x + (0,_lib_util__WEBPACK_IMPORTED_MODULE_1__.randomInRange)(0, this.w),
-            this.y + (0,_lib_util__WEBPACK_IMPORTED_MODULE_1__.randomInRange)(0, this.h),
-            (0,_lib_util__WEBPACK_IMPORTED_MODULE_1__.randomInRangeFloat)(-0.6, 0.6) + this.xVelocity,
-            (0,_lib_util__WEBPACK_IMPORTED_MODULE_1__.randomInRangeFloat)(-0.6, 0.6) + this.yVelocity,
-            {
-                moveSpeed: 10,
-                tickSpeed: 30
-            }
-        )
-    }
+	tick() {
+		if (this.asteroidHitCooldown > 0) {
+			this.asteroidHitCooldown -= 1
+		}
+		if (this.bulletHitCooldown > 0) {
+			this.bulletHitCooldown -= 1
+		}
 
-    tick() {
-        if (this.asteroidHitCooldown > 0) {
-            this.asteroidHitCooldown -= 1
-        }
-        if (this.bulletHitCooldown > 0) {
-            this.bulletHitCooldown -= 1
-        }
+		this.x += this.xVelocity
+		this.y += this.yVelocity
 
-        this.x += this.xVelocity
-        this.y += this.yVelocity
+		if (this.x < -this.w - 10 || this.x > window.w + 20 || this.dead) {
+			this.deleter()
+		}
 
-        if (this.x < -this.w - 10 || this.x > window.w + 20 || this.dead) {
-            this.deleter()
-        }
+		const onColision = (object) => {
+			if (!this.asteroidHitCooldown) {
+				this.asteroidHitCooldown = 100
 
-        const onColision = (object) => {
-            if (!this.asteroidHitCooldown) {
-                this.asteroidHitCooldown = 100
+				if (object.name === "player") {
+					this.hp -= 1
+					this.hitAnimation()
+					this.xVelocity *= -0.4
+				}
 
-                if (object.name === 'player') {
-                    this.hp -= 1
-                    this.hitAnimation()
-                    this.xVelocity *= -0.4
-                }
+				if (object.name === "asteroid") {
+					this.hp -= 1
 
-                if (object.name === 'asteroid') {
-                    this.hp -= 1
+					let signX = 1
+					let signY = 1
+					// if opposite directions
+					if (
+						(this.xVelocity > 0 && object.xVelocity < 0) ||
+						(this.xVelocity < 0 && object.xVelocity > 0)
+					) {
+						signX = -1
+					}
+					if (
+						(this.yVelocity > 0 && object.yVelocity < 0) ||
+						(this.yVelocity < 0 && object.yVelocity > 0)
+					) {
+						signY = -1
+					}
 
-                    let signX = 1
-                    let signY = 1
-                    // if opposite directions
-                    if (this.xVelocity > 0 && object.xVelocity < 0 || this.xVelocity < 0 && object.xVelocity > 0) {
-                        signX = -1
-                    }
-                    if (this.yVelocity > 0 && object.yVelocity < 0 || this.yVelocity < 0 && object.yVelocity > 0) {
-                        signY = -1
-                    }
+					this.xVelocity =
+						(signX *
+							(this.m * this.xVelocity +
+								object.m * object.xVelocity)) /
+						(2 * (this.m + object.m))
+					this.yVelocity =
+						(signY *
+							(this.m * this.yVelocity +
+								object.m * object.yVelocity)) /
+						(2 * (this.m + object.m))
 
-                    this.xVelocity = signX * (this.m * this.xVelocity + object.m * object.xVelocity) / (2 * (this.m + object.m))
-                    this.yVelocity = signY * (this.m * this.yVelocity + object.m * object.yVelocity) / (2 * (this.m + object.m))
+					this.hitAnimation()
+				}
 
-                    this.hitAnimation()
-                }
+				const objectCentre = object.y + object.h / 2
+				const thisCentre = this.y + this.h / 2
+				let yDistortion = objectCentre < thisCentre ? 0.02 : -0.02
 
-                const objectCentre = object.y + object.h / 2
-                const thisCentre = this.y + this.h / 2
-                let yDistortion = objectCentre < thisCentre ? 0.02 : -0.02
+				if (Math.abs(objectCentre - thisCentre) < 1.5) {
+					yDistortion = 0
+				}
 
-                if (Math.abs(objectCentre - thisCentre) < 1.5) {
-                    yDistortion = 0
-                }
+				this.yVelocity += yDistortion
+			}
 
-                this.yVelocity += yDistortion
-            }
+			if (object.name == "bullet" && !this.bulletHitCooldown) {
+				this.hitAnimation()
+				this.xVelocity += object.xVelocity * 0.2
+				this.hp -= 1
+				this.bulletHitCooldown = 10
+			}
+		}
 
-            if (object.name == 'bullet' && !this.bulletHitCooldown) {
-                this.hitAnimation()
-                this.xVelocity += object.xVelocity * 0.2
-                this.hp -= 1
-                this.bulletHitCooldown = 10
-            }
-        }
+		if (this.hp <= 0 && !this.dead) {
+			this.dead = true
+		}
 
-        if (this.hp <= 0 && !this.dead) {
-            this.dead = true
-        }
+		_lib_colisions__WEBPACK_IMPORTED_MODULE_4__.colisions.addRectangleColision(this, onColision)
+	}
 
-        _lib_colisions__WEBPACK_IMPORTED_MODULE_4__.colisions.addRectangleColision(this, onColision)
-    }
+	draw() {
+		const hp = ["- - -", "# - -", "# # -", "# # #"]
 
-    draw() {
-        const hp = ['- - -', '# - -', '# # -', '# # #']
+		if (this.hp !== this.maxHp) {
+			_renderer__WEBPACK_IMPORTED_MODULE_0__.renderer.drawObject(
+				hp[Math.floor(this.hp)],
+				this.x,
+				this.y + this.h
+			)
+		}
 
-        if (this.hp !== this.maxHp) {
-            _renderer__WEBPACK_IMPORTED_MODULE_0__.renderer.drawObject(hp[Math.floor(this.hp)], this.x, this.y + this.h)
-        }
-
-        _renderer__WEBPACK_IMPORTED_MODULE_0__.renderer.drawTransparentObject(this.sprite, this.x, this.y)
-    }
+		_renderer__WEBPACK_IMPORTED_MODULE_0__.renderer.drawTransparentObject(this.sprite, this.x, this.y)
+	}
 }
+
 
 /***/ }),
 
@@ -24801,40 +25135,40 @@ __webpack_require__.r(__webpack_exports__);
 
 
 class Particle {
-    constructor(x, y, xVelocity, yVelocity) {
-        this.name = 'particle'
-        this.x = x
-        this.y = y
+	constructor(x, y, xVelocity, yVelocity) {
+		this.name = "particle"
+		this.x = x
+		this.y = y
 
-        this.xVelocity = xVelocity
-        this.yVelocity = yVelocity
+		this.xVelocity = xVelocity
+		this.yVelocity = yVelocity
 
-        this.w = 1
-        this.h = 1
+		this.w = 1
+		this.h = 1
 
-        this.sprite = '-'
+		this.sprite = "-"
 
-        this.deleter = () => { }
-    }
+		this.deleter = () => {}
+	}
 
-    setDeleter(deleter) {
-        this.deleter = deleter
-    }
+	setDeleter(deleter) {
+		this.deleter = deleter
+	}
 
-    tick() {
-        this.x += this.xVelocity
-        this.y += this.yVelocity
+	tick() {
+		this.x += this.xVelocity
+		this.y += this.yVelocity
 
+		if (this.x < 0) {
+			this.deleter()
+		}
+	}
 
-        if (this.x < 0) {
-            this.deleter()
-        }
-    }
-
-    draw() {
-        _renderer__WEBPACK_IMPORTED_MODULE_0__.renderer.drawObject(this.sprite, this.x, this.y)
-    }
+	draw() {
+		_renderer__WEBPACK_IMPORTED_MODULE_0__.renderer.drawObject(this.sprite, this.x, this.y)
+	}
 }
+
 
 /***/ }),
 
@@ -24856,45 +25190,44 @@ __webpack_require__.r(__webpack_exports__);
 
 
 class Planet {
-    constructor(x, y) {
-        this.name = 'planet'
-        this.x = x
+	constructor(x, y) {
+		this.name = "planet"
+		this.x = x
 
-        this.xVelocity = (0,_lib_util__WEBPACK_IMPORTED_MODULE_2__.randomInRangeFloat)(-0.09, -0.03)
-        this.yVelocity = 0
+		this.xVelocity = (0,_lib_util__WEBPACK_IMPORTED_MODULE_2__.randomInRangeFloat)(-0.09, -0.03)
+		this.yVelocity = 0
 
-        const max = _art__WEBPACK_IMPORTED_MODULE_0__.art.textures.planets.length - 1
+		const max = _art__WEBPACK_IMPORTED_MODULE_0__.art.textures.planets.length - 1
 
-        let sprite = _art__WEBPACK_IMPORTED_MODULE_0__.art.textures.planets[(0,_lib_util__WEBPACK_IMPORTED_MODULE_2__.randomInRange)(0, max)]
+		let sprite = _art__WEBPACK_IMPORTED_MODULE_0__.art.textures.planets[(0,_lib_util__WEBPACK_IMPORTED_MODULE_2__.randomInRange)(0, max)]
 
-        this.sprite = sprite
-        this.w = sprite.w
-        this.h = sprite.h
+		this.sprite = sprite
+		this.w = sprite.w
+		this.h = sprite.h
 
-        if (y !== 'auto')
-            this.y = y
-        else
-            this.y = (0,_lib_util__WEBPACK_IMPORTED_MODULE_2__.randomInRange)(5, window.h - this.h - 20)
-    }
+		if (y !== "auto") this.y = y
+		else this.y = (0,_lib_util__WEBPACK_IMPORTED_MODULE_2__.randomInRange)(5, window.h - this.h - 20)
+	}
 
-    setDeleter(deleter) {
-        this.deleter = () => {
-            deleter()
-        }
-    }
+	setDeleter(deleter) {
+		this.deleter = () => {
+			deleter()
+		}
+	}
 
-    tick() {
-        this.x += this.xVelocity
+	tick() {
+		this.x += this.xVelocity
 
-        if (this.x < -this.w) {
-            this.deleter()
-        }
-    }
+		if (this.x < -this.w) {
+			this.deleter()
+		}
+	}
 
-    draw() {
-        _renderer__WEBPACK_IMPORTED_MODULE_1__.renderer.drawTransparentObject(this.sprite, this.x, this.y)
-    }
+	draw() {
+		_renderer__WEBPACK_IMPORTED_MODULE_1__.renderer.drawTransparentObject(this.sprite, this.x, this.y)
+	}
 }
+
 
 /***/ }),
 
@@ -24922,325 +25255,429 @@ __webpack_require__.r(__webpack_exports__);
 
 
 class Player {
-    constructor(x, y) {
-        this.name = 'player'
-        this.x = x
-        this.y = y
-        this.score = 0
+	constructor(x, y) {
+		this.name = "player"
+		this.x = x
+		this.y = y
+		this.score = 0
 
-        this.dead = false
-        this.maxHp = 3
-        this.hp = this.maxHp
+		this.dead = false
+		this.maxHp = 3
+		this.hp = this.maxHp
 
-        this.bullets = []
-        this.shootCooldown = 0
+		this.bullets = []
+		this.shootCooldown = 0
 
-        this.hitCooldown = 0
-        this.invincibility = 400
-        this.hitAnimation = 0
-        this.deathAnimation = 0
-        this.regenerationCooldownMax = 4000
-        this.regenerationCooldown = this.regenerationCooldownMax / 3
+		this.hitCooldown = 0
+		this.invincibility = 400
+		this.hitAnimation = 0
+		this.deathAnimation = 0
+		this.regenerationCooldownMax = 4000
+		this.regenerationCooldown = this.regenerationCooldownMax / 3
 
-        this.sprite = _art__WEBPACK_IMPORTED_MODULE_0__.art.textures.ship
+		this.sprite = _art__WEBPACK_IMPORTED_MODULE_0__.art.textures.ship
 
-        this.w = this.sprite.w
-        this.h = this.sprite.h
+		this.w = this.sprite.w
+		this.h = this.sprite.h
 
-        this.xVelocity = 0
-        this.xAcceleration = 0.0032
-        this.maxForwardXVelocity = 0.1
-        this.maxBackwardsXVelocity = -0.15
+		this.xVelocity = 0
+		this.xAcceleration = 0.0032
+		this.maxForwardXVelocity = 0.1
+		this.maxBackwardsXVelocity = -0.15
 
-        this.yVelocity = 0
-        this.yAcceleration = 0.0048
-        this.maxYVelocity = 0.2
+		this.yVelocity = 0
+		this.yAcceleration = 0.0048
+		this.maxYVelocity = 0.2
 
-        // slow the ship acceleration down when it goes from negative speed
-        this.stopper = 0.6
+		// slow the ship acceleration down when it goes from negative speed
+		this.stopper = 0.6
 
-        this.bulletCooldown = 0
+		this.bulletCooldown = 0
 
-        this.loss = 0.98
-    }
+		this.loss = 0.98
+	}
 
-    shoot() {
-        if (this.shootCooldown > 0) {
-            this.shootCooldown -= 1
-        }
-        if (!this.shootCooldown) {
-            this.shootCooldown = 100
+	shoot() {
+		if (this.shootCooldown > 0) {
+			this.shootCooldown -= 1
+		}
+		if (!this.shootCooldown) {
+			this.shootCooldown = 100
 
-            this.bullets.push({
-                x: this.x + this.w,
-                y: this.y + this.h / 2,
-                xVelocity: 1.5,
-                yVelocity: this.yVelocity * 0.5
-            })
-        }
-    }
+			this.bullets.push({
+				x: this.x + this.w,
+				y: this.y + this.h / 2,
+				xVelocity: 1.5,
+				yVelocity: this.yVelocity * 0.5,
+			})
+		}
+	}
 
-    handleBullets() {
-        this.bullets.map((bullet, i) => {
-            _renderer__WEBPACK_IMPORTED_MODULE_4__.renderer.drawObject('=', bullet.x, bullet.y)
+	handleBullets() {
+		this.bullets.map((bullet, i) => {
+			_renderer__WEBPACK_IMPORTED_MODULE_4__.renderer.drawObject("=", bullet.x, bullet.y)
 
-            _lib_animations__WEBPACK_IMPORTED_MODULE_2__.animations.animate(_art__WEBPACK_IMPORTED_MODULE_0__.art.animations.smallParticle, bullet.x, bullet.y, bullet.xVelocity * 0.5 * 0, bullet.yVelocity + (0,_lib_util__WEBPACK_IMPORTED_MODULE_5__.randomInRange)(-0.1, 0.1), {
-                tickSpeed: (0,_lib_util__WEBPACK_IMPORTED_MODULE_5__.randomInRange)(2, 3),
-                moveSpeed: (0,_lib_util__WEBPACK_IMPORTED_MODULE_5__.randomInRange)(11, 21),
-            })
+			_lib_animations__WEBPACK_IMPORTED_MODULE_2__.animations.animate(
+				_art__WEBPACK_IMPORTED_MODULE_0__.art.animations.smallParticle,
+				bullet.x,
+				bullet.y,
+				bullet.xVelocity * 0.5 * 0,
+				bullet.yVelocity + (0,_lib_util__WEBPACK_IMPORTED_MODULE_5__.randomInRange)(-0.1, 0.1),
+				{
+					tickSpeed: (0,_lib_util__WEBPACK_IMPORTED_MODULE_5__.randomInRange)(2, 3),
+					moveSpeed: (0,_lib_util__WEBPACK_IMPORTED_MODULE_5__.randomInRange)(11, 21),
+				}
+			)
 
-            bullet.x += bullet.xVelocity
-            bullet.y += bullet.yVelocity
+			bullet.x += bullet.xVelocity
+			bullet.y += bullet.yVelocity
 
-            if (bullet.x > window.w + 10)
-                this.bullets.splice(i, 1)
+			if (bullet.x > window.w + 10) this.bullets.splice(i, 1)
 
-            _lib_colisions__WEBPACK_IMPORTED_MODULE_3__.colisions.addRectangleColision({ w: 1, h: 1, x: bullet.x, y: bullet.y, xVelocity: bullet.xVelocity, yVelocity: bullet.yVelocity, name: 'bullet' }, async (reason) => {
-                console.log('colided', i)
+			_lib_colisions__WEBPACK_IMPORTED_MODULE_3__.colisions.addRectangleColision(
+				{
+					w: 1,
+					h: 1,
+					x: bullet.x,
+					y: bullet.y,
+					xVelocity: bullet.xVelocity,
+					yVelocity: bullet.yVelocity,
+					name: "bullet",
+				},
+				async (reason) => {
+					if (reason.name === "bullet") return
 
-                if (reason.name === 'bullet')
-                    return
+					_lib_animations__WEBPACK_IMPORTED_MODULE_2__.animations.animate(
+						_art__WEBPACK_IMPORTED_MODULE_0__.art.animations.particle,
+						bullet.x,
+						bullet.y,
+						bullet.xVelocity,
+						bullet.yVelocity,
+						{
+							tickSpeed: 20,
+							moveSpeed: 20,
+						}
+					)
 
-                _lib_animations__WEBPACK_IMPORTED_MODULE_2__.animations.animate(_art__WEBPACK_IMPORTED_MODULE_0__.art.animations.particle, bullet.x, bullet.y, bullet.xVelocity, bullet.yVelocity, {
-                    tickSpeed: 20,
-                    moveSpeed: 20
-                })
+					if (!this.bulletCooldown) this.bullets.splice(i, 1)
+					this.bulletCooldown = 5
+				}
+			)
+			if (this.bulletCooldown) {
+				this.bulletCooldown -= 1
+			}
+		})
+	}
 
+	async tick(pointer, keyboard, pad) {
+		this.handleBullets()
+		if (this.y > window.h) {
+			this.y = -this.h
+		}
+		if (this.y < -this.h) {
+			this.y = window.h
+		}
 
+		if (this.hitCooldown > 0) {
+			this.hitCooldown -= 1
+		}
+		if (this.hitAnimation > 0) {
+			this.hitAnimation -= 1
+		}
+		if (this.deathAnimation > 0) {
+			this.deathAnimation -= 1
+		}
+		if (this.regenerationCooldown > 0 && this.hp < 3) {
+			this.regenerationCooldown -= 1
+		}
+		if (this.invincibility > 0) {
+			this.invincibility -= 1
+		}
 
-                if (!this.bulletCooldown)
-                    this.bullets.splice(i, 1)
-                this.bulletCooldown = 5
-            })
-            if (this.bulletCooldown) {
-                this.bulletCooldown -= 1
-            }
-        })
-    }
+		this.isTopEngineWorking = false
+		this.isBottomEngineWorking = false
 
-    async tick(pointer, keyboard, pad) {
-        this.handleBullets()
-        if (this.y > window.h) {
-            this.y = -this.h
-        }
-        if (this.y < -this.h) {
-            this.y = window.h
-        }
+		if (this.hp > 0) {
+			this.score += 1
+			if (this.regenerationCooldown <= 0) {
+				if (this.hp < 3) {
+					this.hp += 1
+					this.regenerationCooldown = this.regenerationCooldownMax / 3
+				}
+			}
 
-        if (this.hitCooldown > 0) {
-            this.hitCooldown -= 1
-        }
-        if (this.hitAnimation > 0) {
-            this.hitAnimation -= 1
-        }
-        if (this.deathAnimation > 0) {
-            this.deathAnimation -= 1
-        }
-        if (this.regenerationCooldown > 0 && this.hp < 3) {
-            this.regenerationCooldown -= 1
-        }
-        if (this.invincibility > 0) {
-            this.invincibility -= 1
-        }
+			if (this.x <= 0) {
+				this.xVelocity = 0.2
+			}
+			if (this.x + this.w > window.w) {
+				this.xVelocity = -0.2
+			}
 
-        this.isTopEngineWorking = false
-        this.isBottomEngineWorking = false
+			if (pad) {
+				const stopper = this.yVelocity < 0 ? this.stopper : 1
 
-        if (this.hp > 0) {
-            this.score += 1
-            if (this.regenerationCooldown <= 0) {
-                if (this.hp < 3) {
-                    this.hp += 1
-                    this.regenerationCooldown = this.regenerationCooldownMax / 3
-                }
-            }
+				if (this.yVelocity > -this.maxYVelocity) {
+					if (pad.axes.y1 > 0.1) {
+						this.isTopEngineWorking = true
+					}
+					if (pad.axes.y1 < -0.1) {
+						this.isBottomEngineWorking = true
+					}
+					this.yVelocity += this.yAcceleration * stopper * pad.axes.y1
+				}
 
-            if (this.x <= 0) {
-                this.xVelocity = 0.2
-            }
-            if (this.x + this.w > window.w) {
-                this.xVelocity = -0.2
-            }
+				if (this.xVelocity > this.maxBackwardsXVelocity)
+					this.xVelocity += this.xAcceleration * pad.axes.x1
 
-            if (pad) {
-                const stopper = this.yVelocity < 0 ? this.stopper : 1
+				if (pad.buttons["cross"]) {
+					this.shoot()
+				} else {
+					this.shootCooldown = 0
+				}
+			} else {
+				if (this.hitAnimation <= 0) {
+					if (
+						keyboard.down["w"] ||
+						keyboard.down["W"] ||
+						keyboard.down["ц"] ||
+						keyboard.down["Ц"]
+					) {
+						const stopper = this.yVelocity < 0 ? this.stopper : 1
 
-                if (this.yVelocity > -this.maxYVelocity) {
-                    if (pad.axes.y1 > 0.1) {
-                        this.isTopEngineWorking = true
-                    }
-                    if (pad.axes.y1 < -0.1) {
-                        this.isBottomEngineWorking = true
-                    }
-                    this.yVelocity += this.yAcceleration * stopper * pad.axes.y1
-                }
+						if (this.yVelocity > -this.maxYVelocity) {
+							this.isBottomEngineWorking = true
+							this.yVelocity -= this.yAcceleration * stopper
+						}
+					}
+					if (
+						keyboard.down["s"] ||
+						keyboard.down["S"] ||
+						keyboard.down["ы"] ||
+						keyboard.down["Ы"] ||
+						keyboard.down["і"] ||
+						keyboard.down["І"]
+					) {
+						const stopper = this.yVelocity > 0 ? this.stopper : 1
 
-                if (this.xVelocity > this.maxBackwardsXVelocity)
-                    this.xVelocity += this.xAcceleration * pad.axes.x1
+						if (this.yVelocity < this.maxYVelocity) {
+							this.isTopEngineWorking = true
+							this.yVelocity += this.yAcceleration * stopper
+						}
+					}
 
-                if (pad.buttons['cross']) {
-                    this.shoot()
-                } else {
-                    this.shootCooldown = 0
-                }
-            } else {
-                if (this.hitAnimation <= 0) {
-                    if (keyboard.down['w'] || keyboard.down['W'] || keyboard.down['ц'] || keyboard.down['Ц']) {
-                        const stopper = this.yVelocity < 0 ? this.stopper : 1
+					if (
+						keyboard.down["a"] ||
+						keyboard.down["A"] ||
+						keyboard.down["ф"] ||
+						keyboard.down["Ф"]
+					) {
+						if (this.xVelocity > this.maxBackwardsXVelocity)
+							this.xVelocity -= this.xAcceleration
+					}
+					if (
+						keyboard.down["d"] ||
+						keyboard.down["D"] ||
+						keyboard.down["в"] ||
+						keyboard.down["В"]
+					) {
+						if (this.xVelocity < this.maxForwardXVelocity)
+							this.xVelocity += this.xAcceleration
+					}
 
-                        if (this.yVelocity > -this.maxYVelocity) {
-                            this.isBottomEngineWorking = true
-                            this.yVelocity -= this.yAcceleration * stopper
-                        }
-                    }
-                    if (keyboard.down['s'] || keyboard.down['S'] || keyboard.down['ы'] || keyboard.down['Ы'] || keyboard.down['і'] || keyboard.down['І']) {
-                        const stopper = this.yVelocity > 0 ? this.stopper : 1
+					if (keyboard.down[" "]) {
+						this.shoot()
+					} else {
+						this.shootCooldown = 0
+					}
+				}
+			}
 
-                        if (this.yVelocity < this.maxYVelocity) {
-                            this.isTopEngineWorking = true
-                            this.yVelocity += this.yAcceleration * stopper
-                        }
-                    }
+			// if very small velocity set it to 0
+			if (
+				(0,_lib_util__WEBPACK_IMPORTED_MODULE_5__.isBetween)(
+					this.xVelocity * 2,
+					-this.xAcceleration,
+					this.xAcceleration
+				)
+			)
+				this.xVelocity = 0
+			if (
+				(0,_lib_util__WEBPACK_IMPORTED_MODULE_5__.isBetween)(
+					this.yVelocity * 2,
+					-this.yAcceleration,
+					this.yAcceleration
+				)
+			)
+				this.yVelocity = 0
 
-                    if (keyboard.down['a'] || keyboard.down['A'] || keyboard.down['ф'] || keyboard.down['Ф']) {
-                        if (this.xVelocity > this.maxBackwardsXVelocity)
-                            this.xVelocity -= this.xAcceleration
-                    }
-                    if (keyboard.down['d'] || keyboard.down['D'] || keyboard.down['в'] || keyboard.down['В']) {
-                        if (this.xVelocity < this.maxForwardXVelocity)
-                            this.xVelocity += this.xAcceleration
-                    }
+			// "friction"
+			this.xVelocity *= this.loss
+			this.yVelocity *= this.loss
 
+			const onColision = (object) => {
+				if (this.hitCooldown <= 0 && !this.invincibility) {
+					this.hp -= 1
+					this.regenerationCooldown +=
+						this.regenerationCooldownMax / 3
 
-                    if (keyboard.down[' ']) {
-                        this.shoot()
-                    } else {
-                        this.shootCooldown = 0
-                    }
-                }
-            }
+					for (let i = 0; i < 10; i += 1) {
+						_lib_animations__WEBPACK_IMPORTED_MODULE_2__.animations.animate(
+							_art__WEBPACK_IMPORTED_MODULE_0__.art.animations.particle,
+							this.x + (0,_lib_util__WEBPACK_IMPORTED_MODULE_5__.randomInRange)(0, this.w),
+							this.y + (0,_lib_util__WEBPACK_IMPORTED_MODULE_5__.randomInRange)(0, this.h),
+							(0,_lib_util__WEBPACK_IMPORTED_MODULE_5__.randomInRangeFloat)(-0.6, 0.6) + this.xVelocity,
+							(0,_lib_util__WEBPACK_IMPORTED_MODULE_5__.randomInRangeFloat)(-0.6, 0.6) + this.yVelocity,
+							{
+								moveSpeed: 10,
+								tickSpeed: 30,
+							}
+						)
+					}
 
-            // if very small velocity set it to 0
-            if ((0,_lib_util__WEBPACK_IMPORTED_MODULE_5__.isBetween)(this.xVelocity * 2, -this.xAcceleration, this.xAcceleration))
-                this.xVelocity = 0
-            if ((0,_lib_util__WEBPACK_IMPORTED_MODULE_5__.isBetween)(this.yVelocity * 2, -this.yAcceleration, this.yAcceleration))
-                this.yVelocity = 0
+					this.xVelocity *= 0.8
+					this.yVelocity *= 0.8
+				}
 
-            // "friction"
-            this.xVelocity *= this.loss
-            this.yVelocity *= this.loss
+				this.hitCooldown = 100
+				this.hitAnimation = 100
+			}
 
-            const onColision = (object) => {
-                if (this.hitCooldown <= 0 && !this.invincibility) {
-                    this.hp -= 1
-                    this.regenerationCooldown += this.regenerationCooldownMax / 3
+			_lib_colisions__WEBPACK_IMPORTED_MODULE_3__.colisions.addRectangleColision(this, onColision)
+		}
+		if (this.hp === 0 && !this.dead) {
+			this.deathAnimation = 10000
+			this.dead = true
 
-                    for (let i = 0; i < 10; i += 1) {
-                        _lib_animations__WEBPACK_IMPORTED_MODULE_2__.animations.animate(_art__WEBPACK_IMPORTED_MODULE_0__.art.animations.particle,
-                            this.x + (0,_lib_util__WEBPACK_IMPORTED_MODULE_5__.randomInRange)(0, this.w),
-                            this.y + (0,_lib_util__WEBPACK_IMPORTED_MODULE_5__.randomInRange)(0, this.h),
-                            (0,_lib_util__WEBPACK_IMPORTED_MODULE_5__.randomInRangeFloat)(-0.6, 0.6) + this.xVelocity,
-                            (0,_lib_util__WEBPACK_IMPORTED_MODULE_5__.randomInRangeFloat)(-0.6, 0.6) + this.yVelocity,
-                            {
-                                moveSpeed: 10,
-                                tickSpeed: 30
-                            }
-                        )
-                    }
+			window.formatedScores = "Loading scores\n\n(under maintenance)"
+			await (0,_firebase_scoreboard__WEBPACK_IMPORTED_MODULE_1__.submitScore)(window.username, this.score)
 
-                    this.xVelocity *= 0.8
-                    this.yVelocity *= 0.8
-                }
+			const scores = await (0,_firebase_scoreboard__WEBPACK_IMPORTED_MODULE_1__.getBestScores)(10)
+			let res = "Scores:\n\n\n"
 
-                this.hitCooldown = 100
-                this.hitAnimation = 100
-            }
+			window.formatedScores = scores.forEach((record, i) => {
+				res += `${i + 1}. ${record.name} - ${(0,_lib_util__WEBPACK_IMPORTED_MODULE_5__.numberWithCommas)(
+					record.score
+				)}\n\n`
+			})
 
-            _lib_colisions__WEBPACK_IMPORTED_MODULE_3__.colisions.addRectangleColision(this, onColision)
-        }
-        if (this.hp === 0 && !this.dead) {
-            this.deathAnimation = 10000
-            this.dead = true
+			window.formatedScores = res
 
+			if (!window.formatedScores) {
+				window.formatedScores = "Loading scores"
+			}
 
-            window.formatedScores = 'Loading scores\n\n(under maintenance)'
-            await (0,_firebase_scoreboard__WEBPACK_IMPORTED_MODULE_1__.submitScore)(window.username, this.score)
+			for (let i = 0; i < 10; i += 1) {
+				_lib_animations__WEBPACK_IMPORTED_MODULE_2__.animations.animate(
+					_art__WEBPACK_IMPORTED_MODULE_0__.art.animations.particle,
+					this.x + (0,_lib_util__WEBPACK_IMPORTED_MODULE_5__.randomInRange)(0, this.w),
+					this.y + (0,_lib_util__WEBPACK_IMPORTED_MODULE_5__.randomInRange)(0, this.h),
+					(0,_lib_util__WEBPACK_IMPORTED_MODULE_5__.randomInRangeFloat)(-1, 1) + this.xVelocity,
+					(0,_lib_util__WEBPACK_IMPORTED_MODULE_5__.randomInRangeFloat)(-1, 1) + this.yVelocity,
+					{
+						moveSpeed: 10,
+						tickSpeed: 30,
+					}
+				)
+			}
+		}
 
-            const scores = await (0,_firebase_scoreboard__WEBPACK_IMPORTED_MODULE_1__.getBestScores)(10)
-            let res = 'Scores:\n\n\n'
+		this.x += this.xVelocity
+		this.y += this.yVelocity
 
-            window.formatedScores = scores.forEach((record, i) => {
-                res += `${i + 1}. ${record.name} - ${(0,_lib_util__WEBPACK_IMPORTED_MODULE_5__.numberWithCommas)(record.score)}\n\n`
-            })
+		if (this.dead) {
+			this.xVelocity = -0.2
+		}
+	}
 
-            window.formatedScores = res
+	draw(isPaused) {
+		// ship texture
 
-            if (!window.formatedScores) {
-                window.formatedScores = 'Loading scores'
-            }
+		_renderer__WEBPACK_IMPORTED_MODULE_4__.renderer.drawTransparentObject(this.sprite, this.x, this.y)
+		// renderer.drawObject(this.regenerationCooldown + 's', this.x + 20, this.y)
 
+		// ui(hp)
+		const hp = ["- - -", "# - -", "# # -", "# # #"]
 
-            for (let i = 0; i < 10; i += 1) {
-                _lib_animations__WEBPACK_IMPORTED_MODULE_2__.animations.animate(_art__WEBPACK_IMPORTED_MODULE_0__.art.animations.particle,
-                    this.x + (0,_lib_util__WEBPACK_IMPORTED_MODULE_5__.randomInRange)(0, this.w),
-                    this.y + (0,_lib_util__WEBPACK_IMPORTED_MODULE_5__.randomInRange)(0, this.h),
-                    (0,_lib_util__WEBPACK_IMPORTED_MODULE_5__.randomInRangeFloat)(-1, 1) + this.xVelocity,
-                    (0,_lib_util__WEBPACK_IMPORTED_MODULE_5__.randomInRangeFloat)(-1, 1) + this.yVelocity,
-                    {
-                        moveSpeed: 10,
-                        tickSpeed: 30
-                    }
-                )
-            }
-        }
+		if (this.maxHp !== this.hp)
+			_renderer__WEBPACK_IMPORTED_MODULE_4__.renderer.drawObject(`${hp[this.hp]}`, this.x, this.y + this.h + 2)
 
-        this.x += this.xVelocity
-        this.y += this.yVelocity
+		// particles
+		if (isPaused) return
 
-        if (this.dead) {
-            this.xVelocity = -0.2
-        }
-    }
+		if (window.clock % 3 == 0 && !this.dead) {
+			if (this.isTopEngineWorking)
+				_lib_animations__WEBPACK_IMPORTED_MODULE_2__.animations.animate(
+					_art__WEBPACK_IMPORTED_MODULE_0__.art.animations.particle,
+					this.x,
+					this.y + 0,
+					(0,_lib_util__WEBPACK_IMPORTED_MODULE_5__.randomInRangeFloat)(-2.5, -0.2),
+					(0,_lib_util__WEBPACK_IMPORTED_MODULE_5__.randomInRangeFloat)(-0.2, 0.2),
+					{ tickSpeed: 8, moveSpeed: 10 }
+				)
+			else
+				_lib_animations__WEBPACK_IMPORTED_MODULE_2__.animations.animate(
+					_art__WEBPACK_IMPORTED_MODULE_0__.art.animations.fire,
+					this.x,
+					this.y + 0,
+					(0,_lib_util__WEBPACK_IMPORTED_MODULE_5__.randomInRangeFloat)(-2.5, -0.2),
+					0,
+					{ tickSpeed: 1, moveSpeed: 2 }
+				)
 
-    draw(isPaused) {
-        // ship texture
+			if (this.hitAnimation > 1) {
+				if (window.clock % 10 == 0)
+					_lib_animations__WEBPACK_IMPORTED_MODULE_2__.animations.animate(
+						_art__WEBPACK_IMPORTED_MODULE_0__.art.animations.particle,
+						this.x,
+						this.y + 2,
+						(0,_lib_util__WEBPACK_IMPORTED_MODULE_5__.randomInRangeFloat)(-2.5, -0.2),
+						(0,_lib_util__WEBPACK_IMPORTED_MODULE_5__.randomInRangeFloat)(-0.01, 0.01),
+						{ tickSpeed: 8, moveSpeed: 5 }
+					)
+			} else {
+				_lib_animations__WEBPACK_IMPORTED_MODULE_2__.animations.animate(
+					_art__WEBPACK_IMPORTED_MODULE_0__.art.animations.particle,
+					this.x,
+					this.y + 2,
+					(0,_lib_util__WEBPACK_IMPORTED_MODULE_5__.randomInRangeFloat)(-2.5, -0.2),
+					(0,_lib_util__WEBPACK_IMPORTED_MODULE_5__.randomInRangeFloat)(-0.01, 0.01),
+					{ tickSpeed: 8, moveSpeed: 5 }
+				)
+			}
 
-        _renderer__WEBPACK_IMPORTED_MODULE_4__.renderer.drawTransparentObject(this.sprite, this.x, this.y)
-        // renderer.drawObject(this.regenerationCooldown + 's', this.x + 20, this.y)
+			if (this.isBottomEngineWorking)
+				_lib_animations__WEBPACK_IMPORTED_MODULE_2__.animations.animate(
+					_art__WEBPACK_IMPORTED_MODULE_0__.art.animations.particle,
+					this.x,
+					this.y + 4,
+					(0,_lib_util__WEBPACK_IMPORTED_MODULE_5__.randomInRangeFloat)(-2.5, -0.2),
+					(0,_lib_util__WEBPACK_IMPORTED_MODULE_5__.randomInRangeFloat)(-0.2, 0.2),
+					{ tickSpeed: 8, moveSpeed: 10 }
+				)
+			else
+				_lib_animations__WEBPACK_IMPORTED_MODULE_2__.animations.animate(
+					_art__WEBPACK_IMPORTED_MODULE_0__.art.animations.fire,
+					this.x,
+					this.y + 4,
+					(0,_lib_util__WEBPACK_IMPORTED_MODULE_5__.randomInRangeFloat)(-2.5, -0.2),
+					0,
+					{ tickSpeed: 1, moveSpeed: 2 }
+				)
+		}
 
-        // ui(hp)
-        const hp = ['- - -', '# - -', '# # -', '# # #']
-
-        if (this.maxHp !== this.hp)
-            _renderer__WEBPACK_IMPORTED_MODULE_4__.renderer.drawObject(`${hp[this.hp]}`, this.x, this.y + this.h + 2)
-
-        // particles
-        if (isPaused) return
-
-        if (window.clock % 3 == 0 && !this.dead) {
-            if (this.isTopEngineWorking)
-                _lib_animations__WEBPACK_IMPORTED_MODULE_2__.animations.animate(_art__WEBPACK_IMPORTED_MODULE_0__.art.animations.particle, this.x, this.y + 0, (0,_lib_util__WEBPACK_IMPORTED_MODULE_5__.randomInRangeFloat)(-2.5, -0.2), (0,_lib_util__WEBPACK_IMPORTED_MODULE_5__.randomInRangeFloat)(-0.2, 0.2), { tickSpeed: 8, moveSpeed: 10 })
-            else
-                _lib_animations__WEBPACK_IMPORTED_MODULE_2__.animations.animate(_art__WEBPACK_IMPORTED_MODULE_0__.art.animations.fire, this.x, this.y + 0, (0,_lib_util__WEBPACK_IMPORTED_MODULE_5__.randomInRangeFloat)(-2.5, -0.2), 0, { tickSpeed: 1, moveSpeed: 2 })
-
-            if (this.hitAnimation > 1) {
-                if (window.clock % 10 == 0)
-                    _lib_animations__WEBPACK_IMPORTED_MODULE_2__.animations.animate(_art__WEBPACK_IMPORTED_MODULE_0__.art.animations.particle, this.x, this.y + 2, (0,_lib_util__WEBPACK_IMPORTED_MODULE_5__.randomInRangeFloat)(-2.5, -0.2), (0,_lib_util__WEBPACK_IMPORTED_MODULE_5__.randomInRangeFloat)(-0.01, 0.01), { tickSpeed: 8, moveSpeed: 5 })
-            } else {
-                _lib_animations__WEBPACK_IMPORTED_MODULE_2__.animations.animate(_art__WEBPACK_IMPORTED_MODULE_0__.art.animations.particle, this.x, this.y + 2, (0,_lib_util__WEBPACK_IMPORTED_MODULE_5__.randomInRangeFloat)(-2.5, -0.2), (0,_lib_util__WEBPACK_IMPORTED_MODULE_5__.randomInRangeFloat)(-0.01, 0.01), { tickSpeed: 8, moveSpeed: 5 })
-            }
-
-            if (this.isBottomEngineWorking)
-                _lib_animations__WEBPACK_IMPORTED_MODULE_2__.animations.animate(_art__WEBPACK_IMPORTED_MODULE_0__.art.animations.particle, this.x, this.y + 4, (0,_lib_util__WEBPACK_IMPORTED_MODULE_5__.randomInRangeFloat)(-2.5, -0.2), (0,_lib_util__WEBPACK_IMPORTED_MODULE_5__.randomInRangeFloat)(-0.2, 0.2), { tickSpeed: 8, moveSpeed: 10 })
-            else
-                _lib_animations__WEBPACK_IMPORTED_MODULE_2__.animations.animate(_art__WEBPACK_IMPORTED_MODULE_0__.art.animations.fire, this.x, this.y + 4, (0,_lib_util__WEBPACK_IMPORTED_MODULE_5__.randomInRangeFloat)(-2.5, -0.2), 0, { tickSpeed: 1, moveSpeed: 2 })
-        }
-
-        if (this.dead && window.clock % 20 == 0) {
-            _lib_animations__WEBPACK_IMPORTED_MODULE_2__.animations.animate(_art__WEBPACK_IMPORTED_MODULE_0__.art.animations.fire, this.x + (0,_lib_util__WEBPACK_IMPORTED_MODULE_5__.randomInRange)(0, this.w), this.y + (0,_lib_util__WEBPACK_IMPORTED_MODULE_5__.randomInRange)(0, this.h), (0,_lib_util__WEBPACK_IMPORTED_MODULE_5__.randomInRangeFloat)(-1, 1), (0,_lib_util__WEBPACK_IMPORTED_MODULE_5__.randomInRangeFloat)(-1, 1), { tickSpeed: 10, moveSpeed: 20 })
-        }
-    }
+		if (this.dead && window.clock % 20 == 0) {
+			_lib_animations__WEBPACK_IMPORTED_MODULE_2__.animations.animate(
+				_art__WEBPACK_IMPORTED_MODULE_0__.art.animations.fire,
+				this.x + (0,_lib_util__WEBPACK_IMPORTED_MODULE_5__.randomInRange)(0, this.w),
+				this.y + (0,_lib_util__WEBPACK_IMPORTED_MODULE_5__.randomInRange)(0, this.h),
+				(0,_lib_util__WEBPACK_IMPORTED_MODULE_5__.randomInRangeFloat)(-1, 1),
+				(0,_lib_util__WEBPACK_IMPORTED_MODULE_5__.randomInRangeFloat)(-1, 1),
+				{ tickSpeed: 10, moveSpeed: 20 }
+			)
+		}
+	}
 }
+
 
 /***/ }),
 
@@ -25266,400 +25703,203 @@ __webpack_require__.r(__webpack_exports__);
 
 
 class Ufo {
-    constructor(x, y) {
-        this.name = 'ufo'
-        this.x = x
-        this.y = y
-        this.w = _art__WEBPACK_IMPORTED_MODULE_0__.art.textures.ufo.w
-        this.h = _art__WEBPACK_IMPORTED_MODULE_0__.art.textures.ufo.h
+	constructor(x, y) {
+		this.name = "ufo"
+		this.x = x
+		this.y = y
+		this.w = _art__WEBPACK_IMPORTED_MODULE_0__.art.textures.ufo.w
+		this.h = _art__WEBPACK_IMPORTED_MODULE_0__.art.textures.ufo.h
 
-        this.xVelocity = 0
-        this.yVelocity = 0
+		this.xVelocity = 0
+		this.yVelocity = 0
 
-        this.xAcceleration = 0.0025
-        this.yAcceleration = 0.001
+		this.xAcceleration = 0.0025
+		this.yAcceleration = 0.001
 
-        this.invincibility = 400
-        this.hp = 5
+		this.invincibility = 400
+		this.hp = 5
 
-        this.asteroidHitCooldown = 0
-        this.bulletHitCooldown = 0
+		this.asteroidHitCooldown = 0
+		this.bulletHitCooldown = 0
 
-        this.sprite = _art__WEBPACK_IMPORTED_MODULE_0__.art.textures.ufo
+		this.sprite = _art__WEBPACK_IMPORTED_MODULE_0__.art.textures.ufo
 
-        this.bullets = []
-        this.shootCooldown = 0
+		this.bullets = []
+		this.shootCooldown = 0
 
-        this.loss = 0.97
-    }
+		this.loss = 0.97
+	}
 
-    setDeleter(deleter) {
-        this.deleter = () => {
-            for (let i = 0; i < 10; i += 1) {
-                _lib_animations__WEBPACK_IMPORTED_MODULE_1__.animations.animate(_art__WEBPACK_IMPORTED_MODULE_0__.art.animations.particle,
-                    this.x + (0,_lib_util__WEBPACK_IMPORTED_MODULE_4__.randomInRange)(0, this.w),
-                    this.y + (0,_lib_util__WEBPACK_IMPORTED_MODULE_4__.randomInRange)(0, this.h),
-                    (0,_lib_util__WEBPACK_IMPORTED_MODULE_4__.randomInRangeFloat)(-1, 1) + this.xVelocity,
-                    (0,_lib_util__WEBPACK_IMPORTED_MODULE_4__.randomInRangeFloat)(-1, 1) + this.yVelocity,
-                    {
-                        moveSpeed: 10,
-                        tickSpeed: 30
-                    }
-                )
-            }
+	setDeleter(deleter) {
+		this.deleter = () => {
+			for (let i = 0; i < 10; i += 1) {
+				_lib_animations__WEBPACK_IMPORTED_MODULE_1__.animations.animate(
+					_art__WEBPACK_IMPORTED_MODULE_0__.art.animations.particle,
+					this.x + (0,_lib_util__WEBPACK_IMPORTED_MODULE_4__.randomInRange)(0, this.w),
+					this.y + (0,_lib_util__WEBPACK_IMPORTED_MODULE_4__.randomInRange)(0, this.h),
+					(0,_lib_util__WEBPACK_IMPORTED_MODULE_4__.randomInRangeFloat)(-1, 1) + this.xVelocity,
+					(0,_lib_util__WEBPACK_IMPORTED_MODULE_4__.randomInRangeFloat)(-1, 1) + this.yVelocity,
+					{
+						moveSpeed: 10,
+						tickSpeed: 30,
+					}
+				)
+			}
 
-            deleter()
-        }
-    }
+			deleter()
+		}
+	}
 
-    tick(player) {
-        if (this.asteroidHitCooldown > 0) {
-            this.asteroidHitCooldown -= 1
-        }
-        if (this.bulletHitCooldown > 0) {
-            this.bulletHitCooldown -= 1
-        }
+	tick(player) {
+		if (this.asteroidHitCooldown > 0) {
+			this.asteroidHitCooldown -= 1
+		}
+		if (this.bulletHitCooldown > 0) {
+			this.bulletHitCooldown -= 1
+		}
 
-        if (this.y < player.y) {
-            this.yVelocity += this.yAcceleration
-        }
-        if (this.y > player.y) {
-            this.yVelocity -= this.yAcceleration
-        }
+		if (this.y < player.y) {
+			this.yVelocity += this.yAcceleration
+		}
+		if (this.y > player.y) {
+			this.yVelocity -= this.yAcceleration
+		}
 
-        if (this.x > player.x + window.w / 3 && this.x >= window.w / 3) {
-            this.xVelocity -= this.xAcceleration
-        }
-        if (this.x < player.x + window.w / 3) {
-            this.xVelocity += this.xAcceleration
-        }
+		if (this.x > player.x + window.w / 3 && this.x >= window.w / 3) {
+			this.xVelocity -= this.xAcceleration
+		}
+		if (this.x < player.x + window.w / 3) {
+			this.xVelocity += this.xAcceleration
+		}
 
-        this.x += this.xVelocity
-        this.y += this.yVelocity
+		this.x += this.xVelocity
+		this.y += this.yVelocity
 
-        this.xVelocity *= this.loss
-        this.yVelocity *= this.loss
+		this.xVelocity *= this.loss
+		this.yVelocity *= this.loss
 
-        if (this.hp <= 0) {
-            this.deleter()
-        }
+		if (this.hp <= 0) {
+			this.deleter()
+		}
 
-        _lib_colisions__WEBPACK_IMPORTED_MODULE_2__.colisions.addRectangleColision(this, (object) => {
-            if (!this.asteroidHitCooldown && !this.bulletHitCooldown)
-                for (let i = 0; i < 10; i += 1) {
-                    _lib_animations__WEBPACK_IMPORTED_MODULE_1__.animations.animate(_art__WEBPACK_IMPORTED_MODULE_0__.art.animations.particle,
-                        this.x + (0,_lib_util__WEBPACK_IMPORTED_MODULE_4__.randomInRange)(0, this.w),
-                        this.y + (0,_lib_util__WEBPACK_IMPORTED_MODULE_4__.randomInRange)(0, this.h),
-                        (0,_lib_util__WEBPACK_IMPORTED_MODULE_4__.randomInRangeFloat)(-1, 1) + this.xVelocity,
-                        (0,_lib_util__WEBPACK_IMPORTED_MODULE_4__.randomInRangeFloat)(-1, 1) + this.yVelocity,
-                        {
-                            moveSpeed: 10,
-                            tickSpeed: 30
-                        }
-                    )
-                }
+		_lib_colisions__WEBPACK_IMPORTED_MODULE_2__.colisions.addRectangleColision(this, (object) => {
+			if (!this.asteroidHitCooldown && !this.bulletHitCooldown)
+				for (let i = 0; i < 10; i += 1) {
+					_lib_animations__WEBPACK_IMPORTED_MODULE_1__.animations.animate(
+						_art__WEBPACK_IMPORTED_MODULE_0__.art.animations.particle,
+						this.x + (0,_lib_util__WEBPACK_IMPORTED_MODULE_4__.randomInRange)(0, this.w),
+						this.y + (0,_lib_util__WEBPACK_IMPORTED_MODULE_4__.randomInRange)(0, this.h),
+						(0,_lib_util__WEBPACK_IMPORTED_MODULE_4__.randomInRangeFloat)(-1, 1) + this.xVelocity,
+						(0,_lib_util__WEBPACK_IMPORTED_MODULE_4__.randomInRangeFloat)(-1, 1) + this.yVelocity,
+						{
+							moveSpeed: 10,
+							tickSpeed: 30,
+						}
+					)
+				}
 
-            if (object.name === 'asteroid') {
-                if (!this.asteroidHitCooldown) {
-                    this.hp -= 1
-                }
+			if (object.name === "asteroid") {
+				if (!this.asteroidHitCooldown) {
+					this.hp -= 1
+				}
 
-                this.yVelocity = -object.yVelocity
-                this.asteroidHitCooldown = 10
-            }
-            if (object.name === 'bullet') {
-                if (!this.bulletHitCooldown) {
-                    this.hp -= 1
-                }
+				this.yVelocity = -object.yVelocity
+				this.asteroidHitCooldown = 10
+			}
+			if (object.name === "bullet") {
+				if (!this.bulletHitCooldown) {
+					this.hp -= 1
+				}
 
-                this.bulletHitCooldown = 10
-            }
-        })
+				this.bulletHitCooldown = 10
+			}
+		})
 
-        this.shoot()
-        this.handleBullets()
-    }
+		this.shoot()
+		this.handleBullets()
+	}
 
-    shoot() {
-        if (this.shootCooldown > 0) {
-            this.shootCooldown -= 1
-        }
-        if (!this.shootCooldown) {
-            this.shootCooldown = 500
+	shoot() {
+		if (this.shootCooldown > 0) {
+			this.shootCooldown -= 1
+		}
+		if (!this.shootCooldown) {
+			this.shootCooldown = 500
 
-            this.bullets.push({
-                x: this.x - 1,
-                y: this.y + this.h / 2,
-                xVelocity: -0.5,
-                yVelocity: this.yVelocity * 0.5
-            })
-        }
-    }
+			this.bullets.push({
+				x: this.x - 1,
+				y: this.y + this.h / 2,
+				xVelocity: -0.5,
+				yVelocity: this.yVelocity * 0.5,
+			})
+		}
+	}
 
-    handleBullets() {
-        this.bullets.map((bullet, i) => {
-            _renderer__WEBPACK_IMPORTED_MODULE_3__.renderer.drawObject('=', bullet.x, bullet.y)
+	handleBullets() {
+		this.bullets.map((bullet, i) => {
+			_renderer__WEBPACK_IMPORTED_MODULE_3__.renderer.drawObject("=", bullet.x, bullet.y)
 
-            _lib_animations__WEBPACK_IMPORTED_MODULE_1__.animations.animate(_art__WEBPACK_IMPORTED_MODULE_0__.art.animations.smallParticle, bullet.x, bullet.y, bullet.xVelocity * 0.5 * 0, bullet.yVelocity + (0,_lib_util__WEBPACK_IMPORTED_MODULE_4__.randomInRange)(-0.1, 0.1), {
-                tickSpeed: (0,_lib_util__WEBPACK_IMPORTED_MODULE_4__.randomInRange)(2, 3),
-                moveSpeed: (0,_lib_util__WEBPACK_IMPORTED_MODULE_4__.randomInRange)(11, 21),
-            })
+			_lib_animations__WEBPACK_IMPORTED_MODULE_1__.animations.animate(
+				_art__WEBPACK_IMPORTED_MODULE_0__.art.animations.smallParticle,
+				bullet.x,
+				bullet.y,
+				bullet.xVelocity * 0.5 * 0,
+				bullet.yVelocity + (0,_lib_util__WEBPACK_IMPORTED_MODULE_4__.randomInRange)(-0.1, 0.1),
+				{
+					tickSpeed: (0,_lib_util__WEBPACK_IMPORTED_MODULE_4__.randomInRange)(2, 3),
+					moveSpeed: (0,_lib_util__WEBPACK_IMPORTED_MODULE_4__.randomInRange)(11, 21),
+				}
+			)
 
-            bullet.x += bullet.xVelocity
-            bullet.y += bullet.yVelocity
+			bullet.x += bullet.xVelocity
+			bullet.y += bullet.yVelocity
 
-            if (bullet.x > window.w + 10 || bullet.x < -10)
-                this.bullets.splice(i, 1)
+			if (bullet.x > window.w + 10 || bullet.x < -10)
+				this.bullets.splice(i, 1)
 
-            _lib_colisions__WEBPACK_IMPORTED_MODULE_2__.colisions.addRectangleColision({ w: 1, h: 1, x: bullet.x, y: bullet.y, xVelocity: bullet.xVelocity, yVelocity: bullet.yVelocity, name: 'bullet' }, (object) => {
-                if (object.name === 'bullet')
-                    return
+			_lib_colisions__WEBPACK_IMPORTED_MODULE_2__.colisions.addRectangleColision(
+				{
+					w: 1,
+					h: 1,
+					x: bullet.x,
+					y: bullet.y,
+					xVelocity: bullet.xVelocity,
+					yVelocity: bullet.yVelocity,
+					name: "bullet",
+				},
+				(object) => {
+					if (object.name === "bullet") return
 
-                _lib_animations__WEBPACK_IMPORTED_MODULE_1__.animations.animate(_art__WEBPACK_IMPORTED_MODULE_0__.art.animations.particle, bullet.x, bullet.y, bullet.xVelocity, bullet.yVelocity, {
-                    tickSpeed: 20,
-                    moveSpeed: 20
-                })
+					_lib_animations__WEBPACK_IMPORTED_MODULE_1__.animations.animate(
+						_art__WEBPACK_IMPORTED_MODULE_0__.art.animations.particle,
+						bullet.x,
+						bullet.y,
+						bullet.xVelocity,
+						bullet.yVelocity,
+						{
+							tickSpeed: 20,
+							moveSpeed: 20,
+						}
+					)
 
-                this.bullets.splice(i, 1)
-            })
-        })
-    }
+					this.bullets.splice(i, 1)
+				}
+			)
+		})
+	}
 
-    draw() {
-        const hp = ['-----', '#----', '##---', '###--', '####-', '#####']
+	draw() {
+		const hp = ["-----", "#----", "##---", "###--", "####-", "#####"]
 
-        _renderer__WEBPACK_IMPORTED_MODULE_3__.renderer.drawTransparentObject(this.sprite, this.x, this.y)
-        _renderer__WEBPACK_IMPORTED_MODULE_3__.renderer.drawObject(hp[this.hp], this.x + this.w / 2 - 3, this.y + this.h)
-    }
+		_renderer__WEBPACK_IMPORTED_MODULE_3__.renderer.drawTransparentObject(this.sprite, this.x, this.y)
+		_renderer__WEBPACK_IMPORTED_MODULE_3__.renderer.drawObject(
+			hp[this.hp],
+			this.x + this.w / 2 - 3,
+			this.y + this.h
+		)
+	}
 }
 
-/***/ }),
-
-/***/ "./src/pages/game.js":
-/*!***************************!*\
-  !*** ./src/pages/game.js ***!
-  \***************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "game": () => (/* binding */ game),
-/* harmony export */   "initGame": () => (/* binding */ initGame)
-/* harmony export */ });
-/* harmony import */ var _lib_animations__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../lib/animations */ "./src/lib/animations.ts");
-/* harmony import */ var _lib_keyboard__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../lib/keyboard */ "./src/lib/keyboard.ts");
-/* harmony import */ var _lib_mouse__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../lib/mouse */ "./src/lib/mouse.ts");
-/* harmony import */ var _lib_util__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../lib/util */ "./src/lib/util.js");
-/* harmony import */ var _lib_colisions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../lib/colisions */ "./src/lib/colisions.ts");
-/* harmony import */ var _objects_player__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../objects/player */ "./src/objects/player.js");
-/* harmony import */ var _objects_asteroid__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../objects/asteroid */ "./src/objects/asteroid.js");
-/* harmony import */ var _objects_particle__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../objects/particle */ "./src/objects/particle.js");
-/* harmony import */ var _renderer__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../renderer */ "./src/renderer.ts");
-/* harmony import */ var _objects_ufo__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../objects/ufo */ "./src/objects/ufo.js");
-/* harmony import */ var _lib_gamepad__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../lib/gamepad */ "./src/lib/gamepad.ts");
-/* harmony import */ var _objects_planet__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../objects/planet */ "./src/objects/planet.js");
-
-
-
-
-
-
-
-
-
-
-
-
-
-window.formatedScores = 'Loading scores'
-
-let isPaused = false
-
-let asteroids = []
-let particles = []
-let enemies = []
-let planets = []
-
-let player
-
-let str = ''
-
-let difficultyStart = 0.7
-let difficulty = difficultyStart
-
-let ufoSpawnCooldown = 6000
-let planetSpawnCooldown = 1000
-
-let asteroidBeltSpawnCooldown = 3000
-let asteroidBeltSpawnCooldownMax = 15000
-let asteroidBeltCooldown = 0
-let asteroidBeltCooldownMax = 3000
-
-
-function initGame() {
-    player = new _objects_player__WEBPACK_IMPORTED_MODULE_5__.Player(window.w / 3, window.h / 2)
-}
-
-async function game() {
-    const pointer = _lib_mouse__WEBPACK_IMPORTED_MODULE_2__.mouse.info()
-    const keyboard = _lib_keyboard__WEBPACK_IMPORTED_MODULE_1__.kb.info()
-    let pad = _lib_gamepad__WEBPACK_IMPORTED_MODULE_10__.gamepad.info()
-
-    if (Object.keys(keyboard.down).length) {
-        pad = null
-    }
-
-    if (!isPaused) {
-        if (asteroidBeltSpawnCooldown > 0) {
-            asteroidBeltSpawnCooldown -= 1
-        } else {
-            asteroidBeltCooldown = asteroidBeltCooldownMax
-            asteroidBeltSpawnCooldown = asteroidBeltSpawnCooldownMax
-        }
-
-        if (asteroidBeltCooldown > 0) {
-            asteroidBeltCooldown -= 1
-        }
-
-        if (ufoSpawnCooldown > 0) {
-            ufoSpawnCooldown -= 1
-        }
-
-        if (planetSpawnCooldown > 0) {
-            planetSpawnCooldown -= 1
-        } else {
-            planets.push(new _objects_planet__WEBPACK_IMPORTED_MODULE_11__.Planet(window.w, 'auto'))
-            planetSpawnCooldown = 60000
-        }
-
-        if (difficulty <= 1.4) {
-            difficulty += 0.00004
-        }
-    }
-
-    particles.forEach(particle => {
-        if (!isPaused)
-            particle.tick()
-
-        particle.draw()
-    })
-
-    planets.forEach((planet, i) => {
-        if (!isPaused) {
-            planet.setDeleter(() => {
-                planets.splice(i, 1)
-                planetSpawnCooldown = 6000
-            })
-            planet.tick()
-        }
-        planet.draw()
-    })
-
-    asteroids.forEach((asteroid, i) => {
-        if (!isPaused) {
-
-            asteroid.setDeleter(() => {
-                asteroids.splice(i, 1)
-            })
-            asteroid.tick()
-        }
-        asteroid.draw()
-    })
-
-    if (!isPaused) {
-        if (window.clock % parseInt(201 / difficulty) == 0) {
-            asteroids.push(new _objects_asteroid__WEBPACK_IMPORTED_MODULE_6__.Asteroid(window.w, (0,_lib_util__WEBPACK_IMPORTED_MODULE_3__.randomInRange)(0, window.h - 6), (0,_lib_util__WEBPACK_IMPORTED_MODULE_3__.randomInRangeFloat)(-0.5, -0.2) * difficulty, 0))
-        }
-        if (asteroidBeltCooldown) {
-            if (window.clock % parseInt(201 / difficulty) - 100 == 0) {
-                asteroids.push(new _objects_asteroid__WEBPACK_IMPORTED_MODULE_6__.Asteroid(window.w, (0,_lib_util__WEBPACK_IMPORTED_MODULE_3__.randomInRange)(0, window.h - 6), (0,_lib_util__WEBPACK_IMPORTED_MODULE_3__.randomInRangeFloat)(-0.5, -0.2) * difficulty, 0))
-                asteroids.push(new _objects_asteroid__WEBPACK_IMPORTED_MODULE_6__.Asteroid(window.w, (0,_lib_util__WEBPACK_IMPORTED_MODULE_3__.randomInRange)(0, window.h - 6), (0,_lib_util__WEBPACK_IMPORTED_MODULE_3__.randomInRangeFloat)(-0.5, -0.2) * difficulty, 0))
-            }
-        }
-    }
-
-    enemies.forEach((enemy, i) => {
-        if (!isPaused) {
-            enemy.setDeleter(() => {
-                enemies.splice(i, 1)
-                ufoSpawnCooldown = 8000
-            })
-            enemy.tick(player)
-        }
-        enemy.draw()
-    })
-
-    if (!ufoSpawnCooldown && !enemies.length) {
-        enemies.push(new _objects_ufo__WEBPACK_IMPORTED_MODULE_9__.Ufo(window.w, (0,_lib_util__WEBPACK_IMPORTED_MODULE_3__.randomInRange)(0, window.h)))
-    }
-
-
-    if (!isPaused) {
-        if (window.clock % 40 == 0) {
-            particles.push(new _objects_particle__WEBPACK_IMPORTED_MODULE_7__.Particle(window.w, (0,_lib_util__WEBPACK_IMPORTED_MODULE_3__.randomInRange)(0, window.h), (0,_lib_util__WEBPACK_IMPORTED_MODULE_3__.randomInRangeFloat)(-0.4, -0.2) * difficulty, 0))
-        }
-        if (window.clock % 40 - 20 == 0) {
-            particles.push(new _objects_particle__WEBPACK_IMPORTED_MODULE_7__.Particle(window.w, (0,_lib_util__WEBPACK_IMPORTED_MODULE_3__.randomInRange)(0, window.h), (0,_lib_util__WEBPACK_IMPORTED_MODULE_3__.randomInRangeFloat)(-0.7, -0.4) * difficulty, 0))
-        }
-
-        player.tick(pointer, keyboard, pad)
-    }
-
-    player.draw(isPaused)
-
-    if (player.dead) {
-        str = 'You died!'
-        _renderer__WEBPACK_IMPORTED_MODULE_8__.renderer.drawObject(`${str}`, window.w / 2 - str.length / 2, window.h / 2 - 2)
-        str = `Score: ${player.score}`
-        _renderer__WEBPACK_IMPORTED_MODULE_8__.renderer.drawObject(`${str}`, window.w / 2 - str.length / 2, window.h / 2)
-        str = 'Press Enter to respawn'
-        if (pad) {
-            str = 'Press triangle to respawn'
-        }
-        _renderer__WEBPACK_IMPORTED_MODULE_8__.renderer.drawObject(`${str}`, window.w / 2 - str.length / 2, window.h / 2 + 2)
-
-        if (keyboard.new['Enter'] || pad?.buttons.triangle) {
-            player = new _objects_player__WEBPACK_IMPORTED_MODULE_5__.Player(window.w / 3, window.h / 2)
-            difficulty = difficultyStart
-        }
-
-
-        _renderer__WEBPACK_IMPORTED_MODULE_8__.renderer.drawObject(window.formatedScores, 10, 10)
-    } else {
-        if (keyboard.new['Escape']) {// todo: add option button from controller
-            isPaused = !isPaused
-        }
-
-        str = `${player.score}`
-        _renderer__WEBPACK_IMPORTED_MODULE_8__.renderer.drawObject(`${str}`, window.w / 2 - str.length / 2, window.h - 3)
-    }
-
-    if (isPaused) {
-        str = `Game is paused`
-        _renderer__WEBPACK_IMPORTED_MODULE_8__.renderer.drawObject(`${str}`, window.w / 2 - str.length / 2, window.h / 2 - 1)
-        str = `Press escape to unpause`
-        _renderer__WEBPACK_IMPORTED_MODULE_8__.renderer.drawObject(`${str}`, window.w / 2 - str.length / 2, window.h / 2 + 1)
-    }
-
-
-    if (asteroidBeltCooldown) {
-        str = 'Asteroid cluster detected!'
-        _renderer__WEBPACK_IMPORTED_MODULE_8__.renderer.drawObject(str, window.w / 2 - str.length / 2, window.h - 1)
-    }
-
-    tick()
-    _lib_mouse__WEBPACK_IMPORTED_MODULE_2__.mouse.showCursor()
-}
-
-function tick() {
-    _lib_colisions__WEBPACK_IMPORTED_MODULE_4__.colisions.check()
-
-    if (!isPaused) {
-        _lib_animations__WEBPACK_IMPORTED_MODULE_0__.animations.move()
-        _lib_animations__WEBPACK_IMPORTED_MODULE_0__.animations.tick()
-    }
-    _lib_animations__WEBPACK_IMPORTED_MODULE_0__.animations.render()
-}
 
 /***/ }),
 
@@ -25696,66 +25936,66 @@ __webpack_require__.r(__webpack_exports__);
 window.username = `player${(0,_lib_util__WEBPACK_IMPORTED_MODULE_3__.randomInRange)(0, 10_000)}`
 
 function initMainMenu() {
-    window.username = localStorage.getItem('username')
+	window.username = localStorage.getItem("username")
 
-    if (!window.username) {
-        window.username = `player${(0,_lib_util__WEBPACK_IMPORTED_MODULE_3__.randomInRange)(0, 10_000)}`
-        localStorage.setItem('username', window.username)
-    }
+	if (!window.username) {
+		window.username = `player${(0,_lib_util__WEBPACK_IMPORTED_MODULE_3__.randomInRange)(0, 10_000)}`
+		localStorage.setItem("username", window.username)
+	}
 }
 
 function mainMenu() {
-    const pointer = _lib_mouse__WEBPACK_IMPORTED_MODULE_2__.mouse.info()
-    const keyboard = _lib_keyboard__WEBPACK_IMPORTED_MODULE_1__.kb.info()
-    const pad = _lib_gamepad__WEBPACK_IMPORTED_MODULE_8__.gamepad.info()
+	const pointer = _lib_mouse__WEBPACK_IMPORTED_MODULE_2__.mouse.info()
+	const keyboard = _lib_keyboard__WEBPACK_IMPORTED_MODULE_1__.kb.info()
+	const pad = _lib_gamepad__WEBPACK_IMPORTED_MODULE_8__.gamepad.info()
 
-    const logo = _art__WEBPACK_IMPORTED_MODULE_6__.art.textures.logo
-    _renderer__WEBPACK_IMPORTED_MODULE_5__.renderer.drawObject(logo.img, window.w / 2 - logo.w / 2, window.h / 3)
+	const logo = _art__WEBPACK_IMPORTED_MODULE_6__.art.textures.logo
+	_renderer__WEBPACK_IMPORTED_MODULE_5__.renderer.drawObject(logo.img, window.w / 2 - logo.w / 2, window.h / 3)
 
-    const start = () => {
-        window.page = 'game'
-    }
+	const start = () => {
+		window.page = "game"
+	}
 
-    const changeName = () => {
-        window.username = prompt("Please enter your name", window.username)
+	const changeName = () => {
+		window.username = prompt("Please enter your name", window.username)
 
-        localStorage.setItem('username', window.username)
-    }
+		localStorage.setItem("username", window.username)
+	}
 
-    if (pad?.buttons.cross || keyboard.new['Enter'] || keyboard.new[' ']) {
-        start()
-    }
+	if (pad?.buttons.cross || keyboard.new["Enter"] || keyboard.new[" "]) {
+		start()
+	}
 
+	_lib_ui__WEBPACK_IMPORTED_MODULE_7__.ui.button({
+		content: "Play",
+		x: window.w / 2 - 3,
+		y: window.h / 3 + 8,
+		pointer: pointer,
+		onClick: start,
+	})
 
-    _lib_ui__WEBPACK_IMPORTED_MODULE_7__.ui.button({
-        content: 'Play',
-        x: window.w / 2 - 3,
-        y: window.h / 3 + 8,
-        pointer: pointer,
-        onClick: start
-    })
+	_renderer__WEBPACK_IMPORTED_MODULE_5__.renderer.drawObject(window.username, 5, 5)
 
-    _renderer__WEBPACK_IMPORTED_MODULE_5__.renderer.drawObject(window.username, 5, 5)
+	_lib_ui__WEBPACK_IMPORTED_MODULE_7__.ui.button({
+		content: "Change name",
+		x: 5 + window.username.length + 2,
+		y: 4,
+		pointer: pointer,
+		onClick: changeName,
+	})
 
-    _lib_ui__WEBPACK_IMPORTED_MODULE_7__.ui.button({
-        content: 'Change name',
-        x: 5 + window.username.length + 2,
-        y: 4,
-        pointer: pointer,
-        onClick: changeName
-    })
-
-    tick()
-    _lib_mouse__WEBPACK_IMPORTED_MODULE_2__.mouse.showCursor()
+	tick()
+	_lib_mouse__WEBPACK_IMPORTED_MODULE_2__.mouse.showCursor()
 }
 
 function tick() {
-    _lib_colisions__WEBPACK_IMPORTED_MODULE_4__.colisions.check()
+	_lib_colisions__WEBPACK_IMPORTED_MODULE_4__.colisions.check()
 
-    _lib_animations__WEBPACK_IMPORTED_MODULE_0__.animations.move()
-    _lib_animations__WEBPACK_IMPORTED_MODULE_0__.animations.tick()
-    _lib_animations__WEBPACK_IMPORTED_MODULE_0__.animations.render()
+	_lib_animations__WEBPACK_IMPORTED_MODULE_0__.animations.move()
+	_lib_animations__WEBPACK_IMPORTED_MODULE_0__.animations.tick()
+	_lib_animations__WEBPACK_IMPORTED_MODULE_0__.animations.render()
 }
+
 
 /***/ }),
 
@@ -25770,15 +26010,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "navigation": () => (/* binding */ navigation)
 /* harmony export */ });
 const navigation = [
-    {
-        content: 'Assets',
-        onClick: () => { window.page = 'utility-asset-viewer' }
-    },
-    {
-        content: 'Particles/animations',
-        onClick: () => { window.page = 'utility-animation-viewer' }
-    },
+	{
+		content: "Assets",
+		onClick: () => {
+			window.page = "utility-asset-viewer"
+		},
+	},
+	{
+		content: "Particles/animations",
+		onClick: () => {
+			window.page = "utility-animation-viewer"
+		},
+	},
 ]
+
 
 /***/ }),
 
@@ -25820,197 +26065,228 @@ let tickSpeed = 17
 let moveSpeed = 8
 
 function initAnimationViewer() {
-    console.log('init')
+	console.log("init")
 
-    for (const [key, value] of Object.entries(animations_)) {
-        anims.push({
-            name: `${key}`,
-            sprites: animations_[key].sprites,
-        })
-    }
+	for (const [key, value] of Object.entries(animations_)) {
+		anims.push({
+			name: `${key}`,
+			sprites: animations_[key].sprites,
+		})
+	}
 }
 
 function animationViewer() {
-    const pointer = _lib_mouse__WEBPACK_IMPORTED_MODULE_1__.mouse.info()
-    const keyboard = _lib_keyboard__WEBPACK_IMPORTED_MODULE_0__.kb.info()
+	const pointer = _lib_mouse__WEBPACK_IMPORTED_MODULE_1__.mouse.info()
+	const keyboard = _lib_keyboard__WEBPACK_IMPORTED_MODULE_0__.kb.info()
 
-    _lib_ui__WEBPACK_IMPORTED_MODULE_3__.ui.dropDown('Navigation', _nav__WEBPACK_IMPORTED_MODULE_6__.navigation, 5, 5, pointer)
-    _lib_animations__WEBPACK_IMPORTED_MODULE_7__.animations.render()
+	_lib_ui__WEBPACK_IMPORTED_MODULE_3__.ui.dropDown("Navigation", _nav__WEBPACK_IMPORTED_MODULE_6__.navigation, 5, 5, pointer)
+	_lib_animations__WEBPACK_IMPORTED_MODULE_7__.animations.render()
 
-    const command = `animations.animate(art.animations.${anims[id].name}, x, y, randomInRangeFloat(${-spreadX}, ${spreadX}), -${spreadY}, { tickSpeed: ${tickSpeed}, moveSpeed: ${moveSpeed}, loop: ${loop} })`
+	const command = `animations.animate(art.animations.${
+		anims[id].name
+	}, x, y, randomInRangeFloat(${-spreadX}, ${spreadX}), -${spreadY}, { tickSpeed: ${tickSpeed}, moveSpeed: ${moveSpeed}, loop: ${loop} })`
 
-    const configurations = [
-        {
-            content: `|`,
-            pointer: pointer,
-            onClick: () => { },
-            disabled: true,
-        },
-        {
-            content: `X spread(${spreadX.toFixed(1)})`,
-            pointer: pointer,
-            onClick: () => { },
-            disabled: true,
-        },
-        {
-            content: '+',
-            pointer: pointer,
-            onClick: () => { spreadX += 0.1 },
-        },
-        {
-            content: '-',
-            pointer: pointer,
-            onClick: () => { spreadX -= 0.1 },
-        },
-        {
-            content: `|`,
-            pointer: pointer,
-            onClick: () => { },
-            disabled: true,
-        },
-        {
-            content: `Y spread(${spreadY.toFixed(1)})`,
-            pointer: pointer,
-            onClick: () => { },
-            disabled: true,
-        },
-        {
-            content: '+',
-            pointer: pointer,
-            onClick: () => { spreadY += 0.1 },
-        },
-        {
-            content: '-',
-            pointer: pointer,
-            onClick: () => { spreadY -= 0.1 },
-        },
-        {
-            content: `|`,
-            pointer: pointer,
-            onClick: () => { },
-            disabled: true,
-        },
-        {
-            content: 'switch loop',
-            pointer: pointer,
-            onClick: () => { loop = !loop },
-        },
-        {
-            content: `|`,
-            pointer: pointer,
-            onClick: () => { },
-            disabled: true,
-        },
-        {
-            content: `tick speed ${tickSpeed}`,
-            pointer: pointer,
-            onClick: () => { },
-            disabled: true,
-        },
-        {
-            content: '+',
-            pointer: pointer,
-            onClick: () => { tickSpeed += 1 },
-        },
-        {
-            content: '-',
-            pointer: pointer,
-            onClick: () => { tickSpeed -= 1 },
-        },
-        {
-            content: `|`,
-            pointer: pointer,
-            onClick: () => { },
-            disabled: true,
-        },
-        {
-            content: `move speed ${moveSpeed}`,
-            pointer: pointer,
-            onClick: () => { },
-            disabled: true,
-        },
-        {
-            content: '+',
-            pointer: pointer,
-            onClick: () => { moveSpeed += 1 },
-        },
-        {
-            content: '-',
-            pointer: pointer,
-            onClick: () => { moveSpeed -= 1 },
-        },
-    ]
+	const configurations = [
+		{
+			content: `|`,
+			pointer: pointer,
+			onClick: () => {},
+			disabled: true,
+		},
+		{
+			content: `X spread(${spreadX.toFixed(1)})`,
+			pointer: pointer,
+			onClick: () => {},
+			disabled: true,
+		},
+		{
+			content: "+",
+			pointer: pointer,
+			onClick: () => {
+				spreadX += 0.1
+			},
+		},
+		{
+			content: "-",
+			pointer: pointer,
+			onClick: () => {
+				spreadX -= 0.1
+			},
+		},
+		{
+			content: `|`,
+			pointer: pointer,
+			onClick: () => {},
+			disabled: true,
+		},
+		{
+			content: `Y spread(${spreadY.toFixed(1)})`,
+			pointer: pointer,
+			onClick: () => {},
+			disabled: true,
+		},
+		{
+			content: "+",
+			pointer: pointer,
+			onClick: () => {
+				spreadY += 0.1
+			},
+		},
+		{
+			content: "-",
+			pointer: pointer,
+			onClick: () => {
+				spreadY -= 0.1
+			},
+		},
+		{
+			content: `|`,
+			pointer: pointer,
+			onClick: () => {},
+			disabled: true,
+		},
+		{
+			content: "switch loop",
+			pointer: pointer,
+			onClick: () => {
+				loop = !loop
+			},
+		},
+		{
+			content: `|`,
+			pointer: pointer,
+			onClick: () => {},
+			disabled: true,
+		},
+		{
+			content: `tick speed ${tickSpeed}`,
+			pointer: pointer,
+			onClick: () => {},
+			disabled: true,
+		},
+		{
+			content: "+",
+			pointer: pointer,
+			onClick: () => {
+				tickSpeed += 1
+			},
+		},
+		{
+			content: "-",
+			pointer: pointer,
+			onClick: () => {
+				tickSpeed -= 1
+			},
+		},
+		{
+			content: `|`,
+			pointer: pointer,
+			onClick: () => {},
+			disabled: true,
+		},
+		{
+			content: `move speed ${moveSpeed}`,
+			pointer: pointer,
+			onClick: () => {},
+			disabled: true,
+		},
+		{
+			content: "+",
+			pointer: pointer,
+			onClick: () => {
+				moveSpeed += 1
+			},
+		},
+		{
+			content: "-",
+			pointer: pointer,
+			onClick: () => {
+				moveSpeed -= 1
+			},
+		},
+	]
 
-    _lib_ui__WEBPACK_IMPORTED_MODULE_3__.ui.buttonRow(configurations, 20, 4)
+	_lib_ui__WEBPACK_IMPORTED_MODULE_3__.ui.buttonRow(configurations, 20, 4)
 
-    // renderer.drawObject(`${id} - img id`, 0, 0)
+	// renderer.drawObject(`${id} - img id`, 0, 0)
 
-    _lib_ui__WEBPACK_IMPORTED_MODULE_3__.ui.button({
-        content: '<',
-        x: window.w * 0.1,
-        y: window.h / 2,
-        pointer: pointer,
-        onClick: () => {
-            if (id - 1 >= 0)
-                id -= 1
-        },
-        style: 'underlined'
-    })
-    _lib_ui__WEBPACK_IMPORTED_MODULE_3__.ui.button({
-        content: '>',
-        x: window.w * 0.9,
-        y: window.h / 2,
-        pointer: pointer,
-        onClick: () => {
-            if (id + 1 < anims.length)
-                id += 1
-        },
-        style: 'underlined'
-    })
+	_lib_ui__WEBPACK_IMPORTED_MODULE_3__.ui.button({
+		content: "<",
+		x: window.w * 0.1,
+		y: window.h / 2,
+		pointer: pointer,
+		onClick: () => {
+			if (id - 1 >= 0) id -= 1
+		},
+		style: "underlined",
+	})
+	_lib_ui__WEBPACK_IMPORTED_MODULE_3__.ui.button({
+		content: ">",
+		x: window.w * 0.9,
+		y: window.h / 2,
+		pointer: pointer,
+		onClick: () => {
+			if (id + 1 < anims.length) id += 1
+		},
+		style: "underlined",
+	})
 
-    let buttons = [
-        {
-            content: 'copy:',
-            pointer: pointer,
-            onClick: () => {
-                console.log('nononono')
-            },
-            disabled: true
-        },
-        {
-            content: 'path',
-            pointer: pointer,
-            onClick: () => {
-                navigator.clipboard.writeText(`art.animations.${anims[id].name}`)
-            },
-            style: 'underlined',
-        },
-        {
-            content: 'command',
-            pointer: pointer,
-            onClick: () => {
-                navigator.clipboard.writeText(command)
-            },
-            style: 'underlined',
-        }
-    ]
+	let buttons = [
+		{
+			content: "copy:",
+			pointer: pointer,
+			onClick: () => {
+				console.log("nononono")
+			},
+			disabled: true,
+		},
+		{
+			content: "path",
+			pointer: pointer,
+			onClick: () => {
+				navigator.clipboard.writeText(
+					`art.animations.${anims[id].name}`
+				)
+			},
+			style: "underlined",
+		},
+		{
+			content: "command",
+			pointer: pointer,
+			onClick: () => {
+				navigator.clipboard.writeText(command)
+			},
+			style: "underlined",
+		},
+	]
 
-    _lib_ui__WEBPACK_IMPORTED_MODULE_3__.ui.buttonRow(buttons, window.w / 2 - 22, window.h - 8)
+	_lib_ui__WEBPACK_IMPORTED_MODULE_3__.ui.buttonRow(buttons, window.w / 2 - 22, window.h - 8)
 
-    let text = `${id}. art.animations.${anims[id].name}, sprites:${anims[id].sprites.length}`
-    _renderer__WEBPACK_IMPORTED_MODULE_2__.renderer.drawObject(text, window.w / 2 - text.length / 2, window.h - 10)
+	let text = `${id}. art.animations.${anims[id].name}, sprites:${anims[id].sprites.length}`
+	_renderer__WEBPACK_IMPORTED_MODULE_2__.renderer.drawObject(text, window.w / 2 - text.length / 2, window.h - 10)
 
-    _renderer__WEBPACK_IMPORTED_MODULE_2__.renderer.drawObject(command, window.w / 2 - command.length / 2, window.h - 3)
-    // renderer.drawObject(anims[id].sprti, window.w / 2 - anims[id].width / 2, window.h / 2 - anims[id].height / 2)
+	_renderer__WEBPACK_IMPORTED_MODULE_2__.renderer.drawObject(
+		command,
+		window.w / 2 - command.length / 2,
+		window.h - 3
+	)
+	// renderer.drawObject(anims[id].sprti, window.w / 2 - anims[id].width / 2, window.h / 2 - anims[id].height / 2)
 
-    _lib_animations__WEBPACK_IMPORTED_MODULE_7__.animations.animate(anims[id], window.w / 2, window.h / 2, (0,_lib_util__WEBPACK_IMPORTED_MODULE_5__.randomInRangeFloat)(-spreadX, spreadX), -spreadY, { tickSpeed: tickSpeed, moveSpeed: moveSpeed, loop: loop })
+	_lib_animations__WEBPACK_IMPORTED_MODULE_7__.animations.animate(
+		anims[id],
+		window.w / 2,
+		window.h / 2,
+		(0,_lib_util__WEBPACK_IMPORTED_MODULE_5__.randomInRangeFloat)(-spreadX, spreadX),
+		-spreadY,
+		{ tickSpeed: tickSpeed, moveSpeed: moveSpeed, loop: loop }
+	)
 
+	_lib_animations__WEBPACK_IMPORTED_MODULE_7__.animations.tick()
+	_lib_animations__WEBPACK_IMPORTED_MODULE_7__.animations.move()
 
-    _lib_animations__WEBPACK_IMPORTED_MODULE_7__.animations.tick()
-    _lib_animations__WEBPACK_IMPORTED_MODULE_7__.animations.move()
-
-    _lib_mouse__WEBPACK_IMPORTED_MODULE_1__.mouse.showCursor()
+	_lib_mouse__WEBPACK_IMPORTED_MODULE_1__.mouse.showCursor()
 }
+
 
 /***/ }),
 
@@ -26045,94 +26321,101 @@ let { textures } = _art__WEBPACK_IMPORTED_MODULE_4__.art
 let images = []
 
 function initAssetsViewer() {
-    console.log('init')
+	console.log("init")
 
-    for (const [key, value] of Object.entries(textures)) {
-        const { height, width } = (0,_lib_util__WEBPACK_IMPORTED_MODULE_5__.getDimensions)(textures[key].img)
+	for (const [key, value] of Object.entries(textures)) {
+		const { height, width } = (0,_lib_util__WEBPACK_IMPORTED_MODULE_5__.getDimensions)(textures[key].img)
 
-        images.push({
-            name: `${key}`,
-            img: textures[key].img,
-            height: height,
-            width: width
-        })
-    }
+		images.push({
+			name: `${key}`,
+			img: textures[key].img,
+			height: height,
+			width: width,
+		})
+	}
 }
 
 function assetsViewer() {
-    const pointer = _lib_mouse__WEBPACK_IMPORTED_MODULE_1__.mouse.info()
-    const keyboard = _lib_keyboard__WEBPACK_IMPORTED_MODULE_0__.kb.info()
+	const pointer = _lib_mouse__WEBPACK_IMPORTED_MODULE_1__.mouse.info()
+	const keyboard = _lib_keyboard__WEBPACK_IMPORTED_MODULE_0__.kb.info()
 
-    _lib_ui__WEBPACK_IMPORTED_MODULE_3__.ui.dropDown('Navigation', _nav__WEBPACK_IMPORTED_MODULE_6__.navigation, 5, 5, pointer)
+	_lib_ui__WEBPACK_IMPORTED_MODULE_3__.ui.dropDown("Navigation", _nav__WEBPACK_IMPORTED_MODULE_6__.navigation, 5, 5, pointer)
 
-    // renderer.drawObject(`${id} - img id`, 0, 0)
+	// renderer.drawObject(`${id} - img id`, 0, 0)
 
-    _lib_ui__WEBPACK_IMPORTED_MODULE_3__.ui.button({
-        content: '<',
-        x: window.w * 0.1,
-        y: window.h / 2,
-        pointer: pointer,
-        onClick: () => {
-            if (id - 1 >= 0)
-                id -= 1
-        },
-        style: 'underlined'
-    })
-    _lib_ui__WEBPACK_IMPORTED_MODULE_3__.ui.button({
-        content: '>',
-        x: window.w * 0.9,
-        y: window.h / 2,
-        pointer: pointer,
-        onClick: () => {
-            if (id + 1 < images.length)
-                id += 1
-        },
-        style: 'underlined'
-    })
+	_lib_ui__WEBPACK_IMPORTED_MODULE_3__.ui.button({
+		content: "<",
+		x: window.w * 0.1,
+		y: window.h / 2,
+		pointer: pointer,
+		onClick: () => {
+			if (id - 1 >= 0) id -= 1
+		},
+		style: "underlined",
+	})
+	_lib_ui__WEBPACK_IMPORTED_MODULE_3__.ui.button({
+		content: ">",
+		x: window.w * 0.9,
+		y: window.h / 2,
+		pointer: pointer,
+		onClick: () => {
+			if (id + 1 < images.length) id += 1
+		},
+		style: "underlined",
+	})
 
-    let text = `${id}. art.textures.${images[id].name}, w:${images[id].width} h:${images[id].height}`
-    _renderer__WEBPACK_IMPORTED_MODULE_2__.renderer.drawObject(text, window.w / 2 - text.length / 2, window.h - 10)
-    _renderer__WEBPACK_IMPORTED_MODULE_2__.renderer.drawObject(images[id].img, window.w / 2 - images[id].width / 2, window.h / 2 - images[id].height / 2)
+	let text = `${id}. art.textures.${images[id].name}, w:${images[id].width} h:${images[id].height}`
+	_renderer__WEBPACK_IMPORTED_MODULE_2__.renderer.drawObject(text, window.w / 2 - text.length / 2, window.h - 10)
+	_renderer__WEBPACK_IMPORTED_MODULE_2__.renderer.drawObject(
+		images[id].img,
+		window.w / 2 - images[id].width / 2,
+		window.h / 2 - images[id].height / 2
+	)
 
-    let buttons = [
-        {
-            content: 'copy:',
-            pointer: pointer,
-            onClick: () => {
-                console.log('nononono')
-            },
-            disabled: true
-        },
-        {
-            content: 'path',
-            pointer: pointer,
-            onClick: () => {
-                navigator.clipboard.writeText(`art.textures.${images[id].name}.img`)
-            },
-            style: 'underlined',
-        },
-        {
-            content: 'dimensions',
-            pointer: pointer,
-            onClick: () => {
-                navigator.clipboard.writeText(`width:${images[id].width}, height:${images[id].height}`)
-            },
-            style: 'underlined',
-        },
-        {
-            content: 'img',
-            pointer: pointer,
-            onClick: () => {
-                navigator.clipboard.writeText(`${images[id].img}`)
-            },
-            style: 'underlined',
-        }
-    ]
+	let buttons = [
+		{
+			content: "copy:",
+			pointer: pointer,
+			onClick: () => {
+				console.log("nononono")
+			},
+			disabled: true,
+		},
+		{
+			content: "path",
+			pointer: pointer,
+			onClick: () => {
+				navigator.clipboard.writeText(
+					`art.textures.${images[id].name}.img`
+				)
+			},
+			style: "underlined",
+		},
+		{
+			content: "dimensions",
+			pointer: pointer,
+			onClick: () => {
+				navigator.clipboard.writeText(
+					`width:${images[id].width}, height:${images[id].height}`
+				)
+			},
+			style: "underlined",
+		},
+		{
+			content: "img",
+			pointer: pointer,
+			onClick: () => {
+				navigator.clipboard.writeText(`${images[id].img}`)
+			},
+			style: "underlined",
+		},
+	]
 
-    _lib_ui__WEBPACK_IMPORTED_MODULE_3__.ui.buttonRow(buttons, window.w / 2 - 16, window.h - 8)
+	_lib_ui__WEBPACK_IMPORTED_MODULE_3__.ui.buttonRow(buttons, window.w / 2 - 16, window.h - 8)
 
-    _lib_mouse__WEBPACK_IMPORTED_MODULE_1__.mouse.showCursor()
+	_lib_mouse__WEBPACK_IMPORTED_MODULE_1__.mouse.showCursor()
 }
+
 
 /***/ }),
 
@@ -28331,7 +28614,7 @@ __webpack_require__.r(__webpack_exports__);
 /** editable config
  * also, you can change it in js console
  * by typing "window.setting = value"
-*/
+ */
 /* start page, selects page with corresponding id in page.js file */
 const startPageId = 0;
 /* log average render and logic time for 200 frames in console */
@@ -28360,21 +28643,22 @@ const symbolWidth = 0.66;
 const symbolHeight = 1.22;
 ////
 let interval;
-window.asciiScreen = document.getElementById('asciicontainer');
-window.page = 'main';
+window.asciiScreen = document.getElementById("asciicontainer");
+window.page = "main";
 window.currentPage = window.page;
 window.currentPageFunction = _pageLayout__WEBPACK_IMPORTED_MODULE_4__.pages[startPageId].func;
 window.fps = _pageLayout__WEBPACK_IMPORTED_MODULE_4__.pages[startPageId].fps;
 function resizer() {
     window.w = Math.floor(window.innerWidth / (window.fsize * symbolWidth));
-    window.h = Math.floor(window.innerHeight / (window.fsize * symbolHeight)) + 1;
+    window.h =
+        Math.floor(window.innerHeight / (window.fsize * symbolHeight)) + 1;
     _renderer__WEBPACK_IMPORTED_MODULE_3__.asciiMap.init();
 }
 window.onload = function () {
     resizer();
     _pageLayout__WEBPACK_IMPORTED_MODULE_4__.pages[startPageId].init();
     _renderer__WEBPACK_IMPORTED_MODULE_3__.asciiMap.init();
-    window.addEventListener('resize', resizer, false);
+    window.addEventListener("resize", resizer, false);
     updateFps(window.fps);
     lib_mouse__WEBPACK_IMPORTED_MODULE_2__.mouse.init();
     _lib_keyboard__WEBPACK_IMPORTED_MODULE_0__.kb.init();
@@ -28392,13 +28676,13 @@ function main() {
     if (window.currentPage === window.page) {
         const logicTimeStart = performance.now();
         window.currentPageFunction();
-        lib_logger__WEBPACK_IMPORTED_MODULE_1__.logger.log('logic', performance.now() - logicTimeStart);
+        lib_logger__WEBPACK_IMPORTED_MODULE_1__.logger.log("logic", performance.now() - logicTimeStart);
         if (window.showPerformanceLogs && window.clock % 200 === 1) {
-            console.log('logic: ', lib_logger__WEBPACK_IMPORTED_MODULE_1__.logger.getLog('logic'));
+            console.log("logic: ", lib_logger__WEBPACK_IMPORTED_MODULE_1__.logger.getLog("logic"));
         }
     }
     else {
-        _pageLayout__WEBPACK_IMPORTED_MODULE_4__.pages.forEach(page => {
+        _pageLayout__WEBPACK_IMPORTED_MODULE_4__.pages.forEach((page) => {
             if (page.name === window.page) {
                 updateFps(page.fps);
                 window.currentPage = window.page;
@@ -28409,11 +28693,11 @@ function main() {
     }
     const renderTimeEnd = performance.now();
     const renderTime = renderTimeEnd - renderTimeStart;
-    lib_logger__WEBPACK_IMPORTED_MODULE_1__.logger.log('rendertime', renderTime);
+    lib_logger__WEBPACK_IMPORTED_MODULE_1__.logger.log("rendertime", renderTime);
     window.frameTime = renderTime;
     if (window.clock % 20 === 0) {
-        const frt = lib_logger__WEBPACK_IMPORTED_MODULE_1__.logger.getLog('rendertime');
-        const logic = lib_logger__WEBPACK_IMPORTED_MODULE_1__.logger.getLog('logic');
+        const frt = lib_logger__WEBPACK_IMPORTED_MODULE_1__.logger.getLog("rendertime");
+        const logic = lib_logger__WEBPACK_IMPORTED_MODULE_1__.logger.getLog("logic");
         window.frt = frt;
         window.logic = logic;
     }
