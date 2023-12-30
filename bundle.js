@@ -24133,7 +24133,15 @@ const sounds = {
         const newSound = new Audio(soundPaths[soundKey]);
         soundInstances.push(newSound);
         this.sounds[soundKey] = soundInstances;
+        window.soundInstances = soundInstances.length;
         newSound.play();
+        newSound.addEventListener("ended", () => {
+            const index = soundInstances.indexOf(newSound);
+            if (index !== -1) {
+                soundInstances.splice(index, 1);
+                window.soundInstances = soundInstances.length;
+            }
+        });
     },
 };
 function loadSounds(soundPaths) {
@@ -24144,24 +24152,20 @@ function loadSounds(soundPaths) {
         }
     }
 }
-// Example usage:
 const soundPaths = {
     shoot: "sounds/shoot.wav",
-    hit: "sounds/hit.wav",
-    death: "sounds/death.wav",
-    kill: "sounds/kill.wav",
-    oof: "sounds/oof.wav",
-    bell: "sounds/bell.wav",
-    bonk: "sounds/bonk.wav",
-    pan: "sounds/pan.wav",
-    emergency: "sounds/emergency.wav",
+    asteroidHit: "sounds/asteroid-hit.wav",
+    asteroidExplosion: "sounds/asteroid-explosion.wav",
+    asteroidBeltAlert: "sounds/asteroid-belt-alert.wav",
+    ufoAlert: "sounds/ufo-alert.wav",
+    ufoDeath: "sounds/ufo-death.wav",
+    playerDeath: "sounds/player-death.wav",
     ufoShoot: "sounds/ufo-shoot.wav",
     asteroidBelt: "sounds/asteroid-belt.wav",
     playerSpawn: "sounds/player-spawn.wav",
-    dog: "sounds/dog.wav",
-    bong: "sounds/bong.wav",
-    orbs: "sounds/orbs.wav",
-    // Add more sound paths as needed
+    bigScore: "sounds/big-score.wav",
+    playerHit: "sounds/player-hit.wav",
+    playerRegen: "sounds/player-regen.wav",
 };
 loadSounds(soundPaths);
 
@@ -24427,11 +24431,14 @@ function game() {
             pad = null;
         }
         if (!isPaused) {
+            if (player.score % 2500 === 0) {
+                _lib_sounds__WEBPACK_IMPORTED_MODULE_12__.sounds.play("bigScore");
+            }
             if (asteroidBeltSpawnCooldown > 0) {
                 asteroidBeltSpawnCooldown -= 1;
             }
             else {
-                _lib_sounds__WEBPACK_IMPORTED_MODULE_12__.sounds.play("asteroidBelt");
+                _lib_sounds__WEBPACK_IMPORTED_MODULE_12__.sounds.play("asteroidBeltAlert");
                 asteroidBeltCooldown = asteroidBeltCooldownMax;
                 asteroidBeltSpawnCooldown = asteroidBeltSpawnCooldownMax;
             }
@@ -24711,7 +24718,7 @@ const renderer = {
             if (window.renderer.showPerformance) {
                 const message = `Page ${window.page}.js h=${window.h} w=${window.w}, \nFrame render time = ${window.frt.toFixed(2)} ms${(1000 / window.frt).toFixed(2)}, logic time = ${window.logic.toFixed(2)}, (${((window.logic / window.frt) *
                     100).toFixed(2)}%)
-Active animations:${window.activeAnimations}, objects: ${window.objects}, colision obj: ${window.colisionObjects}`;
+Active animations:${window.activeAnimations}, objects: ${window.objects}, colision obj: ${window.colisionObjects}\nLast sound instances: ${window.soundInstances}`;
                 this.drawObject(message, 5, 5);
             }
             const start = performance.now();
@@ -25097,7 +25104,7 @@ class Asteroid {
 		this.y += this.yVelocity
 
 		if (this.dead) {
-			_lib_sounds__WEBPACK_IMPORTED_MODULE_5__.sounds.play("bell")
+			_lib_sounds__WEBPACK_IMPORTED_MODULE_5__.sounds.play("asteroidExplosion")
 		}
 
 		if (this.x < -this.w - 10 || this.x > window.w + 20 || this.dead) {
@@ -25108,8 +25115,7 @@ class Asteroid {
 			if (!this.asteroidHitCooldown) {
 				this.asteroidHitCooldown = 100
 
-				const soundEffects = ["bonk", "bong", "orbs"]
-				_lib_sounds__WEBPACK_IMPORTED_MODULE_5__.sounds.play((0,_lib_util__WEBPACK_IMPORTED_MODULE_1__.randomItemFromArray)(soundEffects))
+				_lib_sounds__WEBPACK_IMPORTED_MODULE_5__.sounds.play("asteroidHit")
 
 				if (object.name === "player") {
 					this.hp -= 1
@@ -25480,6 +25486,7 @@ class Player {
 			this.score += 1
 			if (this.regenerationCooldown <= 0) {
 				if (this.hp < 3) {
+					_lib_sounds__WEBPACK_IMPORTED_MODULE_6__.sounds.play("playerRegen")
 					this.hp += 1
 					this.regenerationCooldown = this.regenerationCooldownMax / 3
 				}
@@ -25595,7 +25602,7 @@ class Player {
 
 			const onColision = (object) => {
 				if (this.hitCooldown <= 0 && !this.invincibility) {
-					_lib_sounds__WEBPACK_IMPORTED_MODULE_6__.sounds.play("hit")
+					_lib_sounds__WEBPACK_IMPORTED_MODULE_6__.sounds.play("playerHit")
 					this.hp -= 1
 					this.regenerationCooldown +=
 						this.regenerationCooldownMax / 3
@@ -25628,7 +25635,7 @@ class Player {
 			this.deathAnimation = 10000
 			this.dead = true
 
-			_lib_sounds__WEBPACK_IMPORTED_MODULE_6__.sounds.play("death")
+			_lib_sounds__WEBPACK_IMPORTED_MODULE_6__.sounds.play("playerDeath")
 
 			window.formatedScores = "Loading scores\n\n(under maintenance)"
 			await (0,_firebase_scoreboard__WEBPACK_IMPORTED_MODULE_1__.submitScore)(window.username, this.score)
@@ -25788,7 +25795,7 @@ __webpack_require__.r(__webpack_exports__);
 
 class Ufo {
 	constructor(x, y) {
-		_lib_sounds__WEBPACK_IMPORTED_MODULE_5__.sounds.play("emergency")
+		_lib_sounds__WEBPACK_IMPORTED_MODULE_5__.sounds.play("ufoAlert")
 
 		this.name = "ufo"
 		this.x = x
@@ -25865,7 +25872,7 @@ class Ufo {
 		this.yVelocity *= this.loss
 
 		if (this.hp <= 0) {
-			_lib_sounds__WEBPACK_IMPORTED_MODULE_5__.sounds.play("kill")
+			_lib_sounds__WEBPACK_IMPORTED_MODULE_5__.sounds.play("ufoDeath")
 			this.deleter()
 		}
 
@@ -25886,7 +25893,7 @@ class Ufo {
 				}
 
 				if (object.name === "asteroid") {
-					_lib_sounds__WEBPACK_IMPORTED_MODULE_5__.sounds.play("oof")
+					_lib_sounds__WEBPACK_IMPORTED_MODULE_5__.sounds.play("hit")
 
 					if (!this.asteroidHitCooldown) {
 						this.hp -= 1
@@ -25896,7 +25903,7 @@ class Ufo {
 					this.asteroidHitCooldown = 100
 				}
 				if (object.name === "bullet") {
-					_lib_sounds__WEBPACK_IMPORTED_MODULE_5__.sounds.play("oof")
+					_lib_sounds__WEBPACK_IMPORTED_MODULE_5__.sounds.play("hit")
 
 					if (!this.bulletHitCooldown) {
 						this.hp -= 1
