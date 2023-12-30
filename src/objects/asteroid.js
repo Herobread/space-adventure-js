@@ -4,6 +4,7 @@ import {
 	getRandomItemFromArray,
 	randomInRange,
 	randomInRangeFloat,
+	randomItemFromArray,
 } from "../lib/util"
 import { art } from "../art"
 import { animations } from "../lib/animations"
@@ -111,7 +112,8 @@ export class Asteroid {
 			if (!this.asteroidHitCooldown) {
 				this.asteroidHitCooldown = 100
 
-				sounds.play("bonk")
+				const soundEffects = ["bonk", "bong", "orbs"]
+				sounds.play(randomItemFromArray(soundEffects))
 
 				if (object.name === "player") {
 					this.hp -= 1

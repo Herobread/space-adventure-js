@@ -79,7 +79,7 @@ export function numberWithCommas(x) {
 	return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
 }
 
-export function getRandomItemFromArray(array) {
+export function randomItemFromArray(array) {
 	// Check if the array is empty
 	if (array.length === 0) {
 		return undefined // Return undefined if the array is empty

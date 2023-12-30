@@ -24116,6 +24116,56 @@ const shapes = {
 
 /***/ }),
 
+/***/ "./src/lib/sounds.ts":
+/*!***************************!*\
+  !*** ./src/lib/sounds.ts ***!
+  \***************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "sounds": () => (/* binding */ sounds)
+/* harmony export */ });
+const sounds = {
+    sounds: {},
+    play(soundKey) {
+        const soundInstances = this.sounds[soundKey] || [];
+        const newSound = new Audio(soundPaths[soundKey]);
+        soundInstances.push(newSound);
+        this.sounds[soundKey] = soundInstances;
+        newSound.play();
+    },
+};
+function loadSounds(soundPaths) {
+    for (const key in soundPaths) {
+        if (Object.prototype.hasOwnProperty.call(soundPaths, key)) {
+            const audio = new Audio(soundPaths[key]);
+            sounds.sounds[key] = [audio];
+        }
+    }
+}
+// Example usage:
+const soundPaths = {
+    shoot: "sounds/shoot.wav",
+    hit: "sounds/hit.wav",
+    death: "sounds/death.wav",
+    kill: "sounds/kill.wav",
+    oof: "sounds/oof.wav",
+    bell: "sounds/bell.wav",
+    bonk: "sounds/bonk.wav",
+    pan: "sounds/pan.wav",
+    emergency: "sounds/emergency.wav",
+    ufoShoot: "sounds/ufo-shoot.wav",
+    asteroidBelt: "sounds/asteroid-belt.wav",
+    playerSpawn: "sounds/player-spawn.wav",
+    // Add more sound paths as needed
+};
+loadSounds(soundPaths);
+
+
+
+/***/ }),
+
 /***/ "./src/lib/ui.ts":
 /*!***********************!*\
   !*** ./src/lib/ui.ts ***!
@@ -24323,6 +24373,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _objects_ufo__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../objects/ufo */ "./src/objects/ufo.js");
 /* harmony import */ var _lib_gamepad__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../lib/gamepad */ "./src/lib/gamepad.ts");
 /* harmony import */ var _objects_planet__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../objects/planet */ "./src/objects/planet.js");
+/* harmony import */ var _lib_sounds__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../lib/sounds */ "./src/lib/sounds.ts");
 var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -24332,6 +24383,7 @@ var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _argume
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+
 
 
 
@@ -24376,6 +24428,7 @@ function game() {
                 asteroidBeltSpawnCooldown -= 1;
             }
             else {
+                _lib_sounds__WEBPACK_IMPORTED_MODULE_12__.sounds.play("asteroidBelt");
                 asteroidBeltCooldown = asteroidBeltCooldownMax;
                 asteroidBeltSpawnCooldown = asteroidBeltSpawnCooldownMax;
             }
@@ -24451,16 +24504,10 @@ function game() {
         if (!isPaused) {
             if (window.clock % 40 == 0) {
                 const particle = new _objects_particle__WEBPACK_IMPORTED_MODULE_7__.Particle(window.w, (0,_lib_util__WEBPACK_IMPORTED_MODULE_3__.randomInRange)(0, window.h), (0,_lib_util__WEBPACK_IMPORTED_MODULE_3__.randomInRangeFloat)(-0.4, -0.2) * difficulty, 0);
-                particle.setDeleter(() => {
-                    // deleter
-                });
                 particles.push(particle);
             }
             if ((window.clock % 40) - 20 == 0) {
                 const particle = new _objects_particle__WEBPACK_IMPORTED_MODULE_7__.Particle(window.w, (0,_lib_util__WEBPACK_IMPORTED_MODULE_3__.randomInRange)(0, window.h), (0,_lib_util__WEBPACK_IMPORTED_MODULE_3__.randomInRangeFloat)(-0.7, -0.4) * difficulty, 0);
-                particle.setDeleter(() => {
-                    // deleter
-                });
                 particles.push(particle);
             }
             player.tick(pointer, keyboard, pad);
@@ -24830,6 +24877,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "clamp": () => (/* binding */ clamp),
 /* harmony export */   "cropImg": () => (/* binding */ cropImg),
 /* harmony export */   "getDimensions": () => (/* binding */ getDimensions),
+/* harmony export */   "getRandomItemFromArray": () => (/* binding */ getRandomItemFromArray),
 /* harmony export */   "isBetween": () => (/* binding */ isBetween),
 /* harmony export */   "numberWithCommas": () => (/* binding */ numberWithCommas),
 /* harmony export */   "randomInRange": () => (/* binding */ randomInRange),
@@ -24917,6 +24965,19 @@ function numberWithCommas(x) {
 	return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
 }
 
+function getRandomItemFromArray(array) {
+	// Check if the array is empty
+	if (array.length === 0) {
+		return undefined // Return undefined if the array is empty
+	}
+
+	// Generate a random index within the array length
+	const randomIndex = Math.floor(Math.random() * array.length)
+
+	// Return the random item from the array
+	return array[randomIndex]
+}
+
 
 /***/ }),
 
@@ -24935,6 +24996,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _art__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../art */ "./src/art.ts");
 /* harmony import */ var _lib_animations__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../lib/animations */ "./src/lib/animations.ts");
 /* harmony import */ var _lib_colisions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../lib/colisions */ "./src/lib/colisions.ts");
+/* harmony import */ var _lib_sounds__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../lib/sounds */ "./src/lib/sounds.ts");
+
 
 
 
@@ -25030,6 +25093,10 @@ class Asteroid {
 		this.x += this.xVelocity
 		this.y += this.yVelocity
 
+		if (this.dead) {
+			_lib_sounds__WEBPACK_IMPORTED_MODULE_5__.sounds.play("bell")
+		}
+
 		if (this.x < -this.w - 10 || this.x > window.w + 20 || this.dead) {
 			this.deleter()
 		}
@@ -25037,6 +25104,8 @@ class Asteroid {
 		const onColision = (object) => {
 			if (!this.asteroidHitCooldown) {
 				this.asteroidHitCooldown = 100
+
+				_lib_sounds__WEBPACK_IMPORTED_MODULE_5__.sounds.play("bonk")
 
 				if (object.name === "player") {
 					this.hp -= 1
@@ -25247,6 +25316,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _lib_colisions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../lib/colisions */ "./src/lib/colisions.ts");
 /* harmony import */ var _renderer__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../renderer */ "./src/renderer.ts");
 /* harmony import */ var _lib_util__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../lib/util */ "./src/lib/util.js");
+/* harmony import */ var _lib_sounds__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../lib/sounds */ "./src/lib/sounds.ts");
+
 
 
 
@@ -25256,6 +25327,8 @@ __webpack_require__.r(__webpack_exports__);
 
 class Player {
 	constructor(x, y) {
+		_lib_sounds__WEBPACK_IMPORTED_MODULE_6__.sounds.play("playerSpawn")
+
 		this.name = "player"
 		this.x = x
 		this.y = y
@@ -25302,6 +25375,8 @@ class Player {
 			this.shootCooldown -= 1
 		}
 		if (!this.shootCooldown) {
+			_lib_sounds__WEBPACK_IMPORTED_MODULE_6__.sounds.play("shoot")
+
 			this.shootCooldown = 100
 
 			this.bullets.push({
@@ -25516,6 +25591,7 @@ class Player {
 
 			const onColision = (object) => {
 				if (this.hitCooldown <= 0 && !this.invincibility) {
+					_lib_sounds__WEBPACK_IMPORTED_MODULE_6__.sounds.play("hit")
 					this.hp -= 1
 					this.regenerationCooldown +=
 						this.regenerationCooldownMax / 3
@@ -25547,6 +25623,8 @@ class Player {
 		if (this.hp === 0 && !this.dead) {
 			this.deathAnimation = 10000
 			this.dead = true
+
+			_lib_sounds__WEBPACK_IMPORTED_MODULE_6__.sounds.play("death")
 
 			window.formatedScores = "Loading scores\n\n(under maintenance)"
 			await (0,_firebase_scoreboard__WEBPACK_IMPORTED_MODULE_1__.submitScore)(window.username, this.score)
@@ -25696,6 +25774,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _lib_colisions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../lib/colisions */ "./src/lib/colisions.ts");
 /* harmony import */ var _renderer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../renderer */ "./src/renderer.ts");
 /* harmony import */ var _lib_util__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../lib/util */ "./src/lib/util.js");
+/* harmony import */ var _lib_sounds__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../lib/sounds */ "./src/lib/sounds.ts");
+
 
 
 
@@ -25704,6 +25784,8 @@ __webpack_require__.r(__webpack_exports__);
 
 class Ufo {
 	constructor(x, y) {
+		_lib_sounds__WEBPACK_IMPORTED_MODULE_5__.sounds.play("emergency")
+
 		this.name = "ufo"
 		this.x = x
 		this.y = y
@@ -25779,11 +25861,12 @@ class Ufo {
 		this.yVelocity *= this.loss
 
 		if (this.hp <= 0) {
+			_lib_sounds__WEBPACK_IMPORTED_MODULE_5__.sounds.play("kill")
 			this.deleter()
 		}
 
 		_lib_colisions__WEBPACK_IMPORTED_MODULE_2__.colisions.addRectangleColision(this, (object) => {
-			if (!this.asteroidHitCooldown && !this.bulletHitCooldown)
+			if (!this.asteroidHitCooldown && !this.bulletHitCooldown) {
 				for (let i = 0; i < 10; i += 1) {
 					_lib_animations__WEBPACK_IMPORTED_MODULE_1__.animations.animate(
 						_art__WEBPACK_IMPORTED_MODULE_0__.art.animations.particle,
@@ -25798,20 +25881,25 @@ class Ufo {
 					)
 				}
 
-			if (object.name === "asteroid") {
-				if (!this.asteroidHitCooldown) {
-					this.hp -= 1
-				}
+				if (object.name === "asteroid") {
+					_lib_sounds__WEBPACK_IMPORTED_MODULE_5__.sounds.play("oof")
 
-				this.yVelocity = -object.yVelocity
-				this.asteroidHitCooldown = 10
-			}
-			if (object.name === "bullet") {
-				if (!this.bulletHitCooldown) {
-					this.hp -= 1
-				}
+					if (!this.asteroidHitCooldown) {
+						this.hp -= 1
+					}
 
-				this.bulletHitCooldown = 10
+					this.yVelocity = -object.yVelocity
+					this.asteroidHitCooldown = 100
+				}
+				if (object.name === "bullet") {
+					_lib_sounds__WEBPACK_IMPORTED_MODULE_5__.sounds.play("oof")
+
+					if (!this.bulletHitCooldown) {
+						this.hp -= 1
+					}
+
+					this.bulletHitCooldown = 10
+				}
 			}
 		})
 
@@ -25824,6 +25912,8 @@ class Ufo {
 			this.shootCooldown -= 1
 		}
 		if (!this.shootCooldown) {
+			_lib_sounds__WEBPACK_IMPORTED_MODULE_5__.sounds.play("ufoShoot")
+
 			this.shootCooldown = 500
 
 			this.bullets.push({

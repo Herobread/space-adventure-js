@@ -48,6 +48,9 @@ const soundPaths: SoundPaths = {
 	ufoShoot: "sounds/ufo-shoot.wav",
 	asteroidBelt: "sounds/asteroid-belt.wav",
 	playerSpawn: "sounds/player-spawn.wav",
+	dog: "sounds/dog.wav",
+	bong: "sounds/bong.wav",
+	orbs: "sounds/orbs.wav",
 	// Add more sound paths as needed
 }
 
